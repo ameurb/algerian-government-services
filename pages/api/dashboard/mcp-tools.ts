@@ -76,20 +76,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   switch (req.method) {
     case 'GET':
       // Get all MCP tools
-      const { type } = req.query;
+      const { type: filterType } = req.query;
       let filteredTools = mcpTools;
       
-      if (type && typeof type === 'string') {
-        filteredTools = mcpTools.filter(tool => tool.type === type);
+      if (filterType && typeof filterType === 'string') {
+        filteredTools = mcpTools.filter(tool => tool.type === filterType);
       }
       
       return res.status(200).json(filteredTools);
       
     case 'POST':
       // Create new MCP tool
-      const { name, description, type, endpoint, parameters } = req.body;
+      const { name, description, type: toolType, endpoint, parameters } = req.body;
       
-      if (!name || !description || !type || !endpoint) {
+      if (!name || !description || !toolType || !endpoint) {
         return res.status(400).json({ 
           error: 'Name, description, type, and endpoint are required' 
         });
@@ -99,7 +99,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         id: Date.now().toString(),
         name,
         description,
-        type,
+        type: toolType,
         endpoint,
         parameters: parameters || {},
         isActive: true,

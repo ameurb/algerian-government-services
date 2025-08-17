@@ -1,6 +1,8 @@
 // Simple authentication for dashboard access
 // In production, integrate with NextAuth.js or your preferred auth system
 
+import { NextApiRequest, NextApiResponse } from 'next';
+
 export interface AdminUser {
   id: string;
   email: string;
@@ -102,13 +104,13 @@ export class DashboardAuth {
     const now = Date.now();
     const sessions: Array<{ token: string; userId: string; expiresAt: number }> = [];
     
-    for (const [token, session] of activeSessions.entries()) {
+    activeSessions.forEach((session, token) => {
       if (session.expiresAt > now) {
         sessions.push({ token, ...session });
       } else {
         activeSessions.delete(token);
       }
-    }
+    });
     
     return sessions;
   }
