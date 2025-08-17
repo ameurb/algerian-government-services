@@ -2,7 +2,7 @@
 // Server-Sent Events (SSE) for real-time data streaming
 
 class AlgerianServicesStreamingAPI {
-  constructor(apiKey, baseUrl = 'https://api.findapply.com:8081') {
+  constructor(apiKey, baseUrl = 'http://localhost:8082') {
     this.apiKey = apiKey;
     this.baseUrl = baseUrl;
   }
@@ -204,7 +204,8 @@ async function streamingExamples() {
   }
 }
 
-// React component for streaming search
+// React component for streaming search (commented out for Node.js execution)
+/*
 function StreamingSearchComponent() {
   const [searchResults, setSearchResults] = useState([]);
   const [progress, setProgress] = useState(0);
@@ -269,6 +270,7 @@ function StreamingSearchComponent() {
     </div>
   );
 }
+*/
 
 // Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
