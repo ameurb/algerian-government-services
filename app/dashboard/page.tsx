@@ -36,18 +36,24 @@ export default function AdminDashboard() {
   }, []);
 
   const fetchDashboardData = async () => {
+    console.log('🔄 Fetching dashboard data...');
+    
     try {
       // Fetch statistics from dashboard API
       const response = await fetch('/api/dashboard/stats');
+      console.log('📊 Stats response status:', response.status);
+      
       if (response.ok) {
         const data = await response.json();
+        console.log('✅ Stats data received:', Object.keys(data));
         setStats(data);
+        setLoading(false);
       } else {
-        console.error('Failed to fetch stats');
+        console.error('❌ Failed to fetch stats, status:', response.status);
+        setLoading(false);
       }
-      setLoading(false);
     } catch (error) {
-      console.error('Failed to fetch dashboard data:', error);
+      console.error('❌ Dashboard fetch error:', error);
       setLoading(false);
     }
   };
@@ -68,6 +74,28 @@ export default function AdminDashboard() {
         <div className="text-center">
           <div className="animate-spin w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-4"></div>
           <p className="text-gray-600">Loading Dashboard...</p>
+          <p className="text-xs text-gray-500 mt-2">Fetching system statistics...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Add error state
+  if (!stats) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span className="text-red-500 text-2xl">⚠️</span>
+          </div>
+          <p className="text-gray-900 font-medium">Dashboard Error</p>
+          <p className="text-gray-600">Failed to load dashboard data</p>
+          <button 
+            onClick={() => { setLoading(true); fetchDashboardData(); }}
+            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Retry
+          </button>
         </div>
       </div>
     );
