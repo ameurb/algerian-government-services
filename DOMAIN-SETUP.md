@@ -4,14 +4,15 @@ This guide configures your **Algerian Government Services** application to use y
 
 ## 🎯 Recommended Domain Structure
 
-### Option 1: Direct Port Access (Your Configuration)
+### Option 1: Clean URLs with Direct Access (Your Configuration)
 ```
-https://api.findapply.com:3000/            → Next.js App (Chat Interface)
-https://api.findapply.com:8080/            → MCP Server Direct Access
-https://api.findapply.com:8080/search      → MCP Search API
-https://api.findapply.com:8080/health      → MCP Health Check
-https://api.findapply.com:8080/stats       → MCP Statistics
-https://api.findapply.com:5556/            → Prisma Studio (Optional)
+https://api.findapply.com              → Next.js App (Clean URL via Nginx)
+https://api.findapply.com/mcp          → MCP Server API (Proxied)
+https://api.findapply.com:8080         → MCP Server Direct Access
+https://api.findapply.com:8080/search  → MCP Search API
+https://api.findapply.com:8080/health  → MCP Health Check
+https://api.findapply.com:8080/stats   → MCP Statistics
+https://api.findapply.com:5556         → Prisma Studio (Direct)
 ```
 
 ### Option 2: Single Domain with Nginx Proxy (Alternative)
