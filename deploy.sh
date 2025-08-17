@@ -139,7 +139,11 @@ print_status "Application built successfully"
 
 print_info "Step 5: Starting Services with PM2"
 
-# Create PM2 ecosystem config
+# Get domain from environment or use default
+DOMAIN=${DOMAIN:-"api.findapply.com"}
+print_info "Configuring for domain: $DOMAIN"
+
+# Create PM2 ecosystem config for api.findapply.com
 cat > ecosystem.config.js << EOF
 module.exports = {
   apps: [
@@ -153,7 +157,10 @@ module.exports = {
       max_memory_restart: '1G',
       env: {
         NODE_ENV: 'production',
-        PORT: 3000
+        PORT: 3000,
+        NEXT_PUBLIC_APP_URL: 'https://$DOMAIN',
+        DOMAIN: '$DOMAIN',
+        CORS_ORIGIN: 'https://$DOMAIN'
       }
     },
     {
@@ -166,7 +173,9 @@ module.exports = {
       max_memory_restart: '512M',
       env: {
         NODE_ENV: 'production',
-        MCP_SERVER_PORT: 8081
+        MCP_SERVER_PORT: 8081,
+        CORS_ORIGIN: 'https://$DOMAIN',
+        DOMAIN: '$DOMAIN'
       }
     }
   ]

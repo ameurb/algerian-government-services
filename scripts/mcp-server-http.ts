@@ -37,11 +37,30 @@ class Logger {
   }
 }
 
-// Middleware
+// Middleware - CORS configuration for api.findapply.com
+const allowedOrigins = [
+  'http://localhost:3000',                    // Development
+  'https://api.findapply.com',               // Production main
+  'https://www.api.findapply.com',           // Production www
+  'https://app.findapply.com',               // Alternative subdomain
+  'https://admin.findapply.com',             // Admin subdomain
+  process.env.CORS_ORIGIN                    // Environment override
+].filter(Boolean);
+
 app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: (origin, callback) => {
+    // Allow requests with no origin (mobile apps, etc.)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true
 }));
 
 app.use(express.json());
