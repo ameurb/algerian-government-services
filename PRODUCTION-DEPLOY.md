@@ -4,9 +4,10 @@
 
 ### 🌐 Your Domain Structure:
 ```
-https://api.findapply.com:3000    → Next.js Chat Application
-https://api.findapply.com:8080    → MCP Server Direct API
-https://api.findapply.com:5556    → Prisma Studio (Admin)
+https://api.findapply.com         → Next.js Chat Application (Clean URL)
+https://api.findapply.com/mcp     → MCP Server API (Proxied)
+https://api.findapply.com:8080    → MCP Server Direct Access
+https://admin.api.findapply.com   → Prisma Studio (Admin)
 ```
 
 ### ⚙️ Environment Configuration:
@@ -123,8 +124,8 @@ curl https://api.findapply.com:8080/stats
 ## 🎉 Final Result
 
 **Your citizens will access:**
-- **Main App**: https://api.findapply.com:3000
-- **API Docs**: https://api.findapply.com:8080/tools
+- **Main App**: https://api.findapply.com
+- **API Docs**: https://api.findapply.com/mcp/tools
 
 **Features available:**
 - 🤖 ChatGPT-like AI assistant in Arabic/English
