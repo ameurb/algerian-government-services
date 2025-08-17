@@ -40,6 +40,15 @@ A **ChatGPT-like intelligent assistant** for accessing Algerian government servi
 - Enterprise-grade security and backups
 - Zero-maintenance managed service
 
+### 📊 **Admin Dashboard**
+- Comprehensive system management at `/dashboard`
+- API key management and security controls
+- Database collections manager (add/remove/modify)
+- MCP tools configuration and monitoring
+- Templates manager for responses and documents
+- Real-time statistics and performance metrics
+- Resource management and system configuration
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -138,6 +147,7 @@ pm2 start ecosystem.config.js
 ### 🌍 Production URLs
 After deployment, your application will be available at:
 - **🤖 Main Chat**: https://api.findapply.com
+- **📊 Admin Dashboard**: https://api.findapply.com/dashboard
 - **📡 MCP API**: https://api.findapply.com/mcp
 - **🔧 Direct MCP**: https://api.findapply.com:8080
 - **⚙️ Prisma Studio**: https://api.findapply.com:5556
