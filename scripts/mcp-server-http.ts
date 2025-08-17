@@ -67,8 +67,8 @@ app.use(express.json());
 
 // API Key Authentication Middleware
 const API_KEYS = new Map([
-  ['mcp_live_demo123', { name: 'Demo Key', permissions: ['*'], isActive: true }],
-  ['mcp_test_456789', { name: 'Test Key', permissions: ['search', 'stats'], isActive: true }],
+  ['dz_live_demo123', { name: 'Algeria Demo Key', permissions: ['*'], isActive: true }],
+  ['dz_test_456789', { name: 'Algeria Test Key', permissions: ['search', 'stats'], isActive: true }],
   [process.env.MCP_API_KEY, { name: 'Main API Key', permissions: ['*'], isActive: true }]
 ].filter(([key]) => key)); // Remove undefined keys
 

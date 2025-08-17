@@ -154,7 +154,7 @@ class AlgerianServicesStreamingAPI {
 
 // Usage Examples
 async function streamingExamples() {
-  const api = new AlgerianServicesStreamingAPI('mcp_live_demo123');
+  const api = new AlgerianServicesStreamingAPI('dz_live_demo123');
 
   console.log('🌊 Streaming API Examples\n');
 
@@ -215,7 +215,7 @@ function StreamingSearchComponent() {
     setSearchResults([]);
     setProgress(0);
 
-    const api = new AlgerianServicesStreamingAPI('mcp_live_demo123');
+    const api = new AlgerianServicesStreamingAPI('dz_live_demo123');
 
     try {
       await api.streamSearch(query, null, {

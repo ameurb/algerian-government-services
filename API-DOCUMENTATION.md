@@ -23,8 +23,8 @@ Visit the admin dashboard at `https://api.findapply.com/dashboard` to generate A
 
 ### Demo API Keys (for testing):
 ```
-mcp_live_demo123    # Full access (all permissions)
-mcp_test_456789     # Limited access (search and stats only)
+dz_live_demo123    # Full access (all permissions)
+dz_test_456789     # Limited access (search and stats only)
 ```
 
 ## 📡 Available Endpoints

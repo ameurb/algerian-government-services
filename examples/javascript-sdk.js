@@ -54,7 +54,7 @@ class AlgerianServicesAPI {
 
 // Usage Examples
 async function examples() {
-  const api = new AlgerianServicesAPI('mcp_live_demo123'); // Demo API key
+  const api = new AlgerianServicesAPI('dz_live_demo123'); // Demo API key
 
   try {
     console.log('🇩🇿 Algerian Government Services API Examples\n');

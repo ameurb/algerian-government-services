@@ -145,7 +145,7 @@ class AlgerianServicesStreamingAPI:
 def streaming_examples():
     """Example usage of streaming API"""
     
-    api = AlgerianServicesStreamingAPI('mcp_live_demo123')
+    api = AlgerianServicesStreamingAPI('dz_live_demo123')
     
     print("🌊 Python Streaming API Examples\n")
     
@@ -249,5 +249,5 @@ if __name__ == "__main__":
     streaming_examples()
     
     # Uncomment to run real-time dashboard
-    # dashboard = RealTimeDashboard('mcp_live_demo123')
+    # dashboard = RealTimeDashboard('dz_live_demo123')
     # dashboard.start_monitoring()

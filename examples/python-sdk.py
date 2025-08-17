@@ -65,7 +65,7 @@ def main():
     """Example usage of the API"""
     
     # Initialize API client
-    api = AlgerianServicesAPI('mcp_live_demo123')  # Demo API key
+    api = AlgerianServicesAPI('dz_live_demo123')  # Demo API key
     
     print("🇩🇿 Algerian Government Services API - Python Examples\n")
     
