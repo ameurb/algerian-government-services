@@ -194,10 +194,28 @@ curl -X POST https://api.findapply.com:8080/search \
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
+## 📡 API Documentation
+
+Complete API documentation with examples in multiple programming languages:
+
+- 📖 **API Guide**: [API-DOCUMENTATION.md](./API-DOCUMENTATION.md)
+- 🔍 **Query Examples**: [examples/query-examples.md](./examples/query-examples.md)
+- 💻 **JavaScript SDK**: [examples/javascript-sdk.js](./examples/javascript-sdk.js)
+- 🐍 **Python SDK**: [examples/python-sdk.py](./examples/python-sdk.py)
+- 📘 **TypeScript SDK**: [examples/typescript-sdk.ts](./examples/typescript-sdk.ts)
+
+### Quick API Usage:
+```javascript
+const api = new AlgerianServicesAPI('your-api-key');
+const results = await api.search('National ID', 'CIVIL_STATUS', 5);
+console.log(`Found ${results.count} services`);
+```
+
 ## 📞 Support
 
 - 📧 **Issues**: [GitHub Issues](https://github.com/ameurb/algerian-government-services/issues)
 - 📖 **Documentation**: [DEPLOYMENT.md](./DEPLOYMENT.md)
+- 📡 **API Guide**: [API-DOCUMENTATION.md](./API-DOCUMENTATION.md)
 - 🧪 **Testing**: Run `npm run test:streaming`
 
 ## 📄 License
