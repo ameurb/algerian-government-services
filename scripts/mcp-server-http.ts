@@ -107,6 +107,7 @@ app.use('/search', authenticateApiKey);
 app.use('/service', authenticateApiKey);
 app.use('/stats', authenticateApiKey);
 app.use('/tools', authenticateApiKey);
+app.use('/stream', authenticateApiKey);
 
 // Request logging middleware
 app.use((req, res, next) => {
@@ -259,6 +260,198 @@ app.post('/search', async (req, res) => {
       requestId,
       message: error instanceof Error ? error.message : 'Unknown error'
     });
+  }
+});
+
+// Streaming search endpoint
+app.post('/stream/search', async (req, res) => {
+  const requestId = `stream_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  
+  Logger.info('STREAM', `Starting streaming search request ${requestId}`);
+  
+  try {
+    // Validate input
+    const { query, category, limit = 10, chunkSize = 1 } = SearchServicesInputSchema.parse(req.body);
+    
+    Logger.info('STREAM', `Streaming search for ${requestId}`, { query, category, limit, chunkSize });
+
+    // Set up Server-Sent Events
+    res.writeHead(200, {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache',
+      'Connection': 'keep-alive',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Cache-Control, Content-Type, Authorization'
+    });
+
+    // Send initial metadata
+    res.write(`data: ${JSON.stringify({
+      type: 'metadata',
+      requestId,
+      query,
+      category,
+      timestamp: new Date().toISOString()
+    })}\n\n`);
+
+    // Build search query
+    const startTime = Date.now();
+    const whereClause: any = { isActive: true };
+
+    if (query) {
+      whereClause.OR = [
+        { name: { contains: query, mode: 'insensitive' } },
+        { nameEn: { contains: query, mode: 'insensitive' } },
+        { description: { contains: query, mode: 'insensitive' } },
+        { descriptionEn: { contains: query, mode: 'insensitive' } },
+      ];
+    }
+
+    if (category) {
+      whereClause.category = category;
+    }
+
+    // Stream progress update
+    res.write(`data: ${JSON.stringify({
+      type: 'progress',
+      message: 'Searching database...',
+      progress: 25
+    })}\n\n`);
+
+    // Execute query
+    const results = await prisma.governmentService.findMany({
+      where: whereClause,
+      take: limit,
+      select: {
+        id: true,
+        name: true,
+        nameEn: true,
+        description: true,
+        descriptionEn: true,
+        category: true,
+        isOnline: true,
+        bawabticUrl: true,
+        requirements: true,
+        process: true,
+        fee: true,
+        duration: true,
+        contactInfo: true,
+      },
+    });
+
+    // Stream progress update
+    res.write(`data: ${JSON.stringify({
+      type: 'progress',
+      message: 'Processing results...',
+      progress: 75
+    })}\n\n`);
+
+    // Stream results in chunks
+    for (let i = 0; i < results.length; i += chunkSize) {
+      const chunk = results.slice(i, i + chunkSize);
+      
+      res.write(`data: ${JSON.stringify({
+        type: 'result',
+        chunk: i / chunkSize,
+        totalChunks: Math.ceil(results.length / chunkSize),
+        data: chunk,
+        progress: Math.min(100, 75 + (25 * (i + chunkSize) / results.length))
+      })}\n\n`);
+
+      // Small delay to demonstrate streaming (remove in production)
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+
+    // Send completion
+    const queryTime = Date.now() - startTime;
+    res.write(`data: ${JSON.stringify({
+      type: 'complete',
+      requestId,
+      totalResults: results.length,
+      queryTime,
+      timestamp: new Date().toISOString()
+    })}\n\n`);
+
+    res.end();
+
+    Logger.info('STREAM', `Streaming search completed for ${requestId}`, {
+      resultsCount: results.length,
+      queryTimeMs: queryTime
+    });
+
+  } catch (error) {
+    Logger.error('STREAM', `Streaming search failed for ${requestId}`, error);
+    
+    res.write(`data: ${JSON.stringify({
+      type: 'error',
+      requestId,
+      error: 'Streaming search failed',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    })}\n\n`);
+    
+    res.end();
+  }
+});
+
+// Streaming statistics endpoint
+app.get('/stream/stats', async (req, res) => {
+  const requestId = `stream_stats_${Date.now()}`;
+  
+  try {
+    // Set up Server-Sent Events
+    res.writeHead(200, {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache',
+      'Connection': 'keep-alive',
+      'Access-Control-Allow-Origin': '*'
+    });
+
+    // Send real-time stats every 2 seconds
+    const interval = setInterval(async () => {
+      try {
+        const [total, online, active] = await Promise.all([
+          prisma.governmentService.count(),
+          prisma.governmentService.count({ where: { isOnline: true } }),
+          prisma.governmentService.count({ where: { isActive: true } }),
+        ]);
+
+        const categoryStats = await prisma.governmentService.groupBy({
+          by: ['category'],
+          _count: { category: true }
+        });
+
+        res.write(`data: ${JSON.stringify({
+          type: 'stats_update',
+          requestId,
+          data: {
+            total,
+            online,
+            active,
+            byCategory: categoryStats.map(item => ({
+              category: item.category,
+              count: item._count.category
+            })),
+            timestamp: new Date().toISOString()
+          }
+        })}\n\n`);
+
+      } catch (error) {
+        res.write(`data: ${JSON.stringify({
+          type: 'error',
+          error: 'Failed to fetch stats',
+          timestamp: new Date().toISOString()
+        })}\n\n`);
+      }
+    }, 2000);
+
+    // Clean up on client disconnect
+    req.on('close', () => {
+      clearInterval(interval);
+      Logger.info('STREAM', `Stats streaming ended for ${requestId}`);
+    });
+
+  } catch (error) {
+    Logger.error('STREAM', `Stats streaming failed for ${requestId}`, error);
+    res.status(500).json({ error: 'Streaming failed' });
   }
 });
 

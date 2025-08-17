@@ -176,6 +176,53 @@ GET /tools
 }
 ```
 
+## 🌊 Streaming Endpoints
+
+### 6. 📡 Streaming Search
+```http
+POST /stream/search
+```
+
+**Stream search results with real-time progress updates using Server-Sent Events (SSE).**
+
+#### Parameters:
+```json
+{
+  "query": "string (required)",
+  "category": "string (optional)",
+  "limit": "number (optional, default: 10)",
+  "chunkSize": "number (optional, default: 1)"
+}
+```
+
+#### SSE Response Stream:
+```javascript
+// Event: metadata
+data: {"type":"metadata","requestId":"stream_123","query":"National ID","timestamp":"2025-08-17T00:00:00Z"}
+
+// Event: progress
+data: {"type":"progress","message":"Searching database...","progress":25}
+
+// Event: result chunk
+data: {"type":"result","chunk":0,"totalChunks":3,"data":[{"id":"123","name":"Service"}],"progress":50}
+
+// Event: completion
+data: {"type":"complete","requestId":"stream_123","totalResults":5,"queryTime":150}
+```
+
+### 7. 📊 Streaming Statistics
+```http
+GET /stream/stats
+```
+
+**Stream real-time statistics updates every 2 seconds using SSE.**
+
+#### SSE Response Stream:
+```javascript
+// Real-time stats updates
+data: {"type":"stats_update","data":{"total":49,"online":11,"active":49,"byCategory":[...],"timestamp":"2025-08-17T00:00:00Z"}}
+```
+
 ## 💻 Programming Examples
 
 ### JavaScript (Node.js)

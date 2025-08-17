@@ -203,6 +203,8 @@ Complete API documentation with examples in multiple programming languages:
 - 💻 **JavaScript SDK**: [examples/javascript-sdk.js](./examples/javascript-sdk.js)
 - 🐍 **Python SDK**: [examples/python-sdk.py](./examples/python-sdk.py)
 - 📘 **TypeScript SDK**: [examples/typescript-sdk.ts](./examples/typescript-sdk.ts)
+- 🌊 **Streaming Examples**: [examples/streaming-examples.js](./examples/streaming-examples.js)
+- 📡 **Python Streaming**: [examples/streaming-python.py](./examples/streaming-python.py)
 
 ### Quick API Usage:
 ```javascript
