@@ -48,7 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     
     try {
       const mcpStartTime = Date.now();
-      const mcpResponse = await fetch('http://localhost:8080/health');
+      const mcpResponse = await fetch('http://localhost:8081/health');
       mcpResponseTime = Date.now() - mcpStartTime;
       
       if (mcpResponse.ok) {

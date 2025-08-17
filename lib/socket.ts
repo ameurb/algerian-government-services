@@ -278,7 +278,7 @@ async function generateFallbackResponse(searchResult: any, userQuery: string, se
     const services = searchResult.results.slice(0, 3);
     let response = `تم العثور على ${searchResult.count} خدمة متعلقة بـ "${userQuery}":\n\n`;
     
-    const mcpServerUrl = process.env.MCP_SERVER_URL || 'http://localhost:8080';
+    const mcpServerUrl = process.env.MCP_SERVER_URL || 'http://localhost:8081';
     
     // Display service information with available details from search results
     for (let index = 0; index < services.length; index++) {
@@ -421,7 +421,7 @@ Respond with ONLY the category name, nothing else.`
   }
 
   // Try MCP server first, fallback to direct database
-  const mcpServerUrl = process.env.MCP_SERVER_URL || 'http://localhost:8080';
+  const mcpServerUrl = process.env.MCP_SERVER_URL || 'http://localhost:8081';
   ChatLogger.debug('SEARCH', sessionId, `Attempting MCP server search for ${messageId}`, { 
     mcpServerUrl,
     originalQuery: query,
