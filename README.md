@@ -1,219 +1,188 @@
-# Algerian Youth Government Services Chat App 🇩🇿
+# 🇩🇿 Algerian Government Services Chat Application
 
-A real-time chat application that connects to an MCP (Model Context Protocol) server and MongoDB database to provide intelligent assistance for Algerian government services. Features OpenAI integration for humanized responses and real-time communication via Socket.IO.
+A **ChatGPT-like intelligent assistant** for accessing Algerian government services with **automatic RTL/LTR support**, **MongoDB Atlas integration**, and **streaming HTTP-MCP server**.
 
-## Features ✨
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green.svg)
+![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)
 
-- **Real-time Chat**: WebSocket-based communication with typing indicators
-- **AI-Powered Responses**: OpenAI integration with Arabic language support
-- **MCP Integration**: Connects to existing Model Context Protocol server
-- **MongoDB Database**: Stores government services and chat history
-- **Session Management**: Persistent chat sessions with user context
-- **Rate Limiting**: Prevents abuse with configurable limits
-- **Error Handling**: Comprehensive error handling with fallback responses
-- **Responsive UI**: Mobile-friendly chat interface with RTL support
+## 🌟 Features
 
-## Tech Stack 🛠️
+### 🤖 **ChatGPT-like Interface**
+- Natural conversational AI in Arabic, English, and French
+- Intelligent responses using real government data
+- Interactive sample questions for easy discovery
+- Real-time typing indicators with processing stages
 
-- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS
-- **Backend**: Node.js, Socket.IO, Prisma ORM
-- **Database**: MongoDB with comprehensive government services schema
-- **AI**: OpenAI GPT-4 for response humanization and summarization
-- **MCP**: Model Context Protocol for service integration
-- **Language**: Arabic (primary) with English support
+### 🔄 **Automatic RTL/LTR Support** 
+- Detects Arabic text → displays Right-to-Left (RTL)
+- Detects English/French → displays Left-to-Right (LTR)  
+- Smart text direction switching in real-time
+- Language-aware typography and fonts
 
-## Quick Start 🚀
+### 🌊 **Streaming HTTP-MCP Server**
+- Real-time API for government services
+- 49+ comprehensive Algerian services from bawabatic.dz
+- AI-powered search and categorization
+- RESTful endpoints with streaming support
+
+### 📱 **Responsive Design**
+- Mobile-first design with touch-friendly interface
+- Beautiful gradients and modern UI components
+- Works perfectly on all screen sizes
+- ChatGPT-style message bubbles
+
+### 🌐 **MongoDB Atlas Integration**
+- Cloud-hosted database with global availability
+- High performance with automatic scaling
+- Enterprise-grade security and backups
+- Zero-maintenance managed service
+
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 18+ and npm
-- MongoDB running on localhost:27017
+- Node.js 18+
+- MongoDB Atlas account (free tier available)
 - OpenAI API key
 
 ### Installation
+```bash
+# Clone repository
+git clone https://github.com/YOUR_USERNAME/algerian-government-services.git
+cd algerian-government-services
 
-1. **Clone and setup**:
-   ```bash
-   cd data_data
-   npm run setup
-   ```
+# Install dependencies  
+npm install
 
-2. **Configure environment variables** in `.env.local`:
-   ```env
-   DATABASE_URL=mongodb://localhost:27017/youths_portal
-   OPENAI_API_KEY=your_openai_api_key_here
-   NEXTAUTH_SECRET=your_secret_here
-   ```
+# Configure environment
+cp .env.example .env
+# Edit .env with your MongoDB Atlas and OpenAI credentials
 
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
+# Generate Prisma client
+npx prisma generate
 
-4. **Visit the app**: http://localhost:3000
+# Seed database with Algerian services
+tsx prisma/enhanced_seed.ts
 
-## Available Scripts 📜
+# Start development servers
+npm run dev          # Next.js (port 3000)
+npm run mcp:http     # MCP Server (port 8081)
+```
+
+## 🏗️ Architecture
+
+```
+User Query → Next.js App → OpenAI API → MCP HTTP Server → MongoDB Atlas → Response
+     ↓              ↓           ↓            ↓                ↓           ↓
+[Frontend]    [API Proxy]  [AI Tools]  [HTTP Stream]    [Cloud DB]  [Stream Back]
+```
+
+### 🔧 **Components:**
+
+1. **Next.js Frontend** (Port 3000)
+   - ChatGPT-like interface with RTL/LTR support
+   - Responsive design for all devices
+   - Interactive sample questions
+
+2. **HTTP-MCP Server** (Port 8081)
+   - Streaming API for government services
+   - Real-time database access
+   - Health monitoring endpoints
+
+3. **MongoDB Atlas** (Cloud)
+   - 49+ Algerian government services
+   - Bilingual content (Arabic/English)
+   - Automatic scaling and backups
+
+## 📊 Available Services
+
+- **Civil Status** (11 services): National ID, Birth certificates
+- **Business** (9 services): Company registration, Commercial certificates  
+- **Employment** (8 services): Job platforms, Support programs
+- **Housing** (10 services): Housing services and support
+- **Education** (4 services): Grants, University services
+- **Transportation** (3 services): Driving licenses, Vehicle registration
+- **Technology** (2 services): Digital services
+- **Social Security** (2 services): Social support programs
+
+## 🧪 Testing
 
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm start           # Start production server
-npm run setup       # Initial project setup
-npm run test:chat   # Test chat functionality
-npm run db:migrate  # Run database migrations
-npm run db:studio   # Open Prisma Studio
-npm run mcp:server  # Start MCP server
+# Test MongoDB Atlas connection
+npm run test:atlas
+
+# Test streaming MCP server
+npm run test:streaming
+
+# Run comprehensive test scenarios
+npm run test:mcp:scenarios
+
+# Verify deployment
+npm run verify:deployment
 ```
 
-## Architecture 🏗️
+## 🌐 Production Deployment
 
-### Components Structure
-```
-components/
-├── ChatContainer.tsx    # Main chat interface
-├── ChatMessage.tsx      # Individual message component
-├── ChatInput.tsx        # Message input with voice support
-└── TypingIndicator.tsx  # Typing animation
-```
-
-### API Routes
-```
-pages/api/
-├── socket.ts           # Socket.IO initialization
-├── chat.ts             # Chat message handling
-├── session.ts          # Session management
-└── mcp/
-    ├── search.ts       # Service search endpoint
-    ├── stats.ts        # Database statistics
-    └── service/[id].ts # Individual service details
-```
-
-### Libraries
-```
-lib/
-├── prisma.ts           # Database client
-├── socket.ts           # Socket.IO server logic
-├── openai.ts           # OpenAI integration
-├── mcp-client.ts       # MCP client
-├── session.ts          # Session management
-├── error-handler.ts    # Error handling
-└── rate-limiter.ts     # Rate limiting
-```
-
-## Features Details 📋
-
-### Real-time Chat
-- Socket.IO for instant messaging
-- Typing indicators and message status
-- Session-based chat history
-- Mobile-responsive design
-
-### AI Integration
-- OpenAI GPT-4 for response humanization
-- Arabic language optimization
-- Fallback responses when AI is unavailable
-- Context-aware service recommendations
-
-### MCP Server Integration
-- Direct database access through MCP protocol
-- Service search and filtering
-- Statistics and analytics
-- Extensible for additional tools
-
-### Database Schema
-- **GovernmentService**: Comprehensive service data
-- **ChatMessage**: Chat history storage
-- **Session**: User session management
-- **User**: User profiles (optional)
-
-### Error Handling
-- Comprehensive error catching and logging
-- User-friendly error messages in Arabic
-- Fallback mechanisms for service failures
-- Rate limiting to prevent abuse
-
-## Government Services Data 🏛️
-
-The app provides access to various Algerian government services:
-
-- **Civil Status** (الحالة المدنية): ID cards, birth certificates, passports
-- **Education** (التعليم): University services, certificates
-- **Health** (الصحة): Medical services, health records
-- **Employment** (التشغيل): Job services, labor documentation
-- **Business** (التجارة): Business registration, commercial services
-- **And many more...**
-
-## Chat Features 💬
-
-### User Experience
-- Arabic RTL interface with English support
-- Voice input support (Web Speech API)
-- Quick suggestion buttons
-- Service result cards with direct links
-- Real-time typing indicators
-
-### Assistant Capabilities
-- Natural language understanding in Arabic
-- Service search and recommendations
-- Step-by-step guidance for procedures
-- Document requirements explanation
-- Online service availability status
-
-## Development 👨‍💻
-
-### Adding New Features
-
-1. **New MCP Tools**: Add to `scripts/mcp-server.ts`
-2. **UI Components**: Add to `components/` directory
-3. **API Endpoints**: Add to `pages/api/` directory
-4. **Database Models**: Update `prisma/schema.prisma`
-
-### Testing
-
+### Ubuntu Server Deployment
 ```bash
-npm run test:chat    # Test chat functionality
-npm run test:db      # Test database connection
-npm run test:mcp     # Test MCP integration
+# One-command deployment
+./deploy.sh
+
+# Manual deployment
+npm run production:setup
+pm2 start ecosystem.config.js
 ```
 
-### Deployment
+### Docker Deployment
+```bash
+docker-compose up -d
+```
 
-1. Build the application: `npm run build`
-2. Configure production environment variables
-3. Ensure MongoDB is accessible
-4. Start with: `npm start`
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment guide.
 
-## Environment Variables 🔧
+## 📱 Usage Examples
 
-Required variables:
-- `DATABASE_URL`: MongoDB connection string
-- `OPENAI_API_KEY`: OpenAI API key for AI responses
-- `NEXTAUTH_SECRET`: Secret for session encryption
+### Chat Interface
+- **Arabic**: "بطاقة الهوية الوطنية" → RTL response with Arabic typography
+- **English**: "National ID requirements" → LTR response with Latin typography
+- **Mixed**: "كيف أحصل على National ID?" → Smart direction detection
 
-Optional variables:
-- `NEXTAUTH_URL`: Application URL (for production)
-- `MCP_SERVER_URL`: Custom MCP server URL
-- `NODE_ENV`: Environment mode (development/production)
+### API Usage
+```bash
+# Search services
+curl -X POST http://localhost:8081/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "National ID", "limit": 5}'
 
-## Contributing 🤝
+# Get service details  
+curl http://localhost:8081/service/SERVICE_ID
+
+# Database statistics
+curl http://localhost:8081/stats
+```
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
 
-## License 📄
+## 📞 Support
 
-This project is part of the Algerian Youth Portal initiative to improve access to government services through technology.
+- 📧 **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/algerian-government-services/issues)
+- 📖 **Documentation**: [DEPLOYMENT.md](./DEPLOYMENT.md)
+- 🧪 **Testing**: Run `npm run test:streaming`
 
-## Support 📞
+## 📄 License
 
-For technical support or questions about government services:
-- Check the chat app's built-in help
-- Review the API documentation
-- Contact the development team
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-Built with ❤️ for the Algerian youth community
+**🎉 Built with ❤️ for the Algerian community** 🇩🇿
+
+*Empowering citizens with intelligent access to government services through modern technology.*
