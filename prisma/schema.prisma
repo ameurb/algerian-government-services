@@ -1,0 +1,503 @@
+// Prisma schema for Algerian Youth Portal
+// MongoDB configuration with comprehensive models
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Government Services Model
+model GovernmentService {
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  
+  // Basic Information (Bilingual)
+  name            String            // Arabic name
+  nameEn          String?           // English name
+  description     String            // Arabic description  
+  descriptionEn   String?           // English description
+  
+  // Service Details
+  serviceId       String?           // Original bawabatic service ID
+  category        ServiceCategory
+  subcategory     String?           // Subcategory (e.g., "بطاقة التعريف البيومترية")
+  subcategoryEn   String?           // English subcategory
+  serviceType     String?           // Type: خدمة، إجراء، etc.
+  serviceTypeEn   String?           // English service type
+  
+  // Government Structure
+  sector          String?           // Ministry/Sector (Arabic)
+  sectorEn        String?           // Ministry/Sector (English)
+  structure       String?           // Specific department/agency (Arabic)
+  structureEn     String?           // Specific department/agency (English)
+  ministry        String?           // Ministry name (English)
+  agency          String?           // Agency name (English)
+  
+  // Target Information
+  targetGroup     String?           // Target group (Arabic)
+  targetGroupEn   String?           // Target group (English)
+  targetGroups    String[]          // Multiple target groups
+  
+  // Service Process
+  requirements    String[]          // Required documents/conditions
+  requirementsEn  String[]          // English requirements
+  process         String[]          // Step-by-step process
+  processEn       String[]          // English process steps
+  documents       String[]          // Required documents
+  documentsEn     String[]          // English documents
+  
+  // Service Details
+  fee             String?           // Cost information
+  duration        String?           // Processing time
+  processingTime  String?           // Processing time (Arabic)
+  processingTimeEn String?          // Processing time (English)
+  
+  // Contact and Access
+  office          String?           // Office/Department
+  contactInfo     String?           // Contact information
+  contactPhone    String?           // Phone number
+  contactEmail    String?           // Email address
+  onlineUrl       String?           // External platform URL
+  bawabticUrl     String?           // Original bawabatic URL
+  
+  // Additional Information
+  legalFramework  String?           // Legal basis
+  appeals         String?           // Appeals process
+  appealsEn       String?           // Appeals process (English)
+  benefits        String[]          // Service benefits
+  benefitsEn      String[]          // English benefits
+  notes           String?           // Additional notes
+  
+  // Location and Availability
+  wilaya          String?           // Specific wilaya (if applicable)
+  isOnline        Boolean           @default(false)
+  isNational      Boolean           @default(true)
+  isActive        Boolean           @default(true)
+  
+  // Metadata
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime?         @updatedAt
+  
+  @@map("government_services")
+}
+
+// User profiles and authentication
+model User {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  email       String   @unique
+  firstName   String
+  lastName    String
+  phone       String?
+  dateOfBirth DateTime?
+  gender      Gender?
+  wilaya      String? // Algerian province
+  commune     String? // Algerian commune
+  education   EducationLevel?
+  profession  String?
+  bio         String?
+  avatar      String? // URL to profile picture
+  isVerified  Boolean  @default(false)
+  status      UserStatus @default(ACTIVE)
+  language    String   @default("ar") // ar for Arabic, fr for French
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  posts       Post[]
+  comments    Comment[]
+  likes       Like[]
+  applications JobApplication[]
+  sessions    Session[]
+  chatHistory ChatMessage[]
+  eventRegistrations EventRegistration[]
+  healthRecords HealthRecord[]
+  certificates Certificate[]
+  enrollments Enrollment[]
+
+  @@map("users")
+}
+
+// Session management for chat and authentication
+model Session {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionId  String   @unique
+  userId     String?  @db.ObjectId
+  deviceId   String
+  userAgent  String?
+  ipAddress  String?
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  lastActive DateTime @default(now())
+  expiresAt  DateTime
+
+  user       User?    @relation(fields: [userId], references: [id])
+  
+  @@map("sessions")
+}
+
+// Chat messages for AI assistant
+model ChatMessage {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionId String
+  userId    String?  @db.ObjectId
+  role      ChatRole
+  content   String
+  timestamp DateTime @default(now())
+  metadata  Json?    // For storing additional context
+
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@map("chat_messages")
+}
+
+// Job postings and opportunities
+model Job {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  company     String
+  description String
+  requirements String[]
+  location    String
+  wilaya      String
+  salary      String?
+  type        JobType
+  category    JobCategory
+  experience  ExperienceLevel
+  isRemote    Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  deadline    DateTime?
+  contactEmail String
+  contactPhone String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  applications JobApplication[]
+
+  @@map("jobs")
+}
+
+// Job applications
+model JobApplication {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  jobId     String   @db.ObjectId
+  status    ApplicationStatus @default(PENDING)
+  coverLetter String?
+  resume    String? // URL to resume file
+  appliedAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  job       Job      @relation(fields: [jobId], references: [id])
+
+  @@unique([userId, jobId])
+  @@map("job_applications")
+}
+
+// Educational content and courses
+model Course {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  content     String
+  category    CourseCategory
+  level       EducationLevel
+  duration    Int      // in hours
+  instructor  String
+  price       Float    @default(0) // 0 for free courses
+  thumbnail   String?
+  videoUrl    String?
+  materials   String[] // URLs to course materials
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  enrollments Enrollment[]
+  certificates Certificate[]
+
+  @@map("courses")
+}
+
+// Course enrollments
+model Enrollment {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String   @db.ObjectId
+  courseId   String   @db.ObjectId
+  progress   Float    @default(0) // 0-100
+  isCompleted Boolean @default(false)
+  enrolledAt DateTime @default(now())
+  completedAt DateTime?
+
+  user       User     @relation(fields: [userId], references: [id])
+  course     Course   @relation(fields: [courseId], references: [id])
+
+  @@unique([userId, courseId])
+  @@map("enrollments")
+}
+
+// Certificates for completed courses
+model Certificate {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  courseId  String   @db.ObjectId
+  issueDate DateTime @default(now())
+  certificateUrl String? // URL to certificate file
+
+  user      User     @relation(fields: [userId], references: [id])
+  course    Course   @relation(fields: [courseId], references: [id])
+
+  @@map("certificates")
+}
+
+// Health services and records
+model HealthRecord {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  type      HealthRecordType
+  title     String
+  description String?
+  date      DateTime
+  doctor    String?
+  hospital  String?
+  notes     String?
+  attachments String[] // URLs to medical documents
+
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("health_records")
+}
+
+// Events and activities
+model Event {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  category    EventCategory
+  startDate   DateTime
+  endDate     DateTime?
+  location    String
+  wilaya      String
+  organizer   String
+  maxAttendees Int?
+  price       Float    @default(0)
+  image       String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  registrations EventRegistration[]
+
+  @@map("events")
+}
+
+// Event registrations
+model EventRegistration {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId       String   @db.ObjectId
+  eventId      String   @db.ObjectId
+  status       RegistrationStatus @default(CONFIRMED)
+  registeredAt DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id])
+  event        Event    @relation(fields: [eventId], references: [id])
+
+  @@unique([userId, eventId])
+  @@map("event_registrations")
+}
+
+// Community posts and discussions
+model Post {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  title     String?
+  content   String
+  category  PostCategory
+  images    String[] // URLs to images
+  tags      String[]
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
+  comments  Comment[]
+  likes     Like[]
+
+  @@map("posts")
+}
+
+// Comments on posts
+model Comment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  postId    String   @db.ObjectId
+  content   String
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [postId], references: [id])
+
+  @@map("comments")
+}
+
+// Likes on posts
+model Like {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  postId    String   @db.ObjectId
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  post      Post     @relation(fields: [postId], references: [id])
+
+  @@unique([userId, postId])
+  @@map("likes")
+}
+
+// Enums
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+  DELETED
+}
+
+enum ChatRole {
+  USER
+  ASSISTANT
+  SYSTEM
+}
+
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  INTERNSHIP
+  FREELANCE
+}
+
+enum JobCategory {
+  TECHNOLOGY
+  HEALTHCARE
+  EDUCATION
+  ENGINEERING
+  BUSINESS
+  ARTS
+  AGRICULTURE
+  TOURISM
+  MANUFACTURING
+  SERVICES
+  OTHER
+}
+
+enum ExperienceLevel {
+  ENTRY_LEVEL
+  JUNIOR
+  MID_LEVEL
+  SENIOR
+  EXPERT
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWED
+  ACCEPTED
+  REJECTED
+  WITHDRAWN
+}
+
+enum EducationLevel {
+  PRIMARY
+  MIDDLE
+  SECONDARY
+  BACHELOR
+  MASTER
+  PHD
+  PROFESSIONAL
+}
+
+enum CourseCategory {
+  TECHNOLOGY
+  LANGUAGES
+  BUSINESS
+  ARTS
+  SCIENCE
+  HEALTH
+  AGRICULTURE
+  TRADES
+  OTHER
+}
+
+enum HealthRecordType {
+  CHECKUP
+  VACCINATION
+  PRESCRIPTION
+  TEST_RESULT
+  SURGERY
+  EMERGENCY
+  OTHER
+}
+
+enum EventCategory {
+  WORKSHOP
+  SEMINAR
+  CONFERENCE
+  NETWORKING
+  CULTURAL
+  SPORTS
+  VOLUNTEER
+  OTHER
+}
+
+enum RegistrationStatus {
+  CONFIRMED
+  PENDING
+  CANCELLED
+  ATTENDED
+}
+
+enum ServiceCategory {
+  CIVIL_STATUS          // الحالة المدنية
+  EDUCATION            // التعليم
+  HEALTH               // الصحة
+  EMPLOYMENT           // التشغيل والعمل
+  BUSINESS             // التجارة والأعمال
+  TAXATION             // الضرائب والرسوم
+  HOUSING              // السكن والعمران
+  TRANSPORTATION       // النقل والمواصلات
+  SOCIAL_SECURITY      // الضمان الاجتماعي
+  TECHNOLOGY           // التكنولوجيا والرقمنة
+  ENVIRONMENT          // البيئة والفلاحة
+  AGRICULTURE          // الفلاحة
+  CULTURE              // الثقافة والرياضة
+  SPORTS               // الرياضة
+  ENERGY               // الطاقة
+  SOCIAL_SUPPORT       // الدعم الاجتماعي
+  SPECIAL_NEEDS        // ذوي الاحتياجات الخاصة
+  LAW_JUSTICE          // القانون والعدالة
+  TOURISM              // السياحة والترفيه
+  ENTERTAINMENT        // الترفيه
+  INDUSTRY             // الصناعة
+  MEDIA                // الإعلام
+  MANAGEMENT           // الإدارة
+  COMPLAINTS           // الشكاوى
+  ADMINISTRATION       // الإدارة العامة
+  OTHER                // أخرى
+}
+
+enum PostCategory {
+  DISCUSSION
+  QUESTION
+  ANNOUNCEMENT
+  OPPORTUNITY
+  EVENT
+  NEWS
+  OTHER
+}

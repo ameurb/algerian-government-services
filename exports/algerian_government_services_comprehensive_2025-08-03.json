@@ -1,0 +1,4999 @@
+{
+  "metadata": {
+    "exportDate": "2025-08-03T11:03:19.944Z",
+    "totalServices": 57,
+    "onlineServices": 13,
+    "offlineServices": 44,
+    "servicesWithExternalUrls": 13,
+    "categories": 16,
+    "dataSource": "bawabatic.dz and comprehensive Algerian government services"
+  },
+  "statistics": {
+    "servicesByCategory": [
+      {
+        "category": "AGRICULTURE",
+        "count": 1,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "BUSINESS",
+        "count": 9,
+        "onlineCount": 1,
+        "servicesWithUrls": 1
+      },
+      {
+        "category": "CIVIL_STATUS",
+        "count": 11,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "CULTURE",
+        "count": 1,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "EDUCATION",
+        "count": 4,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "EMPLOYMENT",
+        "count": 8,
+        "onlineCount": 8,
+        "servicesWithUrls": 8
+      },
+      {
+        "category": "ENERGY",
+        "count": 1,
+        "onlineCount": 1,
+        "servicesWithUrls": 1
+      },
+      {
+        "category": "HEALTH",
+        "count": 1,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "HOUSING",
+        "count": 10,
+        "onlineCount": 1,
+        "servicesWithUrls": 1
+      },
+      {
+        "category": "INDUSTRY",
+        "count": 1,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "LAW_JUSTICE",
+        "count": 1,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "SOCIAL_SECURITY",
+        "count": 2,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "SOCIAL_SUPPORT",
+        "count": 1,
+        "onlineCount": 1,
+        "servicesWithUrls": 1
+      },
+      {
+        "category": "TECHNOLOGY",
+        "count": 2,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "TOURISM",
+        "count": 1,
+        "onlineCount": 0,
+        "servicesWithUrls": 0
+      },
+      {
+        "category": "TRANSPORTATION",
+        "count": 3,
+        "onlineCount": 1,
+        "servicesWithUrls": 1
+      }
+    ],
+    "coverage": {
+      "employment": 8,
+      "civilStatus": 11,
+      "housing": 10,
+      "business": 9,
+      "health": 1,
+      "education": 4,
+      "transportation": 3,
+      "technology": 2,
+      "agriculture": 1,
+      "energy": 1,
+      "culture": 1,
+      "socialSupport": 1,
+      "lawJustice": 1,
+      "tourism": 1,
+      "industry": 1
+    }
+  },
+  "services": [
+    {
+      "id": "688f41af3caa5f45d9856a8f",
+      "name": "رخصة الاستغلال الفلاحي",
+      "nameEn": "Agricultural Exploitation License",
+      "description": "رخصة لاستغلال الأراضي الفلاحية وممارسة النشاط الزراعي.",
+      "descriptionEn": "License for exploiting agricultural land and practicing farming activities.",
+      "category": "AGRICULTURE",
+      "subcategory": "التراخيص الفلاحية",
+      "subcategoryEn": "Agricultural Licenses",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة الفلاحة والتنمية الريفية",
+      "sectorEn": "Ministry of Agriculture and Rural Development",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Agriculture",
+      "agency": null,
+      "targetGroup": "المزارعون والمستثمرون الفلاحيون",
+      "targetGroupEn": "Farmers and Agricultural Investors",
+      "targetGroups": [
+        "Farmers",
+        "Agricultural investors",
+        "Rural entrepreneurs"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "عقد ملكية أو إيجار الأرض",
+        "دراسة جدوى المشروع",
+        "خطة الاستغلال"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "Land ownership or lease contract",
+        "Project feasibility study",
+        "Exploitation plan"
+      ],
+      "process": [
+        "إعداد ملف الطلب",
+        "تقديم الطلب لمديرية الفلاحة",
+        "معاينة الأرض",
+        "دراسة الملف",
+        "إصدار الرخصة"
+      ],
+      "processEn": [
+        "Prepare application file",
+        "Submit to Agriculture Directorate",
+        "Land inspection",
+        "File review",
+        "License issuance"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "عقد ملكية الأرض",
+        "خطة الاستغلال",
+        "صور للموقع"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Land ownership contract",
+        "Exploitation plan",
+        "Site photos"
+      ],
+      "fee": "5000-15000 دج",
+      "duration": null,
+      "processingTime": "30-60 يوم",
+      "processingTimeEn": "30-60 days",
+      "office": "مديرية الفلاحة بالولاية",
+      "contactInfo": "مديرية الفلاحة المحلية",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "حق الاستغلال الفلاحي",
+        "إمكانية الحصول على الدعم",
+        "تسهيلات قروض فلاحية"
+      ],
+      "benefitsEn": [
+        "Agricultural exploitation rights",
+        "Possibility of support",
+        "Agricultural loan facilities"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": false,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:06.963Z",
+      "updatedAt": "2025-08-03T11:02:06.963Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc8",
+      "name": "التحقق من رقمك الجبائي",
+      "nameEn": "Verify Your Tax Number",
+      "description": "التحقق من صحة الرقم الجبائي",
+      "descriptionEn": "Verification of tax number validity",
+      "category": "BUSINESS",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Verification Service",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة المالية",
+      "sectorEn": "Ministry of Finance",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة المالية",
+      "agency": null,
+      "targetGroup": "مواطنين, متعاملين",
+      "targetGroupEn": "Citizens, Businesses",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=468",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc7",
+      "name": "الترقيم الجبائي",
+      "nameEn": "Tax Numbering",
+      "description": "الحصول على الرقم الجبائي للأفراد والمؤسسات",
+      "descriptionEn": "Obtaining tax number for individuals and institutions",
+      "category": "BUSINESS",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Tax Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة المالية",
+      "sectorEn": "Ministry of Finance",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة المالية",
+      "agency": null,
+      "targetGroup": "مواطنين, متعاملين",
+      "targetGroupEn": "Citizens, Businesses",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=467",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc5",
+      "name": "التصريح الجبائي والدفع عن بعد jibayatic",
+      "nameEn": "Tax Declaration and Remote Payment - Jibayatic",
+      "description": "منصة للتصريح الجبائي والدفع الإلكتروني للضرائب",
+      "descriptionEn": "Platform for tax declaration and electronic tax payment",
+      "category": "BUSINESS",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Tax Platform",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة المالية",
+      "sectorEn": "Ministry of Finance",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة المالية",
+      "agency": null,
+      "targetGroup": "مواطنين, متعاملين",
+      "targetGroupEn": "Citizens, Businesses",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=472",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc6",
+      "name": "بوابة التصريح الجبائي والدفع عن بعد MOUSSAHAMA'TIC",
+      "nameEn": "Tax Declaration and Remote Payment Portal - MOUSSAHAMA'TIC",
+      "description": "بوابة التصريح الجبائي والدفع عن بعد للمؤسسات",
+      "descriptionEn": "Tax declaration and remote payment portal for institutions",
+      "category": "BUSINESS",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Tax Portal",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة المالية",
+      "sectorEn": "Ministry of Finance",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة المالية",
+      "agency": null,
+      "targetGroup": "متعاملين",
+      "targetGroupEn": "Businesses",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=476",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc9",
+      "name": "تأسيس شركة عبر الإنترنت - فضاء المواطن",
+      "nameEn": "Online Company Establishment - Citizen Space",
+      "description": "تأسيس شركة جديدة عبر الإنترنت",
+      "descriptionEn": "Establishing a new company online",
+      "category": "BUSINESS",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Company Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التجارة و ترقية الصادرات",
+      "sectorEn": "Ministry of Commerce and Export Promotion",
+      "structure": "المركز الوطني للسجل التجاري",
+      "structureEn": "National Commercial Register Center",
+      "ministry": "وزارة التجارة و ترقية الصادرات",
+      "agency": "المركز الوطني للسجل التجاري",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المركز الوطني للسجل التجاري",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=208",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dcb",
+      "name": "تسجيل حسابات الشركات عبر الإنترنت",
+      "nameEn": "Register Company Accounts Online",
+      "description": "تسجيل حسابات الشركات عبر الإنترنت",
+      "descriptionEn": "Registering company accounts online",
+      "category": "BUSINESS",
+      "subcategory": "تسجيل",
+      "subcategoryEn": null,
+      "serviceType": "Account Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التجارة و ترقية الصادرات",
+      "sectorEn": "Ministry of Commerce and Export Promotion",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة التجارة و ترقية الصادرات",
+      "agency": null,
+      "targetGroup": "متعاملين",
+      "targetGroupEn": "Businesses",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=161",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dcc",
+      "name": "تسجيل عقود التأجير عبر الإنترنت",
+      "nameEn": "Register Rental Contracts Online",
+      "description": "تسجيل عقود التأجير عبر الإنترنت",
+      "descriptionEn": "Registering rental contracts online",
+      "category": "BUSINESS",
+      "subcategory": "تسجيل",
+      "subcategoryEn": null,
+      "serviceType": "Contract Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة المالية",
+      "sectorEn": "Ministry of Finance",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة المالية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=180",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dca",
+      "name": "حجز العنوان التجاري والاسم التجاري عبر الإنترنت - فضاء المواطن",
+      "nameEn": "Reserve Trade Address and Trade Name Online - Citizen Space",
+      "description": "حجز العنوان التجاري والاسم التجاري عبر الإنترنت",
+      "descriptionEn": "Reserving trade address and trade name online",
+      "category": "BUSINESS",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Name Reservation",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التجارة و ترقية الصادرات",
+      "sectorEn": "Ministry of Commerce and Export Promotion",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة التجارة و ترقية الصادرات",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=157",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc4",
+      "name": "شهادات السجل التجاري",
+      "nameEn": "Commercial Register Certificates",
+      "description": "تسليم الشهادات المختلفة عبر الإنترنت: شهادة عدم القيد في السجل التجاري، شهادة القيد في السجل التجاري، شهادة شطب من السجل التجاري، شهادة عدم إعادة القيد في السجل التجاري، شهادة عدم إيداع حسابات الشركات، نسخة طبق الأصل من شهادة إيداع الحسابات الاجتماعية",
+      "descriptionEn": "Issuing various certificates online: non-registration certificate, registration certificate, deletion certificate, non-re-registration certificate, non-deposit of company accounts certificate, copy of social accounts deposit certificate",
+      "category": "BUSINESS",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Certificate Issuance",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التجارة و ترقية الصادرات",
+      "sectorEn": "Ministry of Commerce and Export Promotion",
+      "structure": "المركز الوطني للسجل التجاري",
+      "structureEn": "National Commercial Register Center",
+      "ministry": "Ministry of Commerce",
+      "agency": "National Commercial Register Center",
+      "targetGroup": "مواطنين, متعاملين",
+      "targetGroupEn": "Citizens, Businesses",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "Business registration",
+        "Valid identification",
+        "Online payment"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Commercial Register Center",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://sidjilcom.cnrc.dz",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=144",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Online convenience",
+        "Multiple certificate types",
+        "Digital delivery",
+        "24/7 availability"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dda",
+      "name": "تحميل صورة بيومترية جديدة مطابقة للمعايير الدولية (إيكاو)",
+      "nameEn": "Upload New Biometric Photo Meeting International Standards (ICAO)",
+      "description": "تحميل صورة بيومترية جديدة تتوافق مع المعايير الدولية لمنظمة الطيران المدني الدولي",
+      "descriptionEn": "Upload new biometric photo that complies with International Civil Aviation Organization standards",
+      "category": "CIVIL_STATUS",
+      "subcategory": "بطاقة التعريف البيومترية",
+      "subcategoryEn": "Biometric ID Card",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=91",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87ddd",
+      "name": "تحميل صورة مطابقة",
+      "nameEn": "Upload Compliant Photo",
+      "description": "تحميل صورة شخصية مطابقة للمعايير المطلوبة لجواز السفر البيومتري",
+      "descriptionEn": "Upload personal photo compliant with required standards for biometric passport",
+      "category": "CIVIL_STATUS",
+      "subcategory": "جواز السفر البيومتري",
+      "subcategoryEn": "Biometric Passport",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=93",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd8",
+      "name": "طلب الحصول على بطاقة التعريف الوطنية البيومترية الإلكترونية",
+      "nameEn": "Request for Electronic Biometric National ID Card",
+      "description": "تقديم طلب للحصول على بطاقة التعريف الوطنية البيومترية الإلكترونية",
+      "descriptionEn": "Submit application for electronic biometric national ID card",
+      "category": "CIVIL_STATUS",
+      "subcategory": "بطاقة التعريف البيومترية",
+      "subcategoryEn": "Biometric ID Card",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "200 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=89",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dde",
+      "name": "طلب شهادة الكفاءة الخاصة برخصة السياقة للجالية الجزائرية المقيمة بالخارج",
+      "nameEn": "Request Driving License Competency Certificate for Algerian Diaspora",
+      "description": "طلب، عبر الأنترنت، شهادة الكفاءة الخاصة برخصة السياقة لصالح جاليتنا الجزائرية المقيمة بالخارج",
+      "descriptionEn": "Online request for driving license competency certificate for Algerian diaspora living abroad",
+      "category": "CIVIL_STATUS",
+      "subcategory": "رخصة السياقة البيومترية",
+      "subcategoryEn": "Biometric Driving License",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "3000-5000 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=82",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "حق قانوني",
+        "تسهيل الإجراءات",
+        "خدمة رسمية"
+      ],
+      "benefitsEn": [
+        "Legal right",
+        "Procedure facilitation",
+        "Official service"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87de0",
+      "name": "طلب واصدار عقد الزواج عبر الأنترنت",
+      "nameEn": "Online Marriage Certificate Request and Issuance",
+      "description": "طلب وإصدار عقد الزواج عبر الإنترنت",
+      "descriptionEn": "Request and issue marriage certificate online",
+      "category": "CIVIL_STATUS",
+      "subcategory": "أخرى",
+      "subcategoryEn": "Other",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=298",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87de2",
+      "name": "طلب وثائق الحالة المدنية عبر الأنترنت (شهادة الميلاد)",
+      "nameEn": "Online Civil Status Documents Request (Birth Certificate)",
+      "description": "طلب شهادة الميلاد عبر الإنترنت",
+      "descriptionEn": "Request birth certificate online",
+      "category": "CIVIL_STATUS",
+      "subcategory": "أخرى",
+      "subcategoryEn": "Other",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "100-500 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=85",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "إثبات رسمي",
+        "وثيقة معتمدة",
+        "صلاحية قانونية"
+      ],
+      "benefitsEn": [
+        "Official proof",
+        "Certified document",
+        "Legal validity"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87de1",
+      "name": "طلب وثائق الحالة المدنية عبر الأنترنت (شهادة الوفاة)",
+      "nameEn": "Online Civil Status Documents Request (Death Certificate)",
+      "description": "طلب شهادة الوفاة عبر الإنترنت",
+      "descriptionEn": "Request death certificate online",
+      "category": "CIVIL_STATUS",
+      "subcategory": "أخرى",
+      "subcategoryEn": "Other",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "100-500 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=299",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "إثبات رسمي",
+        "وثيقة معتمدة",
+        "صلاحية قانونية"
+      ],
+      "benefitsEn": [
+        "Official proof",
+        "Certified document",
+        "Legal validity"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87ddb",
+      "name": "قراءة بطاقة التعريف الوطنية البيومترية الإلكترونية",
+      "nameEn": "Read Electronic Biometric National ID Card",
+      "description": "قراءة والتحقق من بيانات بطاقة التعريف الوطنية البيومترية الإلكترونية",
+      "descriptionEn": "Read and verify electronic biometric national ID card data",
+      "category": "CIVIL_STATUS",
+      "subcategory": "بطاقة التعريف البيومترية",
+      "subcategoryEn": "Biometric ID Card",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "200 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=97",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd9",
+      "name": "متابعة طلب بطاقة التعريف الوطنية البيومترية الإلكترونية",
+      "nameEn": "Track Electronic Biometric National ID Card Application",
+      "description": "متابعة حالة طلب بطاقة التعريف الوطنية البيومترية الإلكترونية",
+      "descriptionEn": "Track the status of electronic biometric national ID card application",
+      "category": "CIVIL_STATUS",
+      "subcategory": "بطاقة التعريف البيومترية",
+      "subcategoryEn": "Biometric ID Card",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "200 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=90",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87ddc",
+      "name": "متابعة طلب جواز السفر البيومتري",
+      "nameEn": "Track Biometric Passport Application",
+      "description": "متابعة حالة طلب جواز السفر البيومتري",
+      "descriptionEn": "Track the status of biometric passport application",
+      "category": "CIVIL_STATUS",
+      "subcategory": "جواز السفر البيومتري",
+      "subcategoryEn": "Biometric Passport",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "6000 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=214",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87ddf",
+      "name": "متابعة طلب رخصة السياقة البيومترية",
+      "nameEn": "Track Biometric Driving License Application",
+      "description": "متابعة حالة طلب رخصة السياقة البيومترية",
+      "descriptionEn": "Track the status of biometric driving license application",
+      "category": "CIVIL_STATUS",
+      "subcategory": "رخصة السياقة البيومترية",
+      "subcategoryEn": "Biometric Driving License",
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "sectorEn": "Ministry of Interior and Local Communities and Urban Planning",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الداخلية والجماعات المحلية والتهيئة العمرانية",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "3000-5000 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=94",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "حق قانوني",
+        "تسهيل الإجراءات",
+        "خدمة رسمية"
+      ],
+      "benefitsEn": [
+        "Legal right",
+        "Procedure facilitation",
+        "Official service"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.820Z",
+      "updatedAt": "2025-08-03T10:56:37.820Z"
+    },
+    {
+      "id": "688f41af3caa5f45d9856a91",
+      "name": "ترخيص النشاط الثقافي",
+      "nameEn": "Cultural Activity License",
+      "description": "ترخيص لتنظيم الفعاليات والأنشطة الثقافية والفنية.",
+      "descriptionEn": "License for organizing cultural and artistic events and activities.",
+      "category": "CULTURE",
+      "subcategory": "التراخيص الثقافية",
+      "subcategoryEn": "Cultural Licenses",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة الثقافة والفنون",
+      "sectorEn": "Ministry of Culture and Arts",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Culture",
+      "agency": null,
+      "targetGroup": "الجمعيات الثقافية والفنانون",
+      "targetGroupEn": "Cultural Associations and Artists",
+      "targetGroups": [
+        "Cultural associations",
+        "Artists",
+        "Event organizers"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "برنامج النشاط الثقافي",
+        "إثبات المؤهلات",
+        "موافقة أمنية"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "Cultural activity program",
+        "Proof of qualifications",
+        "Security clearance"
+      ],
+      "process": [
+        "تحضير ملف الطلب",
+        "تقديم الطلب لمديرية الثقافة",
+        "دراسة الملف",
+        "الموافقة الأمنية",
+        "إصدار الترخيص"
+      ],
+      "processEn": [
+        "Prepare application file",
+        "Submit to Culture Directorate",
+        "File review",
+        "Security approval",
+        "License issuance"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "برنامج الفعالية",
+        "إثبات الكفاءة",
+        "استمارة الطلب"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Event program",
+        "Competency proof",
+        "Application form"
+      ],
+      "fee": "2000-10000 دج",
+      "duration": null,
+      "processingTime": "15-30 يوم",
+      "processingTimeEn": "15-30 days",
+      "office": "مديرية الثقافة بالولاية",
+      "contactInfo": "مديرية الثقافة المحلية",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "تنظيم قانوني للأنشطة",
+        "دعم من الوزارة",
+        "إمكانية التمويل"
+      ],
+      "benefitsEn": [
+        "Legal activity organization",
+        "Ministry support",
+        "Funding possibility"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": false,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:06.963Z",
+      "updatedAt": "2025-08-03T11:02:06.963Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dcd",
+      "name": "البوابة الوطنية للإشعار عن الأطروحات",
+      "nameEn": "National Portal for Thesis Notification",
+      "description": "البوابة الوطنية للإشعار عن الأطروحات الجامعية",
+      "descriptionEn": "National portal for university thesis notification",
+      "category": "EDUCATION",
+      "subcategory": "التعليم العالي",
+      "subcategoryEn": "Higher Education",
+      "serviceType": "Academic Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التعليم العالي و البحث العلمي",
+      "sectorEn": "Ministry of Higher Education and Scientific Research",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة التعليم العالي و البحث العلمي",
+      "agency": null,
+      "targetGroup": "طلبة",
+      "targetGroupEn": "Students",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=507&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dcf",
+      "name": "التسجيل في شهادة البكالوريا",
+      "nameEn": "Registration for Baccalaureate Certificate",
+      "description": "التسجيل في امتحان شهادة البكالوريا",
+      "descriptionEn": "Registration for baccalaureate certificate exam",
+      "category": "EDUCATION",
+      "subcategory": "إبتدائي- متوسط- ثانوي",
+      "subcategoryEn": "Primary-Middle-Secondary",
+      "serviceType": "Exam Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التربية الوطنية",
+      "sectorEn": "Ministry of National Education",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة التربية الوطنية",
+      "agency": null,
+      "targetGroup": "طلبة",
+      "targetGroupEn": "Students",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة",
+        "وثائق إثبات",
+        "رسوم الخدمة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "100-500 دج",
+      "duration": "غير محدد",
+      "processingTime": "3-7 أيام",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=619&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "إثبات رسمي",
+        "وثيقة معتمدة",
+        "صلاحية قانونية"
+      ],
+      "benefitsEn": [
+        "Official proof",
+        "Certified document",
+        "Legal validity"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dce",
+      "name": "بوابة حاملي البكالوريا الجدد",
+      "nameEn": "Portal for New Baccalaureate Holders",
+      "description": "بوابة التوجيه الجامعي لحاملي شهادة البكالوريا الجدد",
+      "descriptionEn": "University orientation portal for new baccalaureate holders",
+      "category": "EDUCATION",
+      "subcategory": "التعليم العالي",
+      "subcategoryEn": "Higher Education",
+      "serviceType": "University Orientation",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التعليم العالي و البحث العلمي",
+      "sectorEn": "Ministry of Higher Education and Scientific Research",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة التعليم العالي و البحث العلمي",
+      "agency": null,
+      "targetGroup": "طلبة",
+      "targetGroupEn": "Students",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=21&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.783Z",
+      "updatedAt": "2025-08-03T10:56:37.783Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd0",
+      "name": "بوابة مهنتي",
+      "nameEn": "My Profession Portal",
+      "description": "بوابة التكوين والتوجيه المهني",
+      "descriptionEn": "Professional training and guidance portal",
+      "category": "EDUCATION",
+      "subcategory": "التكوين المهني",
+      "subcategoryEn": "Vocational Training",
+      "serviceType": "Vocational Portal",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التكوين والتعليم المهنيين",
+      "sectorEn": "Ministry of Vocational Training and Education",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة التكوين والتعليم المهنيين",
+      "agency": null,
+      "targetGroup": "طلبة",
+      "targetGroupEn": "Students",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=110&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db8",
+      "name": "(منحة ) التسجيل الأولى في جهاز منحة البطالة",
+      "nameEn": "Initial Registration in Unemployment Benefit System",
+      "description": "التسجيل الأولي للحصول على منحة البطالة للعاطلين عن العمل المؤهلين",
+      "descriptionEn": "Initial registration to receive unemployment benefits for qualified unemployed individuals",
+      "category": "EMPLOYMENT",
+      "subcategory": "تسجيل",
+      "subcategoryEn": null,
+      "serviceType": "Benefit Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة العمل والتشغيل والضمان الاجتماعي",
+      "sectorEn": "Ministry of Labor, Employment and Social Security",
+      "structure": "الوكالة الوطنية للتشغيل",
+      "structureEn": "National Employment Agency",
+      "ministry": "Ministry of Labor and Employment",
+      "agency": "National Employment Agency (ANEM)",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "Unemployment proof",
+        "Previous work history",
+        "National ID",
+        "Bank account"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Employment Agency (ANEM)",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://manhaonline.anem.dz/",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=658&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Financial support",
+        "Job search assistance",
+        "Training opportunities",
+        "Social protection"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db2",
+      "name": "أرضية التوظيف",
+      "nameEn": "Employment Platform",
+      "description": "أرضية الترشح للتوظيف و/أو المشاركة في مسابقات الالتحاق كالمساعد الرئيسي من الفئة «ب»",
+      "descriptionEn": "Platform for employment applications and participation in recruitment competitions such as Principal Assistant Category B",
+      "category": "EMPLOYMENT",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Online Platform",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة التعليم العالي و البحث العلمي",
+      "sectorEn": "Ministry of Higher Education and Scientific Research",
+      "structure": "لا يوجد",
+      "structureEn": "None",
+      "ministry": "Ministry of Higher Education",
+      "agency": "None",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "Valid ID",
+        "Academic qualifications",
+        "Online registration"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "None",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://progres.mesrs.dz/webrecrutement",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=502&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Direct application",
+        "Competition participation",
+        "Career advancement"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db6",
+      "name": "احصائيات التشغيل- الوكالة الوطنية للتشغيل",
+      "nameEn": "Employment Statistics - National Employment Agency",
+      "description": "إحصائيات ومؤشرات حول سوق العمل والتشغيل في الجزائر",
+      "descriptionEn": "Statistics and indicators about the labor market and employment in Algeria",
+      "category": "EMPLOYMENT",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Information Portal",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة العمل والتشغيل والضمان الاجتماعي",
+      "sectorEn": "Ministry of Labor, Employment and Social Security",
+      "structure": "الوكالة الوطنية للتشغيل",
+      "structureEn": "National Employment Agency",
+      "ministry": "Ministry of Labor and Employment",
+      "agency": "National Employment Agency (ANEM)",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "None"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Employment Agency (ANEM)",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://www.anem.dz/",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=445&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Labor market insights",
+        "Employment trends",
+        "Regional statistics",
+        "Sector analysis"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db4",
+      "name": "البحث عن عرض عمل",
+      "nameEn": "Search for Job Offers",
+      "description": "القيام بالبحث عن عروض العمل المنشورة في عبر فضاء طالبي العمل في الوسيط اونلاين، و تصفح تفاصيله ( معلومات العرض، المنصب، الملحقة المعنية )،كما يمكن القيام ببحث متخصص باختيار معايير متعددة ( الولاية، المنصب، القطاع)",
+      "descriptionEn": "Search for job offers published through job seekers space in Wasit Online, browse details (offer information, position, concerned annex), and perform specialized search by selecting multiple criteria (state, position, sector)",
+      "category": "EMPLOYMENT",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Job Search Engine",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة العمل والتشغيل والضمان الاجتماعي",
+      "sectorEn": "Ministry of Labor, Employment and Social Security",
+      "structure": "الوكالة الوطنية للتشغيل",
+      "structureEn": "National Employment Agency",
+      "ministry": "Ministry of Labor and Employment",
+      "agency": "National Employment Agency (ANEM)",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "Basic registration",
+        "Search criteria"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Employment Agency (ANEM)",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://wassitonline.anem.dz/",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=54&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Advanced filtering",
+        "Detailed job information",
+        "Location-based search",
+        "Sector-specific search"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db5",
+      "name": "التسجيل عن بعد للطالبي العمل عبر منصة الوسيط اونلاين",
+      "nameEn": "Remote Registration for Job Seekers via Wasit Online Platform",
+      "description": "منصة إلكترونية للتسجيل عن بعد لطالبي العمل وإنشاء ملف شخصي للباحثين عن فرص العمل",
+      "descriptionEn": "Electronic platform for remote registration of job seekers and creating personal profiles for those seeking employment opportunities",
+      "category": "EMPLOYMENT",
+      "subcategory": "تسجيل",
+      "subcategoryEn": null,
+      "serviceType": "Registration Portal",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة العمل والتشغيل والضمان الاجتماعي",
+      "sectorEn": "Ministry of Labor, Employment and Social Security",
+      "structure": "الوكالة الوطنية للتشغيل",
+      "structureEn": "National Employment Agency",
+      "ministry": "Ministry of Labor and Employment",
+      "agency": "National Employment Agency (ANEM)",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "Valid national ID",
+        "Contact information",
+        "Educational background",
+        "Work experience details"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Employment Agency (ANEM)",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://wassitonline.anem.dz/",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=29&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "24/7 availability",
+        "Digital profile creation",
+        "Job matching",
+        "Application tracking"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db9",
+      "name": "حجز موعد عبر منصة منحة البطالة (منحة )",
+      "nameEn": "Booking Appointment via Unemployment Benefit Platform",
+      "description": "حجز مواعيد للحصول على خدمات منحة البطالة والمتابعة الإدارية",
+      "descriptionEn": "Booking appointments to receive unemployment benefit services and administrative follow-up",
+      "category": "EMPLOYMENT",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Appointment System",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة العمل والتشغيل والضمان الاجتماعي",
+      "sectorEn": "Ministry of Labor, Employment and Social Security",
+      "structure": "الوكالة الوطنية للتشغيل",
+      "structureEn": "National Employment Agency",
+      "ministry": "Ministry of Labor and Employment",
+      "agency": "National Employment Agency (ANEM)",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "Benefit registration",
+        "Valid ID",
+        "Required documents"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Employment Agency (ANEM)",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://manhaonline.anem.dz/",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=657&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Scheduled visits",
+        "Reduced waiting time",
+        "Better service",
+        "Document preparation"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db3",
+      "name": "فرصتي ( ترشح عن بعد في عرض عمل )",
+      "nameEn": "My Opportunity (Remote Job Application)",
+      "description": "هذه الخدمة تسمح بالترشح عن بعد في عرض العمل",
+      "descriptionEn": "This service allows remote application for job offers",
+      "category": "EMPLOYMENT",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Online Application Portal",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة العمل والتشغيل والضمان الاجتماعي",
+      "sectorEn": "Ministry of Labor, Employment and Social Security",
+      "structure": "الوكالة الوطنية للتشغيل",
+      "structureEn": "National Employment Agency",
+      "ministry": "Ministry of Labor and Employment",
+      "agency": "National Employment Agency (ANEM)",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "ANEM registration",
+        "CV upload",
+        "Valid contact information"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Employment Agency (ANEM)",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://wassitonline.anem.dz/",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=656&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Remote application",
+        "Real-time status updates",
+        "Direct employer contact"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87db7",
+      "name": "مرجع المدونة الجزائرية للمهن و الوظائف",
+      "nameEn": "Reference of Algerian Code of Professions and Jobs",
+      "description": "دليل شامل للمهن والوظائف المعترف بها في الجزائر مع التوصيفات والمتطلبات",
+      "descriptionEn": "Comprehensive guide to recognized professions and jobs in Algeria with descriptions and requirements",
+      "category": "EMPLOYMENT",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Reference Database",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة العمل والتشغيل والضمان الاجتماعي",
+      "sectorEn": "Ministry of Labor, Employment and Social Security",
+      "structure": "الوكالة الوطنية للتشغيل",
+      "structureEn": "National Employment Agency",
+      "ministry": "Ministry of Labor and Employment",
+      "agency": "National Employment Agency (ANEM)",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "None"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "National Employment Agency (ANEM)",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://www.anem.dz/",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=663&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Job classification",
+        "Skill requirements",
+        "Career guidance",
+        "Professional standards"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f41af3caa5f45d9856a90",
+      "name": "طلب توصيل الكهرباء",
+      "nameEn": "Electricity Connection Request",
+      "description": "خدمة طلب توصيل التيار الكهربائي للمنازل والمؤسسات الجديدة.",
+      "descriptionEn": "Service for requesting electricity connection for new homes and institutions.",
+      "category": "ENERGY",
+      "subcategory": "توصيل الكهرباء",
+      "subcategoryEn": "Electricity Connection",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة الطاقة",
+      "sectorEn": "Ministry of Energy",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Energy",
+      "agency": "شركة توزيع الكهرباء والغاز",
+      "targetGroup": "أصحاب المنازل والمؤسسات",
+      "targetGroupEn": "Homeowners and Institutions",
+      "targetGroups": [
+        "Homeowners",
+        "Businesses",
+        "Institutions"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "عقد ملكية أو إيجار",
+        "رخصة البناء",
+        "مخطط الموقع"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "Ownership or lease contract",
+        "Building permit",
+        "Site plan"
+      ],
+      "process": [
+        "تقديم طلب التوصيل",
+        "دفع رسوم الدراسة",
+        "معاينة الموقع",
+        "تنفيذ التوصيل",
+        "تسليم العداد"
+      ],
+      "processEn": [
+        "Submit connection request",
+        "Pay study fees",
+        "Site inspection",
+        "Execute connection",
+        "Meter delivery"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "عقد الملكية",
+        "رخصة البناء",
+        "استمارة الطلب"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Ownership contract",
+        "Building permit",
+        "Application form"
+      ],
+      "fee": "10000-50000 دج حسب القدرة",
+      "duration": null,
+      "processingTime": "15-45 يوم",
+      "processingTimeEn": "15-45 days",
+      "office": "وكالة توزيع الكهرباء والغاز",
+      "contactInfo": "وكالة سونلغاز المحلية",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://www.sonelgaz.dz",
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "إمداد كهربائي مستمر",
+        "أمان في التوصيل",
+        "خدمة ما بعد البيع"
+      ],
+      "benefitsEn": [
+        "Continuous power supply",
+        "Safe connection",
+        "After-sales service"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:06.963Z",
+      "updatedAt": "2025-08-03T11:02:06.963Z"
+    },
+    {
+      "id": "688f41af3caa5f45d9856a8e",
+      "name": "التأمين الصحي الوطني",
+      "nameEn": "National Health Insurance",
+      "description": "خدمة التسجيل في نظام التأمين الصحي الوطني للحصول على التغطية الصحية.",
+      "descriptionEn": "Service for registering in the national health insurance system to receive health coverage.",
+      "category": "HEALTH",
+      "subcategory": "التأمين الصحي",
+      "subcategoryEn": "Health Insurance",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة الصحة والسكان وإصلاح المستشفيات",
+      "sectorEn": "Ministry of Health, Population and Hospital Reform",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Health",
+      "agency": null,
+      "targetGroup": "جميع المواطنين",
+      "targetGroupEn": "All Citizens",
+      "targetGroups": [
+        "Citizens",
+        "Employees",
+        "Self-employed"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "شهادة العمل أو إثبات النشاط",
+        "صور شمسية",
+        "شهادة طبية"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "Work certificate or proof of activity",
+        "Passport photos",
+        "Medical certificate"
+      ],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "التوجه إلى مكتب الضمان الاجتماعي",
+        "ملء استمارة التسجيل",
+        "تقديم الطلب",
+        "استلام بطاقة التأمين"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Go to social security office",
+        "Fill registration form",
+        "Submit application",
+        "Receive insurance card"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة التسجيل",
+        "شهادة العمل",
+        "صور شمسية"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Registration form",
+        "Work certificate",
+        "Passport photos"
+      ],
+      "fee": "مجاني",
+      "duration": null,
+      "processingTime": "15-30 يوم",
+      "processingTimeEn": "15-30 days",
+      "office": "صندوق الضمان الاجتماعي",
+      "contactInfo": "الهاتف: 021-123-456",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "تغطية صحية شاملة",
+        "تعويض نفقات العلاج",
+        "أدوية مجانية"
+      ],
+      "benefitsEn": [
+        "Comprehensive health coverage",
+        "Treatment cost reimbursement",
+        "Free medications"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:06.963Z",
+      "updatedAt": "2025-08-03T11:02:06.963Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dba",
+      "name": "إختيار الموقع عدل",
+      "nameEn": "AADL Location Selection",
+      "description": "منصة رقمية خاصة بالمكتتبين المعنيين بإختيار الموقع (خاصة أيضا بالهاتف النقال)",
+      "descriptionEn": "Digital platform for subscribers concerned with site selection (also available for mobile phones)",
+      "category": "HOUSING",
+      "subcategory": "سكن عدل",
+      "subcategoryEn": "AADL Housing",
+      "serviceType": "Location Selection Platform",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": "لا يوجد",
+      "structureEn": "None",
+      "ministry": "Ministry of Housing and Urban Development",
+      "agency": "AADL",
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "AADL subscription",
+        "Valid credentials",
+        "Mobile or web access"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "AADL",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://mo.aadl.com.dz/CHOIXDUSITE",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=637&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "Site selection",
+        "Digital convenience",
+        "Mobile accessibility",
+        "Real-time updates"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc0",
+      "name": "التسجيل للحصول على سكن ترقوي حر",
+      "nameEn": "Registration for Free Promotional Housing",
+      "description": "التسجيل للحصول على سكن ترقوي حر",
+      "descriptionEn": "Registration for free promotional housing",
+      "category": "HOUSING",
+      "subcategory": "أخرى",
+      "subcategoryEn": "Other",
+      "serviceType": "Housing Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=121&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc3",
+      "name": "بحث للمشاريع العقارية",
+      "nameEn": "Real Estate Projects Search",
+      "description": "البحث عن المشاريع العقارية المتاحة",
+      "descriptionEn": "Search for available real estate projects",
+      "category": "HOUSING",
+      "subcategory": "أخرى",
+      "subcategoryEn": "Other",
+      "serviceType": "Project Search",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=639&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dbf",
+      "name": "تسجيل سكن ترقوي عمومي",
+      "nameEn": "Public Promotional Housing Registration",
+      "description": "التسجيل للحصول على سكن ترقوي عمومي",
+      "descriptionEn": "Registration for public promotional housing",
+      "category": "HOUSING",
+      "subcategory": "سكن ترقوي عمومي",
+      "subcategoryEn": "Public Promotional Housing",
+      "serviceType": "Housing Registration",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=120&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dbd",
+      "name": "تكملة الملفات عدل",
+      "nameEn": "AADL File Completion",
+      "description": "خدمة تكملة وتحديث ملفات مكتتبي سكن عدل",
+      "descriptionEn": "Service for completing and updating AADL housing subscriber files",
+      "category": "HOUSING",
+      "subcategory": "سكن عدل",
+      "subcategoryEn": "AADL Housing",
+      "serviceType": "File Management",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=634&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dbc",
+      "name": "حالة ملف عدل",
+      "nameEn": "AADL File Status",
+      "description": "خدمة الاستعلام عن حالة ملف مكتتب سكن عدل",
+      "descriptionEn": "Service to inquire about the status of AADL housing subscriber file",
+      "category": "HOUSING",
+      "subcategory": "سكن عدل",
+      "subcategoryEn": "AADL Housing",
+      "serviceType": "Status Inquiry",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=635&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc1",
+      "name": "رخصة البناء الالكترونية",
+      "nameEn": "Electronic Building Permit",
+      "description": "الحصول على رخصة البناء عبر الإنترنت",
+      "descriptionEn": "Obtaining building permits online",
+      "category": "HOUSING",
+      "subcategory": "أخرى",
+      "subcategoryEn": "Other",
+      "serviceType": "Building Permit",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة",
+        "شهادة طبية",
+        "صور شمسية"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=630&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "حق قانوني",
+        "تسهيل الإجراءات",
+        "خدمة رسمية"
+      ],
+      "benefitsEn": [
+        "Legal right",
+        "Procedure facilitation",
+        "Official service"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dbb",
+      "name": "طعون عدل",
+      "nameEn": "AADL Appeals",
+      "description": "منصة للتعامل مع طعون وشكاوى مكتتبي سكن عدل",
+      "descriptionEn": "Platform for handling appeals and complaints from AADL housing subscribers",
+      "category": "HOUSING",
+      "subcategory": "سكن عدل",
+      "subcategoryEn": "AADL Housing",
+      "serviceType": "Appeals System",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=636&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.753Z",
+      "updatedAt": "2025-08-03T10:56:37.753Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dc2",
+      "name": "مرجع أسعار العقار",
+      "nameEn": "Real Estate Price Reference",
+      "description": "مرجع أسعار العقارات في مختلف المناطق",
+      "descriptionEn": "Real estate price reference for different regions",
+      "category": "HOUSING",
+      "subcategory": "أخرى",
+      "subcategoryEn": "Other",
+      "serviceType": "Price Reference",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=471&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dbe",
+      "name": "موعد عدل",
+      "nameEn": "AADL Appointment",
+      "description": "حجز مواعيد لدى مكاتب سكن عدل",
+      "descriptionEn": "Booking appointments at AADL housing offices",
+      "category": "HOUSING",
+      "subcategory": "سكن عدل",
+      "subcategoryEn": "AADL Housing",
+      "serviceType": "Appointment Booking",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة السكن والعمران والمدينة",
+      "sectorEn": "Ministry of Housing, Urban Development and City",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة السكن والعمران والمدينة",
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=632&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.767Z",
+      "updatedAt": "2025-08-03T10:56:37.767Z"
+    },
+    {
+      "id": "688f41af3caa5f45d9856a95",
+      "name": "رخصة النشاط الصناعي",
+      "nameEn": "Industrial Activity License",
+      "description": "رخصة لممارسة النشاط الصناعي وإنشاء المصانع والوحدات الإنتاجية.",
+      "descriptionEn": "License for practicing industrial activity and establishing factories and production units.",
+      "category": "INDUSTRY",
+      "subcategory": "التراخيص الصناعية",
+      "subcategoryEn": "Industrial Licenses",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة الصناعة",
+      "sectorEn": "Ministry of Industry",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Industry",
+      "agency": null,
+      "targetGroup": "المستثمرون الصناعيون",
+      "targetGroupEn": "Industrial Investors",
+      "targetGroups": [
+        "Industrial investors",
+        "Manufacturers",
+        "Factory owners"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "دراسة جدوى المشروع",
+        "رأس المال المطلوب",
+        "موافقة بيئية"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "Project feasibility study",
+        "Required capital",
+        "Environmental approval"
+      ],
+      "process": [
+        "إعداد دراسة الجدوى",
+        "تقديم الطلب",
+        "دراسة الأثر البيئي",
+        "الموافقة النهائية",
+        "إصدار الرخصة"
+      ],
+      "processEn": [
+        "Prepare feasibility study",
+        "Submit application",
+        "Environmental impact study",
+        "Final approval",
+        "License issuance"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "دراسة الجدوى",
+        "الموافقة البيئية",
+        "عقد الأرض الصناعية"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Feasibility study",
+        "Environmental approval",
+        "Industrial land contract"
+      ],
+      "fee": "100000-500000 دج حسب حجم المشروع",
+      "duration": null,
+      "processingTime": "60-120 يوم",
+      "processingTimeEn": "60-120 days",
+      "office": "مديرية الصناعة بالولاية",
+      "contactInfo": "مديرية الصناعة المحلية",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "حق الاستثمار الصناعي",
+        "تسهيلات ضريبية",
+        "دعم الدولة"
+      ],
+      "benefitsEn": [
+        "Industrial investment rights",
+        "Tax facilities",
+        "State support"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": false,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:07.510Z",
+      "updatedAt": "2025-08-03T11:02:07.510Z"
+    },
+    {
+      "id": "688f41af3caa5f45d9856a93",
+      "name": "استخراج السجل العدلي",
+      "nameEn": "Criminal Record Extract",
+      "description": "خدمة استخراج نسخة من السجل العدلي للمواطنين.",
+      "descriptionEn": "Service for obtaining a copy of criminal record for citizens.",
+      "category": "LAW_JUSTICE",
+      "subcategory": "الوثائق القضائية",
+      "subcategoryEn": "Judicial Documents",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة العدل",
+      "sectorEn": "Ministry of Justice",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Justice",
+      "agency": "المحكمة المختصة",
+      "targetGroup": "جميع المواطنين",
+      "targetGroupEn": "All Citizens",
+      "targetGroups": [
+        "Citizens",
+        "Job applicants",
+        "Legal procedures"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "طلب خطي",
+        "دفع الرسوم",
+        "إثبات الحاجة"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "Written request",
+        "Fee payment",
+        "Proof of need"
+      ],
+      "process": [
+        "تقديم الطلب",
+        "دفع الرسوم",
+        "التحقق من الهوية",
+        "إصدار الوثيقة",
+        "استلام السجل"
+      ],
+      "processEn": [
+        "Submit request",
+        "Pay fees",
+        "Identity verification",
+        "Document issuance",
+        "Record collection"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "طلب استخراج السجل",
+        "إيصال دفع الرسوم"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Record extraction request",
+        "Fee payment receipt"
+      ],
+      "fee": "200 دج",
+      "duration": null,
+      "processingTime": "1-3 أيام",
+      "processingTimeEn": "1-3 days",
+      "office": "المحكمة أو كتابة الضبط",
+      "contactInfo": "كتابة ضبط المحكمة",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "وثيقة رسمية",
+        "مطلوبة للوظائف",
+        "إجراءات قانونية"
+      ],
+      "benefitsEn": [
+        "Official document",
+        "Required for jobs",
+        "Legal procedures"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:07.510Z",
+      "updatedAt": "2025-08-03T11:02:07.510Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd1",
+      "name": "حساب المتقاعد (عن بعد)",
+      "nameEn": "Retiree Account (Remote)",
+      "description": "حساب المتقاعد للخدمات الإلكترونية",
+      "descriptionEn": "Retiree account for electronic services",
+      "category": "SOCIAL_SECURITY",
+      "subcategory": "التقاعد",
+      "subcategoryEn": "Retirement",
+      "serviceType": "Retirement Services",
+      "serviceTypeEn": "Service",
+      "sector": "الصندوق الوطني للتقاعد",
+      "sectorEn": "National Retirement Fund",
+      "structure": null,
+      "structureEn": null,
+      "ministry": null,
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=651&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": "Sétif",
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd2",
+      "name": "طلب بطاقة الشفاء للعمال",
+      "nameEn": "Request for Workers' Health Card",
+      "description": "طلب بطاقة الشفاء للعمال المؤمنين اجتماعياً",
+      "descriptionEn": "Request for health card for socially insured workers",
+      "category": "SOCIAL_SECURITY",
+      "subcategory": "الأجراء",
+      "subcategoryEn": "Employees",
+      "serviceType": "Health Card",
+      "serviceTypeEn": "Service",
+      "sector": "الصندوق الوطني للتأمينات الاجتماعية للعمال الأجراء",
+      "sectorEn": "National Social Insurance Fund for Wage Earners",
+      "structure": null,
+      "structureEn": null,
+      "ministry": null,
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=347&idC=1",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": "Oran",
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f41af3caa5f45d9856a92",
+      "name": "المنحة الجامعية",
+      "nameEn": "University Scholarship",
+      "description": "منحة مالية لدعم الطلاب الجامعيين من الأسر ذات الدخل المحدود.",
+      "descriptionEn": "Financial grant to support university students from low-income families.",
+      "category": "SOCIAL_SUPPORT",
+      "subcategory": "المنح التعليمية",
+      "subcategoryEn": "Educational Grants",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة التعليم العالي والبحث العلمي",
+      "sectorEn": "Ministry of Higher Education and Scientific Research",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Higher Education",
+      "agency": "الديوان الوطني للخدمات الجامعية",
+      "targetGroup": "الطلاب الجامعيون",
+      "targetGroupEn": "University Students",
+      "targetGroups": [
+        "University students",
+        "Low-income families",
+        "Academic achievers"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "شهادة التسجيل الجامعي",
+        "إثبات الدخل العائلي",
+        "كشف النقاط"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "University enrollment certificate",
+        "Family income proof",
+        "Academic transcript"
+      ],
+      "process": [
+        "تقديم طلب المنحة",
+        "دراسة الملف الاجتماعي",
+        "تقييم النتائج الدراسية",
+        "اتخاذ القرار",
+        "صرف المنحة"
+      ],
+      "processEn": [
+        "Submit scholarship application",
+        "Social file review",
+        "Academic performance evaluation",
+        "Decision making",
+        "Scholarship disbursement"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "شهادة التسجيل",
+        "إثبات الدخل",
+        "كشف النقاط"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Enrollment certificate",
+        "Income proof",
+        "Academic transcript"
+      ],
+      "fee": "مجاني",
+      "duration": null,
+      "processingTime": "30-60 يوم",
+      "processingTimeEn": "30-60 days",
+      "office": "الديوان الوطني للخدمات الجامعية",
+      "contactInfo": "مصالح المنح الجامعية",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://www.ons.dz",
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "دعم مالي شهري",
+        "إعانة السكن الجامعي",
+        "تخفيضات في الخدمات"
+      ],
+      "benefitsEn": [
+        "Monthly financial support",
+        "University housing assistance",
+        "Service discounts"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:06.963Z",
+      "updatedAt": "2025-08-03T11:02:06.963Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd3",
+      "name": "خدمة احتضان الشركات الناشئة في مجال تكنولوجيا المعلومات والاتصالات",
+      "nameEn": "Startup Incubation Service in ICT",
+      "description": "خدمة احتضان الشركات الناشئة في مجال تكنولوجيا المعلومات والاتصالات",
+      "descriptionEn": "Startup incubation service in information and communication technology",
+      "category": "TECHNOLOGY",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Startup Incubation",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الرقمنة والإحصائيات",
+      "sectorEn": "Ministry of Digitization and Statistics",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الرقمنة والإحصائيات",
+      "agency": null,
+      "targetGroup": "متعاملين",
+      "targetGroupEn": "Businesses",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=731",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd4",
+      "name": "خدمة الدّفع عن طريق الهاتف النقّال بريد باي",
+      "nameEn": "Mobile Payment Service Barid Pay",
+      "description": "خدمة الدفع الإلكتروني عبر الهاتف المحمول",
+      "descriptionEn": "Electronic payment service via mobile phone",
+      "category": "TECHNOLOGY",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "Mobile Payment",
+      "serviceTypeEn": "Service",
+      "sector": "بريد الجزائر",
+      "sectorEn": "Algeria Post",
+      "structure": null,
+      "structureEn": null,
+      "ministry": null,
+      "agency": null,
+      "targetGroup": "مواطنين",
+      "targetGroupEn": "Citizens",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب مملوءة",
+        "الوثائق المطلوبة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "استمارة الطلب",
+        "صور شمسية",
+        "الوثائق الداعمة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "7-30 يوم",
+      "processingTimeEn": null,
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=569",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": "Blida",
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f41af3caa5f45d9856a94",
+      "name": "ترخيص وكالة السياحة",
+      "nameEn": "Tourism Agency License",
+      "description": "ترخيص لإنشاء وتشغيل وكالة سياحية لتنظيم الرحلات والخدمات السياحية.",
+      "descriptionEn": "License for establishing and operating a tourism agency for organizing trips and tourist services.",
+      "category": "TOURISM",
+      "subcategory": "تراخيص سياحية",
+      "subcategoryEn": "Tourism Licenses",
+      "serviceType": null,
+      "serviceTypeEn": null,
+      "sector": "وزارة السياحة والصناعات التقليدية",
+      "sectorEn": "Ministry of Tourism and Traditional Industries",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "Ministry of Tourism",
+      "agency": null,
+      "targetGroup": "المستثمرون في القطاع السياحي",
+      "targetGroupEn": "Tourism Sector Investors",
+      "targetGroups": [
+        "Tourism investors",
+        "Business owners",
+        "Entrepreneurs"
+      ],
+      "requirements": [
+        "بطاقة التعريف الوطنية",
+        "رأس المال المطلوب",
+        "مقر العمل مناسب",
+        "موظفون مؤهلون"
+      ],
+      "requirementsEn": [
+        "National ID card",
+        "Required capital",
+        "Suitable business premises",
+        "Qualified staff"
+      ],
+      "process": [
+        "تحضير ملف الطلب",
+        "تقديم الطلب لمديرية السياحة",
+        "معاينة المقر",
+        "دراسة الملف",
+        "إصدار الترخيص"
+      ],
+      "processEn": [
+        "Prepare application file",
+        "Submit to Tourism Directorate",
+        "Premises inspection",
+        "File review",
+        "License issuance"
+      ],
+      "documents": [
+        "بطاقة التعريف الوطنية",
+        "عقد كراء المقر",
+        "شهادات الموظفين",
+        "إيداع رأس المال"
+      ],
+      "documentsEn": [
+        "National ID card",
+        "Premises lease contract",
+        "Staff certificates",
+        "Capital deposit"
+      ],
+      "fee": "50000-100000 دج",
+      "duration": null,
+      "processingTime": "45-90 يوم",
+      "processingTimeEn": "45-90 days",
+      "office": "مديرية السياحة بالولاية",
+      "contactInfo": "مديرية السياحة المحلية",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": null,
+      "legalFramework": null,
+      "appeals": null,
+      "appealsEn": null,
+      "benefits": [
+        "حق تشغيل وكالة سياحية",
+        "إمكانية الحصول على دعم",
+        "انضمام للاتحادات المهنية"
+      ],
+      "benefitsEn": [
+        "Right to operate tourism agency",
+        "Possibility of support",
+        "Professional association membership"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": false,
+      "isActive": true,
+      "createdAt": "2025-08-03T11:02:07.510Z",
+      "updatedAt": "2025-08-03T11:02:07.510Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd5",
+      "name": "إصدار وثيقة إدارية عن بعد",
+      "nameEn": "Remote Administrative Document Issuance",
+      "description": "تزويد المواطنين والشركات بكافة المعلومات المتعلقة بإصدار الوثائق الإدارية عن بعد مع فرصة تقديم طلباتهم عبر المنصة المخصصة",
+      "descriptionEn": "Providing citizens and companies with all information related to remote administrative document issuance with opportunity to submit applications via dedicated platform",
+      "category": "TRANSPORTATION",
+      "subcategory": null,
+      "subcategoryEn": null,
+      "serviceType": "خدمة",
+      "serviceTypeEn": "Service",
+      "sector": "وزارة الأشغال العمومية والمنشآت القاعدية",
+      "sectorEn": "Ministry of Public Works and Base Infrastructure",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الأشغال العمومية والمنشآت القاعدية",
+      "agency": null,
+      "targetGroup": "مواطنين, متعاملين",
+      "targetGroupEn": "Citizens, Business Operators",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [
+        "طلب إظهار السبب",
+        "نسخة من البطاقة الوطنية",
+        "شهادة الإقامة"
+      ],
+      "requirementsEn": [],
+      "process": [
+        "الدخول إلى المنصة الإلكترونية",
+        "إنشاء حساب أو تسجيل الدخول",
+        "ملء البيانات المطلوبة",
+        "رفع الوثائق المطلوبة",
+        "تقديم الطلب إلكترونياً",
+        "متابعة حالة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Access online platform",
+        "Create account or login",
+        "Fill required information",
+        "Upload required documents",
+        "Submit application electronically",
+        "Track application status",
+        "Receive service"
+      ],
+      "documents": [
+        "طلب إظهار السبب",
+        "نسخة من البطاقة الوطنية",
+        "شهادة الإقامة"
+      ],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "1-3 أيام",
+      "processingTimeEn": "1-3 days",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": "https://portail.mtpt.gov.dz/service.php?id=8&lg=ar",
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=182",
+      "legalFramework": "الوثيقة الإدارية عن بعد: مكون من الملفات الإدارية من القطاعات الأخرى (التجارة، الصحة، الجامعة، CNAS ... الخ)",
+      "appeals": "غير مدرجة",
+      "appealsEn": "Not specified",
+      "benefits": [
+        "خدمة حكومية",
+        "تسهيل للمواطن",
+        "إجراء رسمي"
+      ],
+      "benefitsEn": [
+        "Government service",
+        "Citizen facilitation",
+        "Official procedure"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": true,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd7",
+      "name": "شهادة التأهيل والتصنيف المهنيين",
+      "nameEn": "Professional Qualification and Classification Certificate",
+      "description": "إصدار شهادات التأهيل والتصنيف المهني للعاملين في قطاع المواصلات",
+      "descriptionEn": "Issuing professional qualification and classification certificates for transportation sector workers",
+      "category": "TRANSPORTATION",
+      "subcategory": "شهادات",
+      "subcategoryEn": null,
+      "serviceType": "إجراء",
+      "serviceTypeEn": "Procedure",
+      "sector": "وزارة الأشغال العمومية والمنشآت القاعدية",
+      "sectorEn": "Ministry of Public Works and Base Infrastructure",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الأشغال العمومية والمنشآت القاعدية",
+      "agency": null,
+      "targetGroup": "متعاملين",
+      "targetGroupEn": "Business Operators",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "100-500 دج",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=423",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "إثبات رسمي",
+        "وثيقة معتمدة",
+        "صلاحية قانونية"
+      ],
+      "benefitsEn": [
+        "Official proof",
+        "Certified document",
+        "Legal validity"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    },
+    {
+      "id": "688f4065b5e71a0184b87dd6",
+      "name": "منح رخصة شبكة الطرق",
+      "nameEn": "Road Network License Grant",
+      "description": "منح تراخيص لشبكات الطرق والمواصلات",
+      "descriptionEn": "Granting licenses for road and transportation networks",
+      "category": "TRANSPORTATION",
+      "subcategory": "تراخيص",
+      "subcategoryEn": null,
+      "serviceType": "إجراء",
+      "serviceTypeEn": "Procedure",
+      "sector": "وزارة الأشغال العمومية والمنشآت القاعدية",
+      "sectorEn": "Ministry of Public Works and Base Infrastructure",
+      "structure": null,
+      "structureEn": null,
+      "ministry": "وزارة الأشغال العمومية والمنشآت القاعدية",
+      "agency": null,
+      "targetGroup": "متعاملين",
+      "targetGroupEn": "Business Operators",
+      "targetGroups": [
+        "Citizens"
+      ],
+      "requirements": [],
+      "requirementsEn": [],
+      "process": [
+        "تحضير الوثائق المطلوبة",
+        "ملء استمارة الطلب",
+        "تقديم الطلب للمكتب المختص",
+        "دفع الرسوم المطلوبة",
+        "انتظار معالجة الطلب",
+        "استلام الخدمة"
+      ],
+      "processEn": [
+        "Prepare required documents",
+        "Fill application form",
+        "Submit application to relevant office",
+        "Pay required fees",
+        "Wait for processing",
+        "Receive service"
+      ],
+      "documents": [],
+      "documentsEn": [
+        "National ID",
+        "Application form",
+        "Supporting documents"
+      ],
+      "fee": "حسب التعريفة المعمول بها",
+      "duration": "غير محدد",
+      "processingTime": "غير محدد",
+      "processingTimeEn": "Not specified",
+      "office": "المكتب المختص",
+      "contactInfo": "اتصل بالمكتب المختص",
+      "contactPhone": null,
+      "contactEmail": null,
+      "onlineUrl": null,
+      "bawabticUrl": "https://bawabatic.dz?req=informations&op=detail&id=185",
+      "legalFramework": null,
+      "appeals": "يمكن الطعن وفقاً للقوانين المعمول بها",
+      "appealsEn": "Appeals can be made according to applicable laws",
+      "benefits": [
+        "حق قانوني",
+        "تسهيل الإجراءات",
+        "خدمة رسمية"
+      ],
+      "benefitsEn": [
+        "Legal right",
+        "Procedure facilitation",
+        "Official service"
+      ],
+      "notes": null,
+      "wilaya": null,
+      "isOnline": false,
+      "isNational": true,
+      "isActive": true,
+      "createdAt": "2025-08-03T10:56:37.806Z",
+      "updatedAt": "2025-08-03T10:56:37.806Z"
+    }
+  ]
+}

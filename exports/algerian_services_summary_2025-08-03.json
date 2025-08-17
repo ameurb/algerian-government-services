@@ -1,0 +1,261 @@
+{
+  "summary": {
+    "exportDate": "2025-08-03T11:03:19.944Z",
+    "totalServices": 57,
+    "onlineServices": 13,
+    "offlineServices": 44,
+    "servicesWithExternalUrls": 13,
+    "categories": 16,
+    "dataSource": "bawabatic.dz and comprehensive Algerian government services"
+  },
+  "categorySummary": [
+    {
+      "category": "AGRICULTURE",
+      "count": 1,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "BUSINESS",
+      "count": 9,
+      "onlineCount": 1,
+      "servicesWithUrls": 1
+    },
+    {
+      "category": "CIVIL_STATUS",
+      "count": 11,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "CULTURE",
+      "count": 1,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "EDUCATION",
+      "count": 4,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "EMPLOYMENT",
+      "count": 8,
+      "onlineCount": 8,
+      "servicesWithUrls": 8
+    },
+    {
+      "category": "ENERGY",
+      "count": 1,
+      "onlineCount": 1,
+      "servicesWithUrls": 1
+    },
+    {
+      "category": "HEALTH",
+      "count": 1,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "HOUSING",
+      "count": 10,
+      "onlineCount": 1,
+      "servicesWithUrls": 1
+    },
+    {
+      "category": "INDUSTRY",
+      "count": 1,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "LAW_JUSTICE",
+      "count": 1,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "SOCIAL_SECURITY",
+      "count": 2,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "SOCIAL_SUPPORT",
+      "count": 1,
+      "onlineCount": 1,
+      "servicesWithUrls": 1
+    },
+    {
+      "category": "TECHNOLOGY",
+      "count": 2,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "TOURISM",
+      "count": 1,
+      "onlineCount": 0,
+      "servicesWithUrls": 0
+    },
+    {
+      "category": "TRANSPORTATION",
+      "count": 3,
+      "onlineCount": 1,
+      "servicesWithUrls": 1
+    }
+  ],
+  "topServices": [
+    {
+      "name": "رخصة الاستغلال الفلاحي",
+      "nameEn": "Agricultural Exploitation License",
+      "category": "AGRICULTURE",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "التحقق من رقمك الجبائي",
+      "nameEn": "Verify Your Tax Number",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "الترقيم الجبائي",
+      "nameEn": "Tax Numbering",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "التصريح الجبائي والدفع عن بعد jibayatic",
+      "nameEn": "Tax Declaration and Remote Payment - Jibayatic",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "بوابة التصريح الجبائي والدفع عن بعد MOUSSAHAMA'TIC",
+      "nameEn": "Tax Declaration and Remote Payment Portal - MOUSSAHAMA'TIC",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "تأسيس شركة عبر الإنترنت - فضاء المواطن",
+      "nameEn": "Online Company Establishment - Citizen Space",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "تسجيل حسابات الشركات عبر الإنترنت",
+      "nameEn": "Register Company Accounts Online",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "تسجيل عقود التأجير عبر الإنترنت",
+      "nameEn": "Register Rental Contracts Online",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "حجز العنوان التجاري والاسم التجاري عبر الإنترنت - فضاء المواطن",
+      "nameEn": "Reserve Trade Address and Trade Name Online - Citizen Space",
+      "category": "BUSINESS",
+      "isOnline": false,
+      "onlineUrl": null
+    },
+    {
+      "name": "شهادات السجل التجاري",
+      "nameEn": "Commercial Register Certificates",
+      "category": "BUSINESS",
+      "isOnline": true,
+      "onlineUrl": "https://sidjilcom.cnrc.dz"
+    }
+  ],
+  "onlineServices": [
+    {
+      "name": "شهادات السجل التجاري",
+      "nameEn": "Commercial Register Certificates",
+      "category": "BUSINESS",
+      "onlineUrl": "https://sidjilcom.cnrc.dz"
+    },
+    {
+      "name": "(منحة ) التسجيل الأولى في جهاز منحة البطالة",
+      "nameEn": "Initial Registration in Unemployment Benefit System",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://manhaonline.anem.dz/"
+    },
+    {
+      "name": "أرضية التوظيف",
+      "nameEn": "Employment Platform",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://progres.mesrs.dz/webrecrutement"
+    },
+    {
+      "name": "احصائيات التشغيل- الوكالة الوطنية للتشغيل",
+      "nameEn": "Employment Statistics - National Employment Agency",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://www.anem.dz/"
+    },
+    {
+      "name": "البحث عن عرض عمل",
+      "nameEn": "Search for Job Offers",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://wassitonline.anem.dz/"
+    },
+    {
+      "name": "التسجيل عن بعد للطالبي العمل عبر منصة الوسيط اونلاين",
+      "nameEn": "Remote Registration for Job Seekers via Wasit Online Platform",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://wassitonline.anem.dz/"
+    },
+    {
+      "name": "حجز موعد عبر منصة منحة البطالة (منحة )",
+      "nameEn": "Booking Appointment via Unemployment Benefit Platform",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://manhaonline.anem.dz/"
+    },
+    {
+      "name": "فرصتي ( ترشح عن بعد في عرض عمل )",
+      "nameEn": "My Opportunity (Remote Job Application)",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://wassitonline.anem.dz/"
+    },
+    {
+      "name": "مرجع المدونة الجزائرية للمهن و الوظائف",
+      "nameEn": "Reference of Algerian Code of Professions and Jobs",
+      "category": "EMPLOYMENT",
+      "onlineUrl": "https://www.anem.dz/"
+    },
+    {
+      "name": "طلب توصيل الكهرباء",
+      "nameEn": "Electricity Connection Request",
+      "category": "ENERGY",
+      "onlineUrl": "https://www.sonelgaz.dz"
+    },
+    {
+      "name": "إختيار الموقع عدل",
+      "nameEn": "AADL Location Selection",
+      "category": "HOUSING",
+      "onlineUrl": "https://mo.aadl.com.dz/CHOIXDUSITE"
+    },
+    {
+      "name": "المنحة الجامعية",
+      "nameEn": "University Scholarship",
+      "category": "SOCIAL_SUPPORT",
+      "onlineUrl": "https://www.ons.dz"
+    },
+    {
+      "name": "إصدار وثيقة إدارية عن بعد",
+      "nameEn": "Remote Administrative Document Issuance",
+      "category": "TRANSPORTATION",
+      "onlineUrl": "https://portail.mtpt.gov.dz/service.php?id=8&lg=ar"
+    }
+  ]
+}
