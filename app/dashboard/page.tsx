@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { 
   Database, 
@@ -11,7 +13,8 @@ import {
   Plus,
   Trash2,
   Edit,
-  Search
+  Search,
+  Shield
 } from 'lucide-react';
 
 interface DashboardStats {
@@ -23,18 +26,8 @@ interface DashboardStats {
   dbConnections: number;
 }
 
-interface APIKey {
-  id: string;
-  name: string;
-  key: string;
-  permissions: string[];
-  lastUsed: string;
-  isActive: boolean;
-}
-
 export default function AdminDashboard() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
-  const [apiKeys, setApiKeys] = useState<APIKey[]>([]);
   const [activeTab, setActiveTab] = useState('overview');
   const [loading, setLoading] = useState(true);
 
@@ -44,16 +37,14 @@ export default function AdminDashboard() {
 
   const fetchDashboardData = async () => {
     try {
-      // Fetch statistics from MCP server
-      const statsResponse = await fetch('/api/dashboard/stats');
-      const statsData = await statsResponse.json();
-      setStats(statsData);
-
-      // Fetch API keys
-      const keysResponse = await fetch('/api/dashboard/api-keys');
-      const keysData = await keysResponse.json();
-      setApiKeys(keysData);
-
+      // Fetch statistics from dashboard API
+      const response = await fetch('/api/dashboard/stats');
+      if (response.ok) {
+        const data = await response.json();
+        setStats(data);
+      } else {
+        console.error('Failed to fetch stats');
+      }
       setLoading(false);
     } catch (error) {
       console.error('Failed to fetch dashboard data:', error);
@@ -98,6 +89,12 @@ export default function AdminDashboard() {
           </div>
           
           <div className="flex items-center gap-4">
+            <a 
+              href="/"
+              className="px-4 py-2 text-blue-600 hover:text-blue-800 text-sm font-medium"
+            >
+              ← Back to Chat
+            </a>
             <div className={`px-3 py-1 rounded-full text-sm ${
               stats?.mcpHealth === 'healthy' 
                 ? 'bg-green-100 text-green-800' 
@@ -211,89 +208,61 @@ export default function AdminDashboard() {
                   </button>
                 </div>
               </div>
-            </div>
-          )}
 
-          {activeTab === 'services' && (
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-gray-900">Government Services Management</h2>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2">
-                  <Plus size={16} />
-                  Add New Service
-                </button>
-              </div>
-              
+              {/* System Info */}
               <div className="bg-white rounded-lg border border-gray-200 p-6">
-                <p className="text-gray-600">Services management interface will be implemented here.</p>
-                <p className="text-sm text-gray-500 mt-2">Features: Add, edit, delete services, bulk import, category management</p>
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'api-keys' && (
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-gray-900">API Keys Management</h2>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 flex items-center gap-2">
-                  <Plus size={16} />
-                  Generate New Key
-                </button>
-              </div>
-              
-              <div className="bg-white rounded-lg border border-gray-200">
-                <div className="p-6 border-b border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900">Active API Keys</h3>
-                  <p className="text-sm text-gray-600">Manage access to MCP server and APIs</p>
-                </div>
-                
-                <div className="p-6">
-                  <div className="space-y-4">
-                    {apiKeys.map((apiKey) => (
-                      <div key={apiKey.id} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
-                        <div>
-                          <p className="font-medium text-gray-900">{apiKey.name}</p>
-                          <p className="text-sm text-gray-500">Last used: {apiKey.lastUsed}</p>
-                          <div className="flex gap-2 mt-2">
-                            {apiKey.permissions.map((perm) => (
-                              <span key={perm} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
-                                {perm}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-2">
-                          <div className={`w-2 h-2 rounded-full ${
-                            apiKey.isActive ? 'bg-green-500' : 'bg-red-500'
-                          }`}></div>
-                          <button className="p-2 text-gray-400 hover:text-gray-600">
-                            <Edit size={16} />
-                          </button>
-                          <button className="p-2 text-red-400 hover:text-red-600">
-                            <Trash2 size={16} />
-                          </button>
-                        </div>
-                      </div>
-                    ))}
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">System Information</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-600">Database</p>
+                    <p className="font-medium">MongoDB Atlas</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">MCP Server</p>
+                    <p className="font-medium">Port 8080 - {stats?.mcpHealth || 'Unknown'}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Domain</p>
+                    <p className="font-medium">api.findapply.com</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Environment</p>
+                    <p className="font-medium">Production</p>
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Placeholder for other tabs */}
-          {activeTab !== 'overview' && activeTab !== 'services' && activeTab !== 'api-keys' && (
+          {/* Other tabs placeholder */}
+          {activeTab !== 'overview' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 capitalize">{activeTab.replace('-', ' ')} Management</h2>
+              <h2 className="text-2xl font-bold text-gray-900 capitalize">
+                {activeTab.replace('-', ' ')} Management
+              </h2>
+              
               <div className="bg-white rounded-lg border border-gray-200 p-6">
-                <p className="text-gray-600">This section is under development.</p>
-                <p className="text-sm text-gray-500 mt-2">
-                  {activeTab === 'mcp-tools' && 'Manage MCP server tools, add new tools, configure tool parameters'}
-                  {activeTab === 'templates' && 'Manage response templates, create new templates, organize by category'}
-                  {activeTab === 'collections' && 'Database collection management, add/remove collections, data import/export'}
-                  {activeTab === 'config' && 'MCP server configuration, environment variables, performance settings'}
-                </p>
+                <div className="text-center py-12">
+                  <Shield className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">
+                    {activeTab.charAt(0).toUpperCase() + activeTab.slice(1).replace('-', ' ')} Management
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    This section will allow you to manage {activeTab.replace('-', ' ')}.
+                  </p>
+                  
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md mx-auto">
+                    <p className="text-sm text-blue-800">
+                      <strong>Coming Soon:</strong> 
+                      {activeTab === 'services' && ' Add, edit, delete government services, bulk import, category management'}
+                      {activeTab === 'mcp-tools' && ' Configure MCP tools, add custom tools, manage parameters'}
+                      {activeTab === 'api-keys' && ' Generate API keys, set permissions, monitor usage'}
+                      {activeTab === 'templates' && ' Create response templates, manage translations, organize by category'}
+                      {activeTab === 'collections' && ' Database management, collection operations, data import/export'}
+                      {activeTab === 'config' && ' System configuration, environment variables, performance tuning'}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           )}
