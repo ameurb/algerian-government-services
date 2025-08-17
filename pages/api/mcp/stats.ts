@@ -9,6 +9,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Proxy request to HTTP MCP server
     const mcpResponse = await fetch('http://localhost:8081/stats', {
       method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${process.env.MCP_API_KEY}`,
+      },
     });
 
     if (!mcpResponse.ok) {

@@ -435,6 +435,7 @@ Respond with ONLY the category name, nothing else.`
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.MCP_API_KEY}`,
       },
       body: JSON.stringify({
         query: searchQuery,

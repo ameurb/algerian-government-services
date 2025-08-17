@@ -203,7 +203,7 @@ class APIError extends Error {
 // Usage Examples
 async function examples() {
   const api = new AlgerianServicesAPI({
-    apiKey: 'your-api-key-here',
+    apiKey: 'mcp_live_demo123', // Demo API key
     baseUrl: 'https://api.findapply.com:8081'
   });
 

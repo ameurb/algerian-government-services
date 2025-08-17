@@ -98,7 +98,10 @@ async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
       case 'search_government_services':
         const searchResponse = await fetch(`${apiBaseUrl}/search`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.MCP_API_KEY}`
+          },
           body: JSON.stringify({
             query: toolCall.parameters.query,
             category: toolCall.parameters.category,
@@ -119,7 +122,11 @@ async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
         };
 
       case 'get_service_details':
-        const detailResponse = await fetch(`${apiBaseUrl}/service/${toolCall.parameters.serviceId}`);
+        const detailResponse = await fetch(`${apiBaseUrl}/service/${toolCall.parameters.serviceId}`, {
+          headers: {
+            'Authorization': `Bearer ${process.env.MCP_API_KEY}`
+          }
+        });
         
         if (!detailResponse.ok) {
           throw new Error(`Service details failed: ${detailResponse.statusText}`);
@@ -133,7 +140,11 @@ async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
         };
 
       case 'get_services_statistics':
-        const statsResponse = await fetch(`${apiBaseUrl}/stats`);
+        const statsResponse = await fetch(`${apiBaseUrl}/stats`, {
+          headers: {
+            'Authorization': `Bearer ${process.env.MCP_API_KEY}`
+          }
+        });
         
         if (!statsResponse.ok) {
           throw new Error(`Statistics failed: ${statsResponse.statusText}`);

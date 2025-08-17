@@ -21,6 +21,12 @@ Content-Type: application/json
 ### Getting API Keys
 Visit the admin dashboard at `https://api.findapply.com/dashboard` to generate API keys with specific permissions.
 
+### Demo API Keys (for testing):
+```
+mcp_live_demo123    # Full access (all permissions)
+mcp_test_456789     # Limited access (search and stats only)
+```
+
 ## 📡 Available Endpoints
 
 ### 1. 🔍 Search Government Services

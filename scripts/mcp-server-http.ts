@@ -65,6 +65,49 @@ app.use(cors({
 
 app.use(express.json());
 
+// API Key Authentication Middleware
+const API_KEYS = new Map([
+  ['mcp_live_demo123', { name: 'Demo Key', permissions: ['*'], isActive: true }],
+  ['mcp_test_456789', { name: 'Test Key', permissions: ['search', 'stats'], isActive: true }],
+  [process.env.MCP_API_KEY, { name: 'Main API Key', permissions: ['*'], isActive: true }]
+].filter(([key]) => key)); // Remove undefined keys
+
+function authenticateApiKey(req: any, res: any, next: any) {
+  // Skip authentication for health check
+  if (req.path === '/health') {
+    return next();
+  }
+
+  const authHeader = req.headers.authorization;
+  const apiKey = authHeader?.replace('Bearer ', '') || req.headers['x-api-key'];
+
+  if (!apiKey) {
+    return res.status(401).json({ 
+      error: 'API key required', 
+      message: 'Provide API key in Authorization header or x-api-key header' 
+    });
+  }
+
+  const keyInfo = API_KEYS.get(apiKey);
+  
+  if (!keyInfo || !keyInfo.isActive) {
+    return res.status(401).json({ 
+      error: 'Invalid API key', 
+      message: 'API key is invalid or inactive' 
+    });
+  }
+
+  // Add key info to request
+  req.apiKey = { key: apiKey, ...keyInfo };
+  next();
+}
+
+// Apply authentication to protected routes
+app.use('/search', authenticateApiKey);
+app.use('/service', authenticateApiKey);
+app.use('/stats', authenticateApiKey);
+app.use('/tools', authenticateApiKey);
+
 // Request logging middleware
 app.use((req, res, next) => {
   Logger.info('HTTP', `${req.method} ${req.path}`, {
