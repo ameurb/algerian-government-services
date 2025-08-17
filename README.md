@@ -50,7 +50,7 @@ A **ChatGPT-like intelligent assistant** for accessing Algerian government servi
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/algerian-government-services.git
+git clone https://github.com/ameurb/algerian-government-services.git
 cd algerian-government-services
 
 # Install dependencies  
@@ -68,7 +68,7 @@ tsx prisma/enhanced_seed.ts
 
 # Start development servers
 npm run dev          # Next.js (port 3000)
-npm run mcp:http     # MCP Server (port 8081)
+npm run mcp:http     # MCP Server (port 8080)
 ```
 
 ## 🏗️ Architecture
@@ -86,7 +86,7 @@ User Query → Next.js App → OpenAI API → MCP HTTP Server → MongoDB Atlas 
    - Responsive design for all devices
    - Interactive sample questions
 
-2. **HTTP-MCP Server** (Port 8081)
+2. **HTTP-MCP Server** (Port 8080)
    - Streaming API for government services
    - Real-time database access
    - Health monitoring endpoints
@@ -125,22 +125,29 @@ npm run verify:deployment
 
 ## 🌐 Production Deployment
 
-### Ubuntu Server Deployment
+### 🚀 Deploy to api.findapply.com
 ```bash
-# One-command deployment
-./deploy.sh
+# One-command deployment for your domain
+DOMAIN=api.findapply.com ./deploy.sh
 
 # Manual deployment
 npm run production:setup
 pm2 start ecosystem.config.js
 ```
 
+### 🌍 Production URLs
+After deployment, your application will be available at:
+- **🤖 Main Chat**: https://api.findapply.com
+- **📡 MCP API**: https://api.findapply.com/mcp
+- **🔧 Direct MCP**: https://api.findapply.com:8080
+- **⚙️ Prisma Studio**: https://api.findapply.com:5556
+
 ### Docker Deployment
 ```bash
 docker-compose up -d
 ```
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment guide.
+See [DEPLOYMENT.md](./DEPLOYMENT.md) and [PRODUCTION-DEPLOY.md](./PRODUCTION-DEPLOY.md) for complete deployment guides.
 
 ## 📱 Usage Examples
 
@@ -151,16 +158,22 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment guide.
 
 ### API Usage
 ```bash
+# Production API Usage
 # Search services
-curl -X POST http://localhost:8081/search \
+curl -X POST https://api.findapply.com/mcp/search \
   -H "Content-Type: application/json" \
   -d '{"query": "National ID", "limit": 5}'
 
 # Get service details  
-curl http://localhost:8081/service/SERVICE_ID
+curl https://api.findapply.com/mcp/service/SERVICE_ID
 
 # Database statistics
-curl http://localhost:8081/stats
+curl https://api.findapply.com/mcp/stats
+
+# Development/Direct Access
+curl -X POST https://api.findapply.com:8080/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "National ID", "limit": 5}'
 ```
 
 ## 🤝 Contributing
@@ -173,7 +186,7 @@ curl http://localhost:8081/stats
 
 ## 📞 Support
 
-- 📧 **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/algerian-government-services/issues)
+- 📧 **Issues**: [GitHub Issues](https://github.com/ameurb/algerian-government-services/issues)
 - 📖 **Documentation**: [DEPLOYMENT.md](./DEPLOYMENT.md)
 - 🧪 **Testing**: Run `npm run test:streaming`
 
