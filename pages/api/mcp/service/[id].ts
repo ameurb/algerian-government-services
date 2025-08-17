@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // Proxy request to HTTP MCP server
-    const mcpResponse = await fetch(`http://localhost:8081/service/${id}`, {
+    const mcpResponse = await fetch(`http://localhost:8080/service/${id}`, {
       method: 'GET',
     });
 

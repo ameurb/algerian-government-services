@@ -4,7 +4,17 @@ This guide configures your **Algerian Government Services** application to use y
 
 ## 🎯 Recommended Domain Structure
 
-### Option 1: Single Domain with Paths (Recommended)
+### Option 1: Direct Port Access (Your Configuration)
+```
+https://api.findapply.com:3000/            → Next.js App (Chat Interface)
+https://api.findapply.com:8080/            → MCP Server Direct Access
+https://api.findapply.com:8080/search      → MCP Search API
+https://api.findapply.com:8080/health      → MCP Health Check
+https://api.findapply.com:8080/stats       → MCP Statistics
+https://api.findapply.com:5556/            → Prisma Studio (Optional)
+```
+
+### Option 2: Single Domain with Nginx Proxy (Alternative)
 ```
 https://api.findapply.com/                 → Next.js App (Chat Interface)
 https://api.findapply.com/api/mcp/search   → MCP API (Proxied)
@@ -152,15 +162,17 @@ echo "0 12 * * * /usr/bin/certbot renew --quiet" | sudo crontab -
 ### 5. Firewall Configuration
 
 ```bash
-# Configure UFW firewall
+# Configure UFW firewall for api.findapply.com
 sudo ufw allow 22         # SSH
 sudo ufw allow 80         # HTTP  
 sudo ufw allow 443        # HTTPS
+sudo ufw allow 3000       # Next.js App (https://api.findapply.com:3000)
+sudo ufw allow 8080       # MCP Server Direct (https://api.findapply.com:8080)
+sudo ufw allow 5556       # Prisma Studio (optional)
 sudo ufw enable
 
-# Optional: Block direct access to application ports
-sudo ufw deny 3000        # Block direct Next.js access
-sudo ufw deny 8081        # Block direct MCP access
+# Note: Ports 3000, 8080, and 5556 are exposed for direct access
+# This allows clients to connect directly to each service
 ```
 
 ## 🚀 Deployment Commands
@@ -226,12 +238,22 @@ module.exports = {
 
 After deployment, your services will be available at:
 
-- **🌐 Main Application**: https://api.findapply.com
-- **🤖 Chat Interface**: https://api.findapply.com (main page)
-- **📊 API Health**: https://api.findapply.com/api/health
-- **📈 Database Stats**: https://api.findapply.com/api/mcp/stats
-- **🔍 Search API**: https://api.findapply.com/api/mcp/search
-- **⚙️ Admin Panel**: https://admin.api.findapply.com (optional)
+### 🌐 **Main Services:**
+- **🤖 Chat Interface**: https://api.findapply.com:3000
+- **🔧 MCP Server API**: https://api.findapply.com:8080
+- **⚙️ Prisma Studio**: https://api.findapply.com:5556 (optional)
+
+### 📡 **MCP API Endpoints:**
+- **🔍 Search Services**: https://api.findapply.com:8080/search
+- **📋 Service Details**: https://api.findapply.com:8080/service/:id
+- **📊 Database Stats**: https://api.findapply.com:8080/stats
+- **❤️ Health Check**: https://api.findapply.com:8080/health
+- **🛠️ Available Tools**: https://api.findapply.com:8080/tools
+
+### 🔗 **Next.js API Endpoints:**
+- **💬 Chat API**: https://api.findapply.com:3000/api/chat
+- **📊 Session API**: https://api.findapply.com:3000/api/session
+- **🔌 Socket.IO**: https://api.findapply.com:3000/api/socket
 
 ## 📊 Benefits of Using api.findapply.com
 

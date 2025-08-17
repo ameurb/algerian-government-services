@@ -173,7 +173,7 @@ module.exports = {
       max_memory_restart: '512M',
       env: {
         NODE_ENV: 'production',
-        MCP_SERVER_PORT: 8081,
+        MCP_SERVER_PORT: 8080,
         CORS_ORIGIN: 'https://$DOMAIN',
         DOMAIN: '$DOMAIN'
       }
