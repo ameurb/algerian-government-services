@@ -157,7 +157,7 @@ module.exports = {
       max_memory_restart: '1G',
       env: {
         NODE_ENV: 'production',
-        PORT: 3000,
+        PORT: 3030,
         NEXT_PUBLIC_APP_URL: 'https://$DOMAIN',
         DOMAIN: '$DOMAIN',
         CORS_ORIGIN: 'https://$DOMAIN'

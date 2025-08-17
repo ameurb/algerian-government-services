@@ -39,7 +39,8 @@ class Logger {
 
 // Middleware - CORS configuration for api.findapply.com
 const allowedOrigins = [
-  'http://localhost:3000',                    // Development
+  'http://localhost:3030',                    // Development (new port)
+  'http://localhost:3000',                    // Development (fallback)
   'https://api.findapply.com',               // Production main
   'https://www.api.findapply.com',           // Production www
   'https://app.findapply.com',               // Alternative subdomain
