@@ -90,8 +90,8 @@ interface MCPToolResult {
 
 // Execute MCP tool calls
 async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
-  const apiBaseUrl = 'http://localhost:3000/api/mcp'; // Use Next.js API proxy
-  console.log('[AI-MCP] Attempting to connect via Next.js API proxy');
+  const apiBaseUrl = 'http://localhost:8081'; // Direct MCP server connection
+  console.log('[AI-MCP] Attempting to connect to MCP server directly');
   
   try {
     switch (toolCall.name) {
@@ -100,7 +100,7 @@ async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.MCP_API_KEY}`
+            'Authorization': `Bearer dz_live_demo123`
           },
           body: JSON.stringify({
             query: toolCall.parameters.query,
@@ -124,7 +124,7 @@ async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
       case 'get_service_details':
         const detailResponse = await fetch(`${apiBaseUrl}/service/${toolCall.parameters.serviceId}`, {
           headers: {
-            'Authorization': `Bearer ${process.env.MCP_API_KEY}`
+            'Authorization': `Bearer dz_live_demo123`
           }
         });
         
@@ -142,7 +142,7 @@ async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
       case 'get_services_statistics':
         const statsResponse = await fetch(`${apiBaseUrl}/stats`, {
           headers: {
-            'Authorization': `Bearer ${process.env.MCP_API_KEY}`
+            'Authorization': `Bearer dz_live_demo123`
           }
         });
         
