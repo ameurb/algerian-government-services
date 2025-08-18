@@ -124,8 +124,9 @@ curl https://api.findapply.com:8080/stats
 ## 🎉 Final Result
 
 **Your citizens will access:**
-- **Main App**: https://api.findapply.com
-- **API Docs**: https://api.findapply.com/mcp/tools
+- **Main App**: https://api.findapply.com (Clean URL, no port)
+- **Dashboard**: https://api.findapply.com/dashboard
+- **API**: https://api.findapply.com:8081 (Direct API access)
 
 **Features available:**
 - 🤖 ChatGPT-like AI assistant in Arabic/English
