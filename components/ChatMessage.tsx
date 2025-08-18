@@ -95,7 +95,7 @@ export default function ChatMessage({ role, content, timestamp, onQuestionClick,
         )}
         
         <div className="text-xs text-gray-400 px-2">
-          {timestamp.toLocaleTimeString('ar-DZ', { 
+          {new Date(timestamp).toLocaleTimeString('ar-DZ', { 
             hour: '2-digit', 
             minute: '2-digit' 
           })}

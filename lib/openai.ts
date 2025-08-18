@@ -90,7 +90,7 @@ interface MCPToolResult {
 
 // Execute MCP tool calls
 async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
-  const apiBaseUrl = 'http://localhost:8081'; // Direct MCP server connection
+  const apiBaseUrl = 'http://localhost:8083'; // Direct MCP server connection
   console.log('[AI-MCP] Attempting to connect to MCP server directly');
   
   try {
