@@ -95,10 +95,21 @@ export default function ChatMessage({ role, content, timestamp, onQuestionClick,
         )}
         
         <div className="text-xs text-gray-400 px-2">
-          {new Date(timestamp).toLocaleTimeString('ar-DZ', { 
-            hour: '2-digit', 
-            minute: '2-digit' 
-          })}
+          {(() => {
+            try {
+              const date = timestamp instanceof Date ? timestamp : new Date(timestamp);
+              return date.toLocaleTimeString('ar-DZ', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+              });
+            } catch (error) {
+              console.error('Timestamp error:', error, 'Timestamp:', timestamp);
+              return new Date().toLocaleTimeString('ar-DZ', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+              });
+            }
+          })()}
         </div>
       </div>
     </div>
