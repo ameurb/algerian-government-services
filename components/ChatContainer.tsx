@@ -87,6 +87,7 @@ export default function ChatContainer() {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    setIsTyping(true); // Show typing indicator
 
     try {
       const response = await fetch('/api/chat', {
@@ -117,6 +118,8 @@ export default function ChatContainer() {
       }
     } catch (error) {
       console.error('Error sending message:', error);
+      setIsTyping(false); // Stop typing indicator on error
+      
       // Add error message
       setMessages(prev => [...prev, {
         id: uuidv4(),
