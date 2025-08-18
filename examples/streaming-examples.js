@@ -2,7 +2,7 @@
 // Server-Sent Events (SSE) for real-time data streaming
 
 class AlgerianServicesStreamingAPI {
-  constructor(apiKey, baseUrl = 'http://localhost:8082') {
+  constructor(apiKey, baseUrl = 'http://api.findapply.com:8081') {
     this.apiKey = apiKey;
     this.baseUrl = baseUrl;
   }
