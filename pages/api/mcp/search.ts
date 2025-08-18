@@ -6,15 +6,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
+    console.log('🔧 MCP_API_KEY:', process.env.MCP_API_KEY ? 'Available' : 'Missing');
+    
     // Proxy request to HTTP MCP server
     const mcpResponse = await fetch('http://localhost:8081/search', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.MCP_API_KEY}`,
+        'Authorization': `Bearer ${process.env.MCP_API_KEY || 'dz_live_demo123'}`,
       },
       body: JSON.stringify(req.body),
     });
+    
+    console.log('📡 MCP Response status:', mcpResponse.status);
 
     if (!mcpResponse.ok) {
       throw new Error(`MCP server error: ${mcpResponse.status}`);
