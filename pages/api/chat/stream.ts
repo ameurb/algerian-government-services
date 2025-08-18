@@ -39,45 +39,41 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       sessionId
     })}\n\n`);
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Show progress stages immediately with shorter delays
+    setTimeout(() => {
+      res.write(`data: ${JSON.stringify({
+        type: 'processing_stage',
+        stage: 'ai_processing', 
+        message: 'استشارة الذكاء الاصطناعي...',
+        emoji: '🧠',
+        progress: 50,
+        sessionId
+      })}\n\n`);
+    }, 500);
 
-    // Stage 2: Start getting AI response in background
-    res.write(`data: ${JSON.stringify({
-      type: 'processing_stage',
-      stage: 'ai_processing', 
-      message: 'استشارة الذكاء الاصطناعي...',
-      emoji: '🧠',
-      progress: 50,
-      sessionId
-    })}\n\n`);
+    setTimeout(() => {
+      res.write(`data: ${JSON.stringify({
+        type: 'processing_stage',
+        stage: 'preparing',
+        message: 'إعداد الإجابة...',
+        emoji: '✍️', 
+        progress: 75,
+        sessionId
+      })}\n\n`);
+    }, 1000);
 
-    await new Promise(resolve => setTimeout(resolve, 800));
+    setTimeout(() => {
+      res.write(`data: ${JSON.stringify({
+        type: 'processing_stage',
+        stage: 'writing',
+        message: 'بدء الكتابة...',
+        emoji: '💭',
+        progress: 90,
+        sessionId
+      })}\n\n`);
+    }, 1500);
 
-    // Stage 3: Preparing response
-    res.write(`data: ${JSON.stringify({
-      type: 'processing_stage',
-      stage: 'preparing',
-      message: 'إعداد الإجابة...',
-      emoji: '✍️', 
-      progress: 75,
-      sessionId
-    })}\n\n`);
-
-    await new Promise(resolve => setTimeout(resolve, 600));
-
-    // Stage 4: Start writing
-    res.write(`data: ${JSON.stringify({
-      type: 'processing_stage',
-      stage: 'writing',
-      message: 'بدء الكتابة...',
-      emoji: '💭',
-      progress: 90,
-      sessionId
-    })}\n\n`);
-
-    await new Promise(resolve => setTimeout(resolve, 400));
-
-    // Now get the actual response from AI
+    // Get AI response in parallel while showing progress
     const chatResult = await handleChatMessage(message, sessionId, userId);
     const responseText = chatResult.response;
 
@@ -103,8 +99,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         sessionId
       })}\n\n`);
 
-      // Realistic typing speed with longer delays
-      const delay = Math.random() * 200 + 150; // 150-350ms per word
+      // Faster typing speed for better UX
+      const delay = Math.random() * 80 + 40; // 40-120ms per word
       await new Promise(resolve => setTimeout(resolve, delay));
     }
 

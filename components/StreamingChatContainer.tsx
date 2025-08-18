@@ -101,12 +101,16 @@ export default function StreamingChatContainer() {
             try {
               const data = JSON.parse(line.slice(6));
               
+              console.log('📡 Received streaming data:', data.type, data);
+              
               switch (data.type) {
                 case 'typing_start':
                   console.log('🔄 Typing started');
+                  setIsProcessing(true);
                   break;
                   
                 case 'processing_stage':
+                  console.log('📊 Processing stage:', data.message, data.progress + '%');
                   setProcessingStage({
                     stage: data.stage,
                     message: data.message,
@@ -121,6 +125,7 @@ export default function StreamingChatContainer() {
                   break;
                   
                 case 'text_chunk':
+                  console.log('✍️ Text chunk:', data.text.length, 'chars, progress:', data.progress + '%');
                   setCurrentStreamingMessage(data.text);
                   break;
                   
@@ -219,7 +224,7 @@ export default function StreamingChatContainer() {
                 <div className="bg-white border border-gray-200 text-gray-900 rounded-2xl px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm">
                   <div className="flex items-center gap-3">
                     <span className="text-gray-700 font-medium">
-                      {processingStage?.message || 'جاري المعالجة...'}
+                      {processingStage?.message || (isProcessing ? 'جاري المعالجة...' : 'في انتظار...')}
                     </span>
                     <div className="flex gap-1">
                       <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
