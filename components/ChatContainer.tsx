@@ -68,7 +68,9 @@ export default function ChatContainer() {
       metadata: { showSampleQuestions: true }
     }]);
 
-    return () => socketInstance.close();
+    return () => {
+      socketInstance.close();
+    };
   }, [sessionId]);
 
   useEffect(() => {

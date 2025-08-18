@@ -4,10 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 export interface SessionData {
   id: string;
   sessionId: string;
-  userId?: string;
+  userId: string | null;
   deviceId: string;
-  userAgent?: string;
-  ipAddress?: string;
+  userAgent: string | null;
+  ipAddress: string | null;
   isActive: boolean;
   createdAt: Date;
   lastActive: Date;

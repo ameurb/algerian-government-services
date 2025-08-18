@@ -11,11 +11,11 @@ export class RateLimiter {
     // Cleanup expired entries every 5 minutes
     this.cleanupInterval = setInterval(() => {
       const now = Date.now();
-      for (const [key, entry] of this.cache.entries()) {
+      this.cache.forEach((entry, key) => {
         if (now > entry.resetTime) {
           this.cache.delete(key);
         }
-      }
+      });
     }, 5 * 60 * 1000);
   }
 

@@ -124,7 +124,7 @@ class AlgerianServicesAPI {
       if (error instanceof APIError) {
         throw error;
       }
-      throw new APIError(`Network Error: ${error.message}`, 0, { originalError: error });
+      throw new APIError(`Network Error: ${error instanceof Error ? error.message : 'Unknown error'}`, 0, { originalError: error });
     }
   }
 
@@ -271,6 +271,8 @@ async function examples() {
 }
 
 // React Hook for TypeScript projects
+import React from 'react';
+
 export function useAlgerianServices(apiKey: string) {
   const [api] = React.useState(() => new AlgerianServicesAPI({ apiKey }));
   const [loading, setLoading] = React.useState(false);
