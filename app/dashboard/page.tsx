@@ -183,6 +183,7 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* API Usage Examples */}
         <div style={{ 
           marginTop: '30px', 
           padding: '20px', 
@@ -190,13 +191,149 @@ export default function Dashboard() {
           border: '1px solid #ffeaa7', 
           borderRadius: '8px' 
         }}>
-          <h3 style={{ margin: '0 0 10px 0', color: '#856404' }}>💡 API Usage</h3>
-          <p style={{ margin: '0 0 10px 0', color: '#856404' }}>
-            Use API key: <code style={{ background: '#f8f9fa', padding: '2px 6px', borderRadius: '4px' }}>dz_live_demo123</code>
-          </p>
-          <p style={{ margin: '0', color: '#856404', fontSize: '14px' }}>
-            Test API: curl -H "Authorization: Bearer dz_live_demo123" https://api.findapply.com:8081/stats
-          </p>
+          <h3 style={{ margin: '0 0 15px 0', color: '#856404' }}>💡 API Usage Examples</h3>
+          
+          <div style={{ marginBottom: '15px' }}>
+            <p style={{ margin: '0 0 5px 0', color: '#856404', fontWeight: 'bold' }}>
+              🔑 API Key: <code style={{ background: '#f8f9fa', padding: '4px 8px', borderRadius: '4px', fontSize: '14px' }}>dz_live_demo123</code>
+            </p>
+            <p style={{ margin: '0 0 10px 0', color: '#856404', fontSize: '12px' }}>
+              Base URL: <code>http://localhost:8081</code> or <code>https://api.findapply.com:8081</code>
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '15px' }}>
+            
+            {/* Search Services Example */}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '15px', 
+              borderRadius: '6px',
+              border: '1px solid #e9ecef'
+            }}>
+              <h4 style={{ margin: '0 0 10px 0', color: '#495057' }}>🔍 Search Services</h4>
+              <pre style={{ 
+                background: '#343a40', 
+                color: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '4px', 
+                fontSize: '12px',
+                overflow: 'auto',
+                margin: '0'
+              }}>
+{`curl -H "Authorization: Bearer dz_live_demo123" \\
+  -X POST http://localhost:8081/search \\
+  -H "Content-Type: application/json" \\
+  -d '{"query": "National ID", "limit": 5}'`}
+              </pre>
+            </div>
+
+            {/* JavaScript Example */}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '15px', 
+              borderRadius: '6px',
+              border: '1px solid #e9ecef'
+            }}>
+              <h4 style={{ margin: '0 0 10px 0', color: '#495057' }}>📝 JavaScript</h4>
+              <pre style={{ 
+                background: '#343a40', 
+                color: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '4px', 
+                fontSize: '12px',
+                overflow: 'auto',
+                margin: '0'
+              }}>
+{`const response = await fetch('http://localhost:8081/search', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer dz_live_demo123',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    query: 'National ID',
+    limit: 5
+  })
+});
+const data = await response.json();
+console.log('Found', data.count, 'services');`}
+              </pre>
+            </div>
+
+            {/* Python Example */}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '15px', 
+              borderRadius: '6px',
+              border: '1px solid #e9ecef'
+            }}>
+              <h4 style={{ margin: '0 0 10px 0', color: '#495057' }}>🐍 Python</h4>
+              <pre style={{ 
+                background: '#343a40', 
+                color: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '4px', 
+                fontSize: '12px',
+                overflow: 'auto',
+                margin: '0'
+              }}>
+{`import requests
+
+headers = {
+    'Authorization': 'Bearer dz_live_demo123',
+    'Content-Type': 'application/json'
+}
+data = {'query': 'National ID', 'limit': 5}
+
+response = requests.post(
+    'http://localhost:8081/search',
+    json=data, 
+    headers=headers
+)
+result = response.json()
+print(f"Found {result['count']} services")`}
+              </pre>
+            </div>
+
+            {/* Streaming Example */}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '15px', 
+              borderRadius: '6px',
+              border: '1px solid #e9ecef'
+            }}>
+              <h4 style={{ margin: '0 0 10px 0', color: '#495057' }}>🌊 Streaming Search</h4>
+              <pre style={{ 
+                background: '#343a40', 
+                color: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '4px', 
+                fontSize: '12px',
+                overflow: 'auto',
+                margin: '0'
+              }}>
+{`curl -H "Authorization: Bearer dz_live_demo123" \\
+  -X POST http://localhost:8081/stream/search \\
+  -H "Content-Type: application/json" \\
+  -d '{"query": "Company", "chunkSize": 1}' \\
+  --no-buffer`}
+              </pre>
+            </div>
+
+          </div>
+
+          <div style={{ 
+            marginTop: '15px', 
+            padding: '12px', 
+            background: '#d1ecf1', 
+            border: '1px solid #bee5eb', 
+            borderRadius: '6px' 
+          }}>
+            <p style={{ margin: '0', color: '#0c5460', fontSize: '13px' }}>
+              <strong>📚 Complete API Documentation:</strong> Visit <a href="/api-documentation" style={{ color: '#0c5460' }}>API-DOCUMENTATION.md</a> for full examples in JavaScript, Python, TypeScript, and PHP.
+            </p>
+          </div>
         </div>
       </main>
     </div>
