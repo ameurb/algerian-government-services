@@ -90,8 +90,8 @@ interface MCPToolResult {
 
 // Execute MCP tool calls
 async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
-  const apiBaseUrl = 'http://localhost:8081'; // Direct MCP server connection
-  console.log('[AI-MCP] Attempting to connect to MCP server directly');
+  const apiBaseUrl = process.env.MCP_SERVER_URL || 'http://localhost:8080'; // Direct MCP server connection
+  console.log('[AI-MCP] Attempting to connect to MCP server at:', apiBaseUrl);
   
   try {
     switch (toolCall.name) {
@@ -201,12 +201,19 @@ MANDATORY PROCESS:
 4. For English queries, search and respond in English
 5. Always call tools before responding
 
-SMART SEARCH TRANSLATION:
-- Arabic: "بطاقة الهوية" / "بطاقة التعريف" → Search: "National ID"
-- Arabic: "جواز السفر" → Search: "Passport"  
-- Arabic: "شهادة ميلاد" → Search: "Birth certificate"
-- Arabic: "استثمار" → Search: "Business" or "Support"
-- Arabic: "تجارة" → Search: "Company" or "Business"
+INTELLIGENT SEARCH STRATEGY:
+- "بطاقة الهوية" → Try: "التعريف", "ID", "بيومترية", "وطنية" 
+- "منح التعليم" → Try: "منحة", "grant", "scholarship", "تعليم", "education"
+- "تأسيس شركة" → Try: "شركة", "company", "تسجيل", "business", "استثمار"
+- "جواز السفر" → Try: "passport", "بيومتري", "سفر"
+- "رخصة السياقة" → Try: "driving", "license", "قيادة", "سياقة"
+
+🧠 AI SEARCH RULES:
+1. Try multiple related terms, not just exact matches
+2. Search in both Arabic and English contexts
+3. Use semantic understanding - if "بطاقة الهوية" fails, try broader "ID" or "التعريف"
+4. For education queries, try both "تعليم" and "منحة" categories
+5. For business queries, try "BUSINESS", "EMPLOYMENT", "TAXATION" categories
 
 CONVERSATION STYLE:
 - Be friendly, helpful, and conversational
@@ -278,20 +285,24 @@ RESPONSE APPROACH:
 4. **Add personality**: Be naturally helpful and conversational
 5. **End with engagement**: "What else can I help you with?" or "Need more details on anything?"
 
-INFORMATION PRESENTATION:
-- Start directly with the information (no "رائع!" or "Great!" at the beginning)
-- Be conversational but not overly enthusiastic
-- Include ONLY the most important details: key requirements, main fees, one useful link
-- Don't repeat information between services
-- End with friendly engagement
-- For Arabic: Start naturally like "للحصول على..." or "يمكنك..."
-- For English: Start naturally like "To get..." or "You can..."
+🎯 RESPONSE STRATEGY:
+1. **When services found**: Present the most relevant service with key details
+2. **When no exact match**: Suggest related services or broader categories
+3. **Be contextually intelligent**: Understand what the user really needs
+4. **Provide actionable guidance**: Next steps, requirements, where to go
 
-RESPONSE LENGTH:
-- Maximum 4-5 sentences for simple queries
-- Focus on the MAIN service that best answers the question
-- Skip redundant services or details
-- Be conversational but brief
+📝 RESPONSE FORMAT:
+- Start naturally: "للحصول على..." or "يمكنك..." (Arabic) / "To get..." (English)
+- Focus on the MAIN service that answers the question
+- Include essential info: requirements, fees, duration, where to apply
+- End with helpful engagement: "هل تحتاج تفاصيل أكثر؟" / "Need more details?"
+- Keep it conversational and helpful, not robotic
+
+🤖 AI INTELLIGENCE:
+- If "بطاقة الهوية" search fails, automatically suggest ID-related services
+- If "منح التعليم" not found, suggest education or scholarship services  
+- Always try to help, even with partial matches
+- Use reasoning and context, not just keyword matching
 
 CRITICAL: Be like ChatGPT - helpful, friendly, concise, and adapt to user's language.`
       },

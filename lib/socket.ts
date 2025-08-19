@@ -314,10 +314,12 @@ async function searchServices(query: string, sessionId: string, messageId: strin
   
   // Arabic to English query translation for better search results
   const queryTranslations: Record<string, string> = {
-    'بطاقة الهوية': 'National ID',
-    'بطاقة التعريف': 'National ID', 
-    'بطاقة التعريف الوطنية': 'National ID',
-    'بطاقة التعريف الوطنية البيومترية': 'National ID',
+    'بطاقة الهوية': 'بطاقة التعريف',
+    'بطاقة التعريف': 'بطاقة التعريف', 
+    'بطاقة التعريف الوطنية': 'بطاقة التعريف',
+    'بطاقة التعريف الوطنية البيومترية': 'بطاقة التعريف',
+    'National ID': 'بطاقة التعريف',
+    'ID card': 'بطاقة التعريف',
     'جواز السفر': 'Passport',
     'شهادة الميلاد': 'Birth certificate',
     'رخصة القيادة': 'Driving license',
@@ -405,18 +407,38 @@ Respond with ONLY the category name, nothing else.`
     ChatLogger.debug('SEARCH', sessionId, `No category detected for ${messageId}, using general search`);
   }
 
-  // Translate Arabic queries to English for better search results
-  let searchQuery = query;
-  for (const [arabicTerm, englishTerm] of Object.entries(queryTranslations)) {
-    if (query.includes(arabicTerm)) {
-      searchQuery = englishTerm;
-      ChatLogger.debug('SEARCH', sessionId, `Translated query for ${messageId}`, { 
+  // Translate queries for better search results
+  let searchQueries = [query]; // Start with original query
+  
+  // Add translated variations
+  for (const [inputTerm, translatedTerm] of Object.entries(queryTranslations)) {
+    if (query.toLowerCase().includes(inputTerm.toLowerCase())) {
+      if (!searchQueries.includes(translatedTerm)) {
+        searchQueries.push(translatedTerm);
+      }
+      ChatLogger.debug('SEARCH', sessionId, `Added translated query for ${messageId}`, { 
         originalQuery: query,
-        translatedQuery: searchQuery,
-        arabicTerm,
-        englishTerm 
+        translatedQuery: translatedTerm,
+        inputTerm,
+        translatedTerm 
       });
-      break;
+    }
+  }
+  
+  // Add keyword variations for common terms
+  const keywordVariations: Record<string, string[]> = {
+    'بطاقة الهوية': ['بطاقة التعريف', 'التعريف الوطنية', 'ID', 'هوية'],
+    'منح التعليم': ['منحة', 'تعليم', 'جامعة', 'دراسة', 'education', 'grant'],
+    'تأسيس شركة': ['شركة', 'تجارة', 'استثمار', 'company', 'business'],
+  };
+  
+  for (const [mainTerm, variations] of Object.entries(keywordVariations)) {
+    if (query.toLowerCase().includes(mainTerm.toLowerCase())) {
+      variations.forEach(variation => {
+        if (!searchQueries.includes(variation)) {
+          searchQueries.push(variation);
+        }
+      });
     }
   }
 
@@ -425,12 +447,14 @@ Respond with ONLY the category name, nothing else.`
   ChatLogger.debug('SEARCH', sessionId, `Attempting MCP server search for ${messageId}`, { 
     mcpServerUrl,
     originalQuery: query,
-    searchQuery,
+    searchQueries: searchQueries,
     category: detectedCategory 
   });
 
   try {
     const mcpStart = Date.now();
+    // Try MCP server with primary search query
+    const primaryQuery = searchQueries[0];
     const mcpResponse = await fetch(`${mcpServerUrl}/search`, {
       method: 'POST',
       headers: {
@@ -438,7 +462,8 @@ Respond with ONLY the category name, nothing else.`
         'Authorization': `Bearer ${process.env.MCP_API_KEY}`,
       },
       body: JSON.stringify({
-        query: searchQuery,
+        query: primaryQuery,
+        alternateQueries: searchQueries.slice(1),
         category: detectedCategory,
         limit: 5
       }),
@@ -472,20 +497,29 @@ Respond with ONLY the category name, nothing else.`
   }
 
   // Fallback to direct database search
-  ChatLogger.info('SEARCH', sessionId, `Using direct database search for ${messageId}`);
+  ChatLogger.info('SEARCH', sessionId, `Using direct database search for ${messageId}`, {
+    searchQueries: searchQueries
+  });
   const dbStart = Date.now();
+  
+  const searchConditions = [];
+  
+  // Create OR conditions for each search query
+  for (const searchQuery of searchQueries) {
+    searchConditions.push(
+      { name: { contains: searchQuery, mode: 'insensitive' } },
+      { nameEn: { contains: searchQuery, mode: 'insensitive' } },
+      { description: { contains: searchQuery, mode: 'insensitive' } },
+      { descriptionEn: { contains: searchQuery, mode: 'insensitive' } },
+      { subcategory: { contains: searchQuery, mode: 'insensitive' } },
+      { subcategoryEn: { contains: searchQuery, mode: 'insensitive' } }
+    );
+  }
   
   const whereClause: any = {
     isActive: true,
+    OR: searchConditions,
   };
-
-  // Add text search
-  whereClause.OR = [
-    { name: { contains: query, mode: 'insensitive' } },
-    { nameEn: { contains: query, mode: 'insensitive' } },
-    { description: { contains: query, mode: 'insensitive' } },
-    { descriptionEn: { contains: query, mode: 'insensitive' } },
-  ];
 
   if (detectedCategory) {
     whereClause.category = detectedCategory;
