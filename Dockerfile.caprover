@@ -17,6 +17,10 @@ RUN npx prisma generate
 # Build Next.js application
 RUN npm run build
 
+# Copy static assets for standalone mode
+RUN cp -r .next/static .next/standalone/.next/static
+RUN cp -r public .next/standalone/public
+
 # Remove dev dependencies to reduce image size
 RUN npm prune --production
 
