@@ -88,72 +88,49 @@ interface MCPToolResult {
   error?: string;
 }
 
-// Execute MCP tool calls
+// Execute MCP tool calls with AI semantic search
 async function executeMCPTool(toolCall: MCPToolCall): Promise<MCPToolResult> {
-  const apiBaseUrl = process.env.MCP_SERVER_URL || 'http://localhost:8080'; // Direct MCP server connection
-  console.log('[AI-MCP] Attempting to connect to MCP server at:', apiBaseUrl);
+  console.log('[AI-MCP] Executing tool with AI semantic search:', toolCall.name);
   
   try {
     switch (toolCall.name) {
       case 'search_government_services':
-        const searchResponse = await fetch(`${apiBaseUrl}/search`, {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer dz_live_demo123`
-          },
-          body: JSON.stringify({
-            query: toolCall.parameters.query,
-            category: toolCall.parameters.category,
-            limit: toolCall.parameters.limit || 5
-          })
-        });
+        // Use AI semantic search instead of keyword matching
+        const { AISemanticSearch } = await import('./ai-semantic-search');
+        const semanticResults = await AISemanticSearch.searchWithAI(toolCall.parameters.query);
         
-        if (!searchResponse.ok) {
-          throw new Error(`Search failed: ${searchResponse.statusText}`);
-        }
-        
-        const searchResult = await searchResponse.json();
-        console.log('[AI-MCP] Search result:', JSON.stringify(searchResult, null, 2));
         return {
-          toolName: 'search_government_services',
-          result: searchResult,
+          toolName: toolCall.name,
+          result: semanticResults,
           success: true
         };
-
+        
       case 'get_service_details':
-        const detailResponse = await fetch(`${apiBaseUrl}/service/${toolCall.parameters.serviceId}`, {
-          headers: {
-            'Authorization': `Bearer dz_live_demo123`
-          }
+        // Get service details from database
+        const { prisma } = await import('./prisma');
+        const service = await prisma.governmentService.findUnique({
+          where: { id: toolCall.parameters.serviceId }
         });
         
-        if (!detailResponse.ok) {
-          throw new Error(`Service details failed: ${detailResponse.statusText}`);
-        }
-        
-        const detailResult = await detailResponse.json();
         return {
-          toolName: 'get_service_details',
-          result: detailResult,
+          toolName: toolCall.name,
+          result: service,
           success: true
         };
 
       case 'get_services_statistics':
-        const statsResponse = await fetch(`${apiBaseUrl}/stats`, {
-          headers: {
-            'Authorization': `Bearer dz_live_demo123`
-          }
+        // Get statistics from database
+        const { prisma: statsPrisma } = await import('./prisma');
+        const totalServices = await statsPrisma.governmentService.count({ where: { isActive: true } });
+        const byCategory = await statsPrisma.governmentService.groupBy({
+          by: ['category'],
+          where: { isActive: true },
+          _count: true
         });
         
-        if (!statsResponse.ok) {
-          throw new Error(`Statistics failed: ${statsResponse.statusText}`);
-        }
-        
-        const statsResult = await statsResponse.json();
         return {
-          toolName: 'get_services_statistics',
-          result: statsResult,
+          toolName: toolCall.name,
+          result: { totalServices, byCategory },
           success: true
         };
 
@@ -201,19 +178,19 @@ MANDATORY PROCESS:
 4. For English queries, search and respond in English
 5. Always call tools before responding
 
-INTELLIGENT SEARCH STRATEGY:
-- "بطاقة الهوية" → Try: "التعريف", "ID", "بيومترية", "وطنية" 
-- "منح التعليم" → Try: "منحة", "grant", "scholarship", "تعليم", "education"
-- "تأسيس شركة" → Try: "شركة", "company", "تسجيل", "business", "استثمار"
-- "جواز السفر" → Try: "passport", "بيومتري", "سفر"
-- "رخصة السياقة" → Try: "driving", "license", "قيادة", "سياقة"
+🤖 AI SEMANTIC SEARCH:
+- Understand user intent even with typos: "بطاقه الهويه" → "national ID card"  
+- Handle misspellings naturally: "منح التعليمم" → "education grants"
+- Use semantic understanding: "تاسيس شركه" → "company registration"
+- No exact keyword matching required - AI understands meaning
+- Works with any language, any spelling, any phrasing
 
-🧠 AI SEARCH RULES:
-1. Try multiple related terms, not just exact matches
-2. Search in both Arabic and English contexts
-3. Use semantic understanding - if "بطاقة الهوية" fails, try broader "ID" or "التعريف"
-4. For education queries, try both "تعليم" and "منحة" categories
-5. For business queries, try "BUSINESS", "EMPLOYMENT", "TAXATION" categories
+🧠 INTELLIGENT PROCESSING:
+1. Analyze user intent using AI (handles typos automatically)
+2. Use semantic similarity instead of keyword matching  
+3. Rank results by relevance using AI reasoning
+4. Find services by meaning, not exact text
+5. Always provide helpful responses even for unclear queries
 
 CONVERSATION STYLE:
 - Be friendly, helpful, and conversational
@@ -299,10 +276,11 @@ RESPONSE APPROACH:
 - Keep it conversational and helpful, not robotic
 
 🤖 AI INTELLIGENCE:
-- If "بطاقة الهوية" search fails, automatically suggest ID-related services
-- If "منح التعليم" not found, suggest education or scholarship services  
-- Always try to help, even with partial matches
-- Use reasoning and context, not just keyword matching
+- Handle typos naturally: "بطاقه الهويه" → understands "بطاقة الهوية"
+- Understand intent regardless of spelling: "منح التعليمم" → education grants  
+- Use semantic reasoning, not keyword matching
+- Always provide helpful responses even for unclear or misspelled queries
+- Adapt to any language, spelling, or phrasing
 
 CRITICAL: Be like ChatGPT - helpful, friendly, concise, and adapt to user's language.`
       },
