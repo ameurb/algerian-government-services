@@ -22,6 +22,7 @@
     "test:atlas": "tsx test-atlas-connection.ts",
     "verify:deployment": "./verify-deployment.sh",
     "start:all": "concurrently \"npm start\" \"npm run mcp:http\"",
+    "start:production": "sh -c 'npm run mcp:http & npm start'",
     "production:setup": "npx prisma generate && npm run build && tsx prisma/enhanced_seed.ts"
   },
   "dependencies": {
