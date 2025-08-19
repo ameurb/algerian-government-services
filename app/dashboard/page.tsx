@@ -198,7 +198,7 @@ export default function Dashboard() {
               🔑 API Key: <code style={{ background: '#f8f9fa', padding: '4px 8px', borderRadius: '4px', fontSize: '14px' }}>dz_live_demo123</code>
             </p>
             <p style={{ margin: '0 0 10px 0', color: '#856404', fontSize: '12px' }}>
-              Base URL: <code>http://localhost:8081</code> or <code>https://api.findapply.com:8081</code>
+              Base URL: <code>http://localhost:8081</code> or <code>https://dzservices.findapply.com/api</code>
             </p>
           </div>
 
@@ -222,7 +222,7 @@ export default function Dashboard() {
                 margin: '0'
               }}>
 {`curl -H "Authorization: Bearer dz_live_demo123" \\
-  -X POST http://localhost:8081/search \\
+  -X POST https://dzservices.findapply.com/api/search \\
   -H "Content-Type: application/json" \\
   -d '{"query": "National ID", "limit": 5}'`}
               </pre>
@@ -245,7 +245,7 @@ export default function Dashboard() {
                 overflow: 'auto',
                 margin: '0'
               }}>
-{`const response = await fetch('http://localhost:8081/search', {
+{`const response = await fetch('https://dzservices.findapply.com/api/search', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer dz_live_demo123',
@@ -287,7 +287,7 @@ headers = {
 data = {'query': 'National ID', 'limit': 5}
 
 response = requests.post(
-    'http://localhost:8081/search',
+    'https://dzservices.findapply.com/api/search',
     json=data, 
     headers=headers
 )
@@ -314,7 +314,7 @@ print(f"Found {result['count']} services")`}
                 margin: '0'
               }}>
 {`curl -H "Authorization: Bearer dz_live_demo123" \\
-  -X POST http://localhost:8081/stream/search \\
+  -X POST https://dzservices.findapply.com/api/stream/search \\
   -H "Content-Type: application/json" \\
   -d '{"query": "Company", "chunkSize": 1}' \\
   --no-buffer`}

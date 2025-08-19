@@ -140,7 +140,7 @@ print_status "Application built successfully"
 print_info "Step 5: Starting Services with PM2"
 
 # Get domain from environment or use default
-DOMAIN=${DOMAIN:-"api.findapply.com"}
+DOMAIN=${DOMAIN:-"dzservices.findapply.com"}
 print_info "Configuring for domain: $DOMAIN"
 
 # Create PM2 ecosystem config for api.findapply.com
