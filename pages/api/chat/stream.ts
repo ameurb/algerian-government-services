@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { handleChatMessage } from '@/lib/socket';
+import { handleSimpleChatMessage } from '@/lib/simple-chat-handler';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -73,8 +73,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       })}\n\n`);
     }, 1500);
 
-    // Get AI response in parallel while showing progress
-    const chatResult = await handleChatMessage(message, sessionId, userId);
+    // Get response from direct database search while showing progress
+    const chatResult = await handleSimpleChatMessage(message, sessionId, userId);
     const responseText = chatResult.response;
 
     // Send writing start
