@@ -23,8 +23,8 @@ RUN npm run build
 # Copy static assets for standalone mode
 RUN cp -r .next/static .next/standalone/.next/static
 
-# Remove dev dependencies to reduce image size
-RUN npm prune --production
+# Keep concurrently for production startup
+# Note: We need concurrently to run both app and MCP server
 
 # Expose port
 EXPOSE 3030
@@ -33,5 +33,9 @@ EXPOSE 3030
 ENV NODE_ENV=production
 ENV PORT=3030
 
-# Start application using standalone server
-CMD ["node", ".next/standalone/server.js"]
+# Copy and make startup script executable
+COPY start-production.sh /app/start-production.sh
+RUN chmod +x /app/start-production.sh
+
+# Start both the app and MCP server for AI functionality
+CMD ["/app/start-production.sh"]
