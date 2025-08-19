@@ -70,7 +70,7 @@ export default function TestStreaming() {
       }
     } catch (error) {
       console.error('Streaming error:', error);
-      setMessages(prev => [...prev, `Error: ${error.message}`]);
+      setMessages(prev => [...prev, `Error: ${error instanceof Error ? error.message : 'Unknown error'}`]);
       setIsStreaming(false);
     }
   };
