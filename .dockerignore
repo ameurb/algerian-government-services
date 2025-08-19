@@ -1,97 +1,64 @@
-# 🐳 Docker Ignore - Algerian Government Services
+# 🐳 Docker Ignore - CapRover Deployment
 
-# Dependencies
-node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Next.js
-.next
-out
-build
+# Dependencies and cache
+node_modules/
+.npm
+.next/
+out/
+build/
+dist/
 
 # Environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
 
-# Testing
-coverage
-test-results-*.txt
-
-# Logs
-logs
+# Logs and runtime
+logs/
 *.log
-
-# Runtime data
-pids
+pids/
 *.pid
 *.seed
 *.pid.lock
 
-# IDE
-.vscode
-.idea
+# IDE and editors
+.vscode/
+.idea/
 *.swp
 *.swo
 
-# OS generated
+# OS files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-
-# Git
-.git
-.gitignore
-.gitattributes
-
-# CapRover deployment logs
-*.log
-
-# Windows
-Thumbs.db
-ehthumbs.db
 Desktop.ini
 
-# Documentation (not needed in container)
+# Git and version control
+.git/
+.gitignore
+
+# Documentation and examples
 README.md
-DEPLOYMENT.md
-DOMAIN-SETUP.md
-PRODUCTION-DEPLOY.md
-CAPROVER-DEPLOY.md
-API-DOCUMENTATION.md
-
-# Examples (not needed in production)
+*.md
 examples/
+docs/
 
-# Backup files
-*.backup
-*.bak
+# Development and deployment files
+deploy.sh
+verify-deployment.sh
+test-streaming.sh
+caprover-deploy.sh
+nginx-*.conf
+docker-compose.yml
+Dockerfile
 
 # Test files
-test-*.txt
-*-test-*.json
+test-*
+*-test-*
+coverage/
 
-# Cache directories
-.cache
-.parcel-cache
-
-# Temporary folders
+# Backup and temporary
+*.backup
+*.bak
 tmp/
 temp/
 
 # Claude Code
 .claude/
-
-# Deployment scripts (not needed in container)
-deploy.sh
-verify-deployment.sh
-test-streaming.sh
-nginx-*.conf
