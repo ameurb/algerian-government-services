@@ -28,6 +28,7 @@ export default function StreamingChatContainer() {
   const [currentStreamingMessage, setCurrentStreamingMessage] = useState<string>('');
   const [processingStage, setProcessingStage] = useState<ProcessingStage | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [streamingLogs, setStreamingLogs] = useState<string[]>([]);
   const [sessionId] = useState(() => uuidv4());
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -102,11 +103,14 @@ export default function StreamingChatContainer() {
               const data = JSON.parse(line.slice(6));
               
               console.log('📡 Received streaming data:', data.type, data);
+              setStreamingLogs(prev => [...prev, `${data.type}: ${JSON.stringify(data)}`]);
               
               switch (data.type) {
                 case 'typing_start':
                   console.log('🔄 Typing started');
                   setIsProcessing(true);
+                  setProcessingStage(null);
+                  setCurrentStreamingMessage('');
                   break;
                   
                 case 'processing_stage':
@@ -117,6 +121,8 @@ export default function StreamingChatContainer() {
                     emoji: data.emoji,
                     progress: data.progress
                   });
+                  // Force re-render
+                  setIsProcessing(true);
                   break;
                   
                 case 'writing_start':
@@ -278,6 +284,33 @@ export default function StreamingChatContainer() {
             </div>
           )}
           
+          {/* Debug Panel - Remove in production */}
+          {process.env.NODE_ENV === 'development' && (
+            <div style={{
+              position: 'fixed',
+              bottom: '10px',
+              right: '10px',
+              background: 'rgba(0,0,0,0.8)',
+              color: 'white',
+              padding: '10px',
+              borderRadius: '8px',
+              fontSize: '12px',
+              maxWidth: '300px',
+              maxHeight: '200px',
+              overflow: 'auto',
+              zIndex: 1000
+            }}>
+              <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>🔧 Streaming Debug</div>
+              <div>Processing: {isProcessing ? 'Yes' : 'No'}</div>
+              <div>Stage: {processingStage?.stage || 'None'}</div>
+              <div>Message: {processingStage?.message || 'None'}</div>
+              <div>Streaming Text: {currentStreamingMessage ? `${currentStreamingMessage.length} chars` : 'None'}</div>
+              <div style={{ marginTop: '5px', fontSize: '10px' }}>
+                Last logs: {streamingLogs.slice(-3).join(' | ')}
+              </div>
+            </div>
+          )}
+
           <div ref={messagesEndRef} />
         </div>
       </div>
