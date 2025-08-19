@@ -50,6 +50,15 @@ Thumbs.db
 # Git
 .git
 .gitignore
+.gitattributes
+
+# CapRover deployment logs
+*.log
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
 # Documentation (not needed in container)
 README.md
