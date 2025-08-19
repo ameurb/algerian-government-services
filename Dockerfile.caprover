@@ -27,5 +27,5 @@ EXPOSE 3030
 ENV NODE_ENV=production
 ENV PORT=3030
 
-# Start application
-CMD ["npm", "start"]
+# Start application using standalone server
+CMD ["node", ".next/standalone/server.js"]
