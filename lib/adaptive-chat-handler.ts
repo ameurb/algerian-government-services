@@ -135,7 +135,7 @@ async function analyzeDatabaseContent() {
     const categories = Array.from(new Set(services.map(s => s.category)));
     
     // Extract key terms using AI
-    const keyTerms = await extractKeyTermsFromContent(allText);
+    const keyTerms = await extractKeyTermsFromContent(allText.filter((text): text is string => text !== null));
     
     return {
       totalServices: services.length,
