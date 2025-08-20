@@ -361,9 +361,9 @@ async function generateAdaptiveResponse(
     const isArabic = userIntent.language === 'arabic';
     
     if (isArabic) {
-      return `لم أجد خدمات مطابقة لـ "${userIntent.userWants || 'طلبك'}".\n\n🔍 **جرب البحث عن:**\n${suggestions.map(term => `• ${term}`).join('\n')}\n\n💡 أو أعد صياغة سؤالك بطريقة مختلفة.`;
+      return `لم أجد خدمات مطابقة لـ "${userIntent.userWants || 'طلبك'}".\n\n🔍 **جرب البحث عن:**\n${suggestions.map((term: string) => `• ${term}`).join('\n')}\n\n💡 أو أعد صياغة سؤالك بطريقة مختلفة.`;
     } else {
-      return `I couldn't find services matching "${userIntent.userWants || 'your request'}".\n\n🔍 **Try searching for:**\n${suggestions.map(term => `• ${term}`).join('\n')}\n\n💡 Or try rephrasing your question differently.`;
+      return `I couldn't find services matching "${userIntent.userWants || 'your request'}".\n\n🔍 **Try searching for:**\n${suggestions.map((term: string) => `• ${term}`).join('\n')}\n\n💡 Or try rephrasing your question differently.`;
     }
   }
   
