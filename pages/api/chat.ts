@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { handleOptimizedChatMessage } from '@/lib/optimized-chat-handler';
+import { handleAdaptiveChatMessage } from '@/lib/adaptive-chat-handler';
 
 export default async function handler(
   req: NextApiRequest,
@@ -16,7 +16,7 @@ export default async function handler(
   }
 
   try {
-    const result = await handleOptimizedChatMessage(message, sessionId, userId);
+    const result = await handleAdaptiveChatMessage(message, sessionId, userId);
     return res.status(200).json(result);
   } catch (error) {
     console.error('Chat API error:', error);
