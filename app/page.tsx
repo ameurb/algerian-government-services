@@ -2,7 +2,7 @@ import StreamingChatContainer from '@/components/StreamingChatContainer';
 
 export default function Home() {
   return (
-    <main className="h-screen">
+    <main className="h-svh">
       <StreamingChatContainer />
     </main>
   );
