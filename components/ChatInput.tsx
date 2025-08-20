@@ -86,8 +86,7 @@ export default function ChatInput({
       <button
         type="submit"
         disabled={!message.trim() || disabled}
-        className="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-2xl px-4 sm:px-6 hover:from-blue-600 hover:to-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
-        style={{ minHeight: '53px' }}
+        className="bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-2xl px-4 sm:px-6 py-3 hover:from-blue-600 hover:to-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
       >
         <Send size={18} />
       </button>
