@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { handleSimpleChatMessage } from '@/lib/simple-chat-handler';
+import { handleOptimizedChatMessage } from '@/lib/optimized-chat-handler';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -73,8 +73,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       })}\n\n`);
     }, 1500);
 
-    // Get response from direct database search while showing progress
-    const chatResult = await handleSimpleChatMessage(message, sessionId, userId);
+    // Get response from optimized database search with enhanced formatting while showing progress
+    const chatResult = await handleOptimizedChatMessage(message, sessionId, userId);
     const responseText = chatResult.response;
 
     // Send writing start
