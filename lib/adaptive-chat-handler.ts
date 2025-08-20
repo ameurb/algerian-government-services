@@ -356,14 +356,14 @@ async function generateAdaptiveResponse(
 ): Promise<string> {
   
   if (searchResult.count === 0) {
-    // Generate suggestions based on actual database content
-    const suggestions = databaseContent.keyTerms.slice(0, 8);
-    const isArabic = userIntent.language === 'arabic';
+    // Generate suggestions from actual database service names
+    const popularServices = databaseContent.services.slice(0, 8).map(s => s.name);
+    const isArabic = /[\u0600-\u06FF]/.test(userQuery);
     
     if (isArabic) {
-      return `لم أجد خدمات مطابقة لـ "${userIntent.userWants || 'طلبك'}".\n\n🔍 **جرب البحث عن:**\n${suggestions.map((term: string) => `• ${term}`).join('\n')}\n\n💡 أو أعد صياغة سؤالك بطريقة مختلفة.`;
+      return `لم أجد خدمات مطابقة لـ "${userQuery}".\n\n🔍 **الخدمات المتاحة في قاعدة البيانات:**\n${popularServices.map((name: string) => `• ${name}`).join('\n')}\n\n💡 جرب إعادة صياغة سؤالك أو استخدم كلمات مفتاحية من الخدمات أعلاه.`;
     } else {
-      return `I couldn't find services matching "${userIntent.userWants || 'your request'}".\n\n🔍 **Try searching for:**\n${suggestions.map((term: string) => `• ${term}`).join('\n')}\n\n💡 Or try rephrasing your question differently.`;
+      return `I couldn't find services matching "${userQuery}".\n\n🔍 **Available services in database:**\n${popularServices.map((name: string) => `• ${name}`).join('\n')}\n\n💡 Try rephrasing your question or use keywords from the services above.`;
     }
   }
   
@@ -397,13 +397,20 @@ FORMAT:
         },
         {
           role: 'user',
-          content: `User Query: "${searchResult.query}"
-User Intent: ${JSON.stringify(userIntent)}
+          content: `User asked: "${searchResult.query}"
 
-Search Results (${searchResult.count} found):
-${JSON.stringify(searchResult.results.slice(0, 3), null, 2)}
+They want to know about: ${userIntent.userWants}
 
-Create a smart response that directly answers their question using only this information.`
+Most relevant service found:
+Name: ${searchResult.results[0]?.name}
+Description: ${searchResult.results[0]?.description}
+Requirements: ${JSON.stringify(searchResult.results[0]?.requirements)}
+Fee: ${searchResult.results[0]?.fee}
+Duration: ${searchResult.results[0]?.duration}
+Office: ${searchResult.results[0]?.office}
+Contact: ${searchResult.results[0]?.contactInfo}
+
+Create a natural response in ${userIntent.language} that directly tells them what they need to know about "${searchResult.query}".`
         }
       ],
       max_tokens: 600,
@@ -442,7 +449,8 @@ function generateSimpleAdaptiveResponse(searchResult: any, userIntent: any): str
   let response = '';
   
   if (isArabic) {
-    response = `بخصوص ${userIntent.userWants || 'طلبك'}:\n\n`;
+    // Use the original query instead of generic intent
+    response = `بخصوص "${searchResult.query}":\n\n`;
     response += `**${mainService.name}**\n`;
     
     if (mainService.description) {
@@ -460,17 +468,18 @@ function generateSimpleAdaptiveResponse(searchResult: any, userIntent: any): str
     
     relevantFields.forEach(field => {
       const value = mainService[field.key];
-      if (value && value !== 'غير محدد') {
-        if (Array.isArray(value)) {
+      if (value && value !== 'غير محدد' && value !== '') {
+        if (Array.isArray(value) && value.length > 0) {
           response += `${field.emoji} **${field.label}:**\n${value.slice(0, 3).map(item => `• ${item}`).join('\n')}\n\n`;
-        } else {
+        } else if (!Array.isArray(value)) {
           response += `${field.emoji} **${field.label}:** ${value}\n`;
         }
       }
     });
     
   } else {
-    response = `Regarding ${userIntent.userWants || 'your request'}:\n\n`;
+    // Use the original query instead of generic intent
+    response = `Regarding "${searchResult.query}":\n\n`;
     response += `**${mainService.name}**\n`;
     
     if (mainService.description) {
@@ -488,10 +497,10 @@ function generateSimpleAdaptiveResponse(searchResult: any, userIntent: any): str
     
     relevantFields.forEach(field => {
       const value = mainService[field.key];
-      if (value && value !== 'غير محدد') {
-        if (Array.isArray(value)) {
+      if (value && value !== 'غير محدد' && value !== '') {
+        if (Array.isArray(value) && value.length > 0) {
           response += `${field.emoji} **${field.label}:**\n${value.slice(0, 3).map(item => `• ${item}`).join('\n')}\n\n`;
-        } else {
+        } else if (!Array.isArray(value)) {
           response += `${field.emoji} **${field.label}:** ${value}\n`;
         }
       }
