@@ -23,9 +23,6 @@ RUN npm run build
 # Copy static assets for standalone mode
 RUN cp -r .next/static .next/standalone/.next/static
 
-# Copy startup script
-COPY start-production.js ./start-production.js
-
 # Expose port
 EXPOSE 3030
 
@@ -33,5 +30,5 @@ EXPOSE 3030
 ENV NODE_ENV=production
 ENV PORT=3030
 
-# Start both the app and MCP server for AI functionality
-CMD ["node", "start-production.js"]
+# Start the Next.js application directly - simple and reliable
+CMD ["node", ".next/standalone/server.js"]
