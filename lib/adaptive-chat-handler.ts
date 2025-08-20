@@ -306,6 +306,7 @@ async function performAdaptiveSearch(
     await calculateRelevanceScore(userQuery, services.slice(0, 3)) : 0;
   
   return {
+    query: userQuery, // Preserve the original user query
     count: services.length,
     results: services,
     relevanceScore,
@@ -437,11 +438,12 @@ Create a natural response in ${userIntent.language} that directly tells them wha
 function generateSimpleAdaptiveResponse(searchResult: any, userIntent: any): string {
   const services = searchResult.results;
   const isArabic = userIntent.language === 'arabic';
+  const userQuery = searchResult.query || 'طلبك';
   
   if (services.length === 0) {
     return isArabic 
-      ? 'لم أجد معلومات مطابقة لطلبك. يرجى إعادة صياغة السؤال.'
-      : 'No matching information found. Please rephrase your question.';
+      ? `لم أجد معلومات مطابقة لـ "${userQuery}". يرجى إعادة صياغة السؤال.`
+      : `No matching information found for "${userQuery}". Please rephrase your question.`;
   }
   
   // Focus on the most relevant service
@@ -449,8 +451,8 @@ function generateSimpleAdaptiveResponse(searchResult: any, userIntent: any): str
   let response = '';
   
   if (isArabic) {
-    // Use the original query instead of generic intent
-    response = `بخصوص "${searchResult.query}":\n\n`;
+    // Use the original user query, ensure it's not undefined
+    response = `بخصوص "${userQuery}":\n\n`;
     response += `**${mainService.name}**\n`;
     
     if (mainService.description) {
@@ -478,8 +480,8 @@ function generateSimpleAdaptiveResponse(searchResult: any, userIntent: any): str
     });
     
   } else {
-    // Use the original query instead of generic intent
-    response = `Regarding "${searchResult.query}":\n\n`;
+    // Use the original user query, ensure it's not undefined
+    response = `Regarding "${userQuery}":\n\n`;
     response += `**${mainService.name}**\n`;
     
     if (mainService.description) {
