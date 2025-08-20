@@ -1,6 +1,50 @@
 import { prisma } from './prisma';
 import { openai } from './openai';
 
+// Safety function to detect if message is system-generated (prevent feedback loops)
+function isSystemGeneratedMessage(message: string): boolean {
+  const systemPatterns = [
+    'لاستخراج', // "To extract/obtain"
+    'للحصول على', // "To get"
+    'بخصوص', // "Regarding"  
+    'ما تحتاجه:', // "What you need:"
+    'المتطلبات:', // "Requirements:"
+    'Regarding "',
+    'To get a',
+    'What you need:',
+    'Requirements:',
+    '**التكلفة:**', // "Cost:"
+    '**المدة:**', // "Duration:"
+    '📍 **أين تذهب:**', // "Where to go:"
+    '📞 **للاستفسار:**', // "For inquiries:"
+    '🌐 **رابط الخدمة:**' // "Service link:"
+  ];
+  
+  // Check if message contains multiple system response patterns
+  const patternMatches = systemPatterns.filter(pattern => 
+    message.includes(pattern)
+  ).length;
+  
+  // If message contains 2+ system patterns, it's likely a system response
+  if (patternMatches >= 2) {
+    return true;
+  }
+  
+  // Check if message is too long and formatted like a response
+  if (message.length > 200 && (
+    message.includes('**') || 
+    message.includes('📝') || 
+    message.includes('💰') ||
+    message.includes('⏱️') ||
+    message.includes('📍') ||
+    message.includes('📞')
+  )) {
+    return true;
+  }
+  
+  return false;
+}
+
 // Fully adaptive chat handler - learns from database content dynamically
 export async function handleAdaptiveChatMessage(
   message: string,
@@ -10,6 +54,22 @@ export async function handleAdaptiveChatMessage(
   
   const startTime = Date.now();
   console.log('[ADAPTIVE-CHAT] Processing:', message);
+  
+  // Safety check: Don't process if message looks like a system response
+  if (isSystemGeneratedMessage(message)) {
+    console.log('[ADAPTIVE-CHAT] Detected system message, ignoring');
+    const isArabic = /[\u0600-\u06FF]/.test(message);
+    return {
+      response: isArabic 
+        ? 'يبدو أنك أرسلت رد النظام. يرجى طرح سؤال جديد عن الخدمات الحكومية.'
+        : 'It seems you sent a system response. Please ask a new question about government services.',
+      metadata: { 
+        ignored: true, 
+        reason: 'system_message_detected',
+        processingTime: Date.now() - startTime 
+      }
+    };
+  }
   
   try {
     // Step 1: Dynamically analyze what's in the database
