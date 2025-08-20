@@ -132,7 +132,7 @@ async function analyzeDatabaseContent() {
     ]).filter(Boolean);
     
     // Extract unique categories dynamically
-    const categories = [...new Set(services.map(s => s.category))];
+    const categories = Array.from(new Set(services.map(s => s.category)));
     
     // Extract key terms using AI
     const keyTerms = await extractKeyTermsFromContent(allText);
