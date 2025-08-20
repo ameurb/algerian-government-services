@@ -31,8 +31,9 @@ export async function handleAdaptiveChatMessage(
       relevanceScore: searchResult.relevanceScore
     });
     
-    // Step 4: Generate intelligent response using database content and user intent
-    const responseText = await generateAdaptiveResponse(searchResult, userIntent, databaseContent);
+    // Step 4: Generate human-like response with tools and resources
+    const { generateHumanResponse } = await import('./human-response-generator');
+    const responseText = await generateHumanResponse(searchResult, message);
     
     // Step 5: Save to database (with error handling)
     try {
