@@ -66,7 +66,7 @@ export default function ChatInput({
           className={`w-full resize-none border border-gray-300 rounded-2xl px-4 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:text-gray-500 shadow-sm ${inputClasses} ${
             inputDirection === 'rtl' ? 'pr-12 pl-4' : 'pl-12 pr-4'
           }`}
-          style={{ minHeight: '48px', maxHeight: '120px' }}
+          style={{ minHeight: '53px', maxHeight: '132px' }}
         />
         
         <button
