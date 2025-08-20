@@ -19,8 +19,9 @@ export async function handleOptimizedChatMessage(
       searchTerms: searchResult.searchTerms
     });
     
-    // Step 2: Generate formatted response using templates
-    const responseText = generateFormattedResponse(searchResult, message);
+    // Step 2: Generate intelligent contextual response based on user query
+    const { generateIntelligentResponse } = await import('./ai-response-generator');
+    const responseText = await generateIntelligentResponse(searchResult, message);
     
     // Step 3: Save both messages to database (with error handling)
     try {
