@@ -357,13 +357,13 @@ async function generateAdaptiveResponse(
   
   if (searchResult.count === 0) {
     // Generate suggestions from actual database service names
-    const popularServices = databaseContent.services.slice(0, 8).map(s => s.name);
-    const isArabic = /[\u0600-\u06FF]/.test(userQuery);
+    const popularServices = databaseContent.services.slice(0, 8).map((s: any) => s.name);
+    const isArabic = /[\u0600-\u06FF]/.test(searchResult.query);
     
     if (isArabic) {
-      return `لم أجد خدمات مطابقة لـ "${userQuery}".\n\n🔍 **الخدمات المتاحة في قاعدة البيانات:**\n${popularServices.map((name: string) => `• ${name}`).join('\n')}\n\n💡 جرب إعادة صياغة سؤالك أو استخدم كلمات مفتاحية من الخدمات أعلاه.`;
+      return `لم أجد خدمات مطابقة لـ "${searchResult.query}".\n\n🔍 **الخدمات المتاحة في قاعدة البيانات:**\n${popularServices.map((name: string) => `• ${name}`).join('\n')}\n\n💡 جرب إعادة صياغة سؤالك أو استخدم كلمات مفتاحية من الخدمات أعلاه.`;
     } else {
-      return `I couldn't find services matching "${userQuery}".\n\n🔍 **Available services in database:**\n${popularServices.map((name: string) => `• ${name}`).join('\n')}\n\n💡 Try rephrasing your question or use keywords from the services above.`;
+      return `I couldn't find services matching "${searchResult.query}".\n\n🔍 **Available services in database:**\n${popularServices.map((name: string) => `• ${name}`).join('\n')}\n\n💡 Try rephrasing your question or use keywords from the services above.`;
     }
   }
   
