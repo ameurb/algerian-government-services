@@ -154,8 +154,20 @@ async function createComprehensiveSummary(services: any[], userQuery: string): P
   if (services.length === 0) {
     const isArabic = /[\u0600-\u06FF]/.test(userQuery);
     return isArabic 
-      ? `لم أجد معلومات عن "${userQuery}".\n\n💡 جرب البحث عن: بطاقة التعريف، جواز السفر، رخصة السياقة، تأسيس شركة`
-      : `No information found for "${userQuery}".\n\nTry searching for: National ID, Passport, Driving License, Company Registration`;
+      ? `## لم أجد معلومات عن "${userQuery}"\n\n### 💡 جرب البحث عن:\n\n` +
+        `<clickable>بطاقة التعريف</clickable>\n\n` +
+        `<clickable>جواز السفر</clickable>\n\n` +
+        `<clickable>رخصة السياقة</clickable>\n\n` +
+        `<clickable>تأسيس شركة</clickable>\n\n` +
+        `<clickable>منحة التعليم</clickable>\n\n` +
+        `<clickable>خدمات السكن</clickable>`
+      : `## No information found for "${userQuery}"\n\n### 💡 Try searching for:\n\n` +
+        `<clickable>National ID</clickable>\n\n` +
+        `<clickable>Passport</clickable>\n\n` +
+        `<clickable>Driving License</clickable>\n\n` +
+        `<clickable>Company Registration</clickable>\n\n` +
+        `<clickable>Education Grants</clickable>\n\n` +
+        `<clickable>Housing Services</clickable>`;
   }
   
   try {
@@ -170,23 +182,35 @@ async function createComprehensiveSummary(services: any[], userQuery: string): P
           content: `You are creating a comprehensive summary from multiple government services documents.
 
 🎯 **TASK:** 
-Analyze ALL the provided services and create ONE comprehensive, helpful response that addresses the user's query.
+Create a comprehensive markdown-formatted response that addresses the user's query.
 
-📋 **RULES:**
-1. **Synthesize information** from ALL provided services
-2. **Create complete picture** - combine related information
-3. **Natural language** - conversational and helpful
-4. **User's language** - Arabic if they asked in Arabic
-5. **Comprehensive but organized** - cover all aspects
-6. **Database content only** - no external information
+📋 **MARKDOWN FORMAT RULES:**
+1. **Use proper markdown syntax** - headers (##, ###), lists (-, *), bold (**text**)
+2. **Organize with headers** - clear sections and subsections
+3. **User's language** - Arabic if they asked in Arabic
+4. **Clickable suggestions** - format suggestions as simple text (no markdown in suggestions)
+5. **Database content only** - no external information
 
-✅ **APPROACH:**
-- If multiple services for same thing → combine into complete process
-- If different types → explain all options available
-- Include requirements, fees, duration, contacts from ALL relevant services
-- Provide complete guidance covering all aspects
+✅ **MARKDOWN STRUCTURE:**
+\`\`\`markdown
+## الخدمة الرئيسية
 
-🎯 **GOAL:** Give user everything they need to know about their query from ALL available services.`
+### المتطلبات
+- متطلب 1
+- متطلب 2
+
+### الخطوات
+1. خطوة أولى
+2. خطوة ثانية
+
+### معلومات إضافية
+**الرسوم:** 200 دج
+**المدة:** 7-15 يوم
+
+[رابط الخدمة](https://example.com)
+\`\`\`
+
+🎯 **GOAL:** Well-structured markdown that displays beautifully in the UI.`
         },
         {
           role: 'user',
@@ -237,60 +261,102 @@ Create a comprehensive summary that addresses "${userQuery}" using information f
   }
 }
 
-// Manual summary creation from multiple documents
+// Manual summary creation from multiple documents in markdown format
 function createManualSummary(services: any[], userQuery: string): string {
   const isArabic = /[\u0600-\u06FF]/.test(userQuery);
   
   let response = '';
   
   if (isArabic) {
-    response = `بخصوص "${userQuery}"، يمكنني مساعدتك بناءً على ${services.length} خدمة متاحة:\n\n`;
+    response = `## خدمات "${userQuery}"\n\n`;
+    response += `تم العثور على **${services.length} خدمة** متعلقة بطلبك:\n\n`;
     
-    // Combine information from all services
+    // Combine information from all services in markdown
     services.slice(0, 3).forEach((service, index) => {
-      response += `**${index + 1}. ${service.name}**\n`;
+      response += `### ${index + 1}. ${service.name}\n\n`;
+      
       if (service.description) {
-        response += `${service.description}\n`;
+        response += `${service.description}\n\n`;
       }
       
       if (service.requirements && service.requirements.length > 0) {
-        response += `📋 متطلبات: ${service.requirements.slice(0, 3).join('، ')}\n`;
+        response += `#### المتطلبات\n`;
+        service.requirements.slice(0, 4).forEach((req: string) => {
+          response += `- ${req}\n`;
+        });
+        response += '\n';
       }
       
+      if (service.process && service.process.length > 0) {
+        response += `#### الخطوات\n`;
+        service.process.slice(0, 3).forEach((step: string, stepIndex: number) => {
+          response += `${stepIndex + 1}. ${step}\n`;
+        });
+        response += '\n';
+      }
+      
+      response += `#### معلومات الخدمة\n`;
       if (service.fee && service.fee !== 'غير محدد') {
-        response += `💰 الرسوم: ${service.fee}\n`;
+        response += `**الرسوم:** ${service.fee}\n`;
+      }
+      if (service.duration && service.duration !== 'غير محدد') {
+        response += `**المدة:** ${service.duration}\n`;
+      }
+      if (service.office) {
+        response += `**المكتب:** ${service.office}\n`;
       }
       
       if (service.bawabticUrl) {
-        response += `🌐 ${service.bawabticUrl}\n`;
+        response += `\n[🌐 رابط الخدمة](${service.bawabticUrl})\n`;
       }
       
-      response += '\n';
+      response += '\n---\n\n';
     });
     
   } else {
-    response = `Regarding "${userQuery}", I can help you based on ${services.length} available services:\n\n`;
+    response = `## "${userQuery}" Services\n\n`;
+    response += `Found **${services.length} services** related to your request:\n\n`;
     
-    // Combine information from all services
+    // Combine information from all services in markdown
     services.slice(0, 3).forEach((service, index) => {
-      response += `**${index + 1}. ${service.name}**\n`;
+      response += `### ${index + 1}. ${service.name}\n\n`;
+      
       if (service.description) {
-        response += `${service.description}\n`;
+        response += `${service.description}\n\n`;
       }
       
       if (service.requirements && service.requirements.length > 0) {
-        response += `📋 Requirements: ${service.requirements.slice(0, 3).join(', ')}\n`;
+        response += `#### Requirements\n`;
+        service.requirements.slice(0, 4).forEach((req: string) => {
+          response += `- ${req}\n`;
+        });
+        response += '\n';
       }
       
+      if (service.process && service.process.length > 0) {
+        response += `#### Process\n`;
+        service.process.slice(0, 3).forEach((step: string, stepIndex: number) => {
+          response += `${stepIndex + 1}. ${step}\n`;
+        });
+        response += '\n';
+      }
+      
+      response += `#### Service Information\n`;
       if (service.fee && service.fee !== 'غير محدد') {
-        response += `💰 Fee: ${service.fee}\n`;
+        response += `**Fee:** ${service.fee}\n`;
+      }
+      if (service.duration && service.duration !== 'غير محدد') {
+        response += `**Duration:** ${service.duration}\n`;
+      }
+      if (service.office) {
+        response += `**Office:** ${service.office}\n`;
       }
       
       if (service.bawabticUrl) {
-        response += `🌐 ${service.bawabticUrl}\n`;
+        response += `\n[🌐 Service Link](${service.bawabticUrl})\n`;
       }
       
-      response += '\n';
+      response += '\n---\n\n';
     });
   }
   

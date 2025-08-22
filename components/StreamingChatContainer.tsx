@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import ChatMessage from './ChatMessage';
 import ChatInput from './ChatInput';
 import SampleQuestions from './SampleQuestions';
@@ -268,10 +270,12 @@ export default function StreamingChatContainer() {
                 <div className="bg-white border border-gray-200 text-gray-900 rounded-2xl px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base shadow-sm">
                   <div className="flex items-start gap-2">
                     <div className="flex-1">
-                      <p className="whitespace-pre-wrap leading-relaxed text-gray-800" dir="auto">
-                        {currentStreamingMessage}
+                      <div className="markdown-content leading-relaxed text-gray-800" dir="auto">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                          {currentStreamingMessage}
+                        </ReactMarkdown>
                         <span className="inline-block w-0.5 h-5 bg-blue-500 ml-1 animate-pulse"></span>
-                      </p>
+                      </div>
                     </div>
                     <div className="text-xs text-green-600 font-medium animate-pulse">
                       يكتب...

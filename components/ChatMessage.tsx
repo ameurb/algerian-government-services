@@ -1,5 +1,7 @@
 import React from 'react';
 import { Bot, User } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import SampleQuestions from './SampleQuestions';
 import { detectTextDirection, getDirectionClasses, getChatAlignment } from '@/lib/language-utils';
 
@@ -27,6 +29,98 @@ export default function ChatMessage({ role, content, timestamp, onQuestionClick,
   const directionClasses = getDirectionClasses(content);
   const chatAlignment = getChatAlignment(content, isUser);
   
+  // Handle clickable suggestions
+  const handleClickableSuggestion = (suggestion: string) => {
+    if (onQuestionClick) {
+      onQuestionClick(suggestion);
+    }
+  };
+  
+  // Custom markdown components
+  const markdownComponents = {
+    // Handle clickable suggestions
+    p: ({ children, ...props }: any) => {
+      const childString = String(children);
+      if (childString.includes('<clickable>')) {
+        const parts = childString.split(/(<clickable>.*?<\/clickable>)/g);
+        return (
+          <p {...props}>
+            {parts.map((part, index) => {
+              if (part.startsWith('<clickable>') && part.endsWith('</clickable>')) {
+                const suggestion = part.replace(/<\/?clickable>/g, '');
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleClickableSuggestion(suggestion)}
+                    className="inline-block bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm mx-1 my-1 transition-colors cursor-pointer"
+                  >
+                    {suggestion}
+                  </button>
+                );
+              }
+              return part;
+            })}
+          </p>
+        );
+      }
+      return <p {...props}>{children}</p>;
+    },
+    // Style headers
+    h2: ({ children, ...props }: any) => (
+      <h2 {...props} className="text-xl font-bold text-gray-900 mb-3 mt-4">
+        {children}
+      </h2>
+    ),
+    h3: ({ children, ...props }: any) => (
+      <h3 {...props} className="text-lg font-semibold text-gray-800 mb-2 mt-3">
+        {children}
+      </h3>
+    ),
+    h4: ({ children, ...props }: any) => (
+      <h4 {...props} className="text-md font-medium text-gray-700 mb-2 mt-2">
+        {children}
+      </h4>
+    ),
+    // Style lists
+    ul: ({ children, ...props }: any) => (
+      <ul {...props} className="list-disc list-inside mb-3 space-y-1">
+        {children}
+      </ul>
+    ),
+    ol: ({ children, ...props }: any) => (
+      <ol {...props} className="list-decimal list-inside mb-3 space-y-1">
+        {children}
+      </ol>
+    ),
+    li: ({ children, ...props }: any) => (
+      <li {...props} className="text-gray-700">
+        {children}
+      </li>
+    ),
+    // Style links
+    a: ({ children, href, ...props }: any) => (
+      <a 
+        {...props} 
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:text-blue-800 underline"
+      >
+        {children}
+      </a>
+    ),
+    // Style horizontal rules
+    hr: ({ ...props }: any) => (
+      <hr {...props} className="border-gray-300 my-4" />
+    ),
+    // Style strong text
+    strong: ({ children, ...props }: any) => (
+      <strong {...props} className="font-semibold text-gray-900">
+        {children}
+      </strong>
+    )
+  };
+  
   return (
     <div className={`flex gap-2 sm:gap-3 mb-4 sm:mb-6 ${chatAlignment}`}>
       <div className="flex-shrink-0">
@@ -45,10 +139,22 @@ export default function ChatMessage({ role, content, timestamp, onQuestionClick,
             ? 'bg-blue-500 text-white' 
             : 'bg-white border border-gray-200 text-gray-900'
         } ${textDirection === 'rtl' ? 'ml-auto' : 'mr-auto'}`}>
-          <p className={`whitespace-pre-wrap leading-relaxed ${directionClasses}`} 
-             dir={textDirection}>
-            {content}
-          </p>
+          {isUser ? (
+            <p className={`whitespace-pre-wrap leading-relaxed ${directionClasses}`} 
+               dir={textDirection}>
+              {content}
+            </p>
+          ) : (
+            <div className={`markdown-content leading-relaxed ${directionClasses}`} 
+                 dir={textDirection}>
+              <ReactMarkdown 
+                remarkPlugins={[remarkGfm]}
+                components={markdownComponents}
+              >
+                {content}
+              </ReactMarkdown>
+            </div>
+          )}
         </div>
         
         {metadata && metadata.services && metadata.services.length > 0 && (
