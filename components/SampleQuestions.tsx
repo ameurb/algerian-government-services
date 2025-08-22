@@ -6,14 +6,14 @@ interface SampleQuestionsProps {
 }
 
 const sampleQuestions = [
-  { ar: "بطاقة الهوية", en: "National ID", emoji: "🆔" },
-  { ar: "جواز السفر", en: "Passport", emoji: "✈️" },
-  { ar: "رخصة السياقة", en: "Driving license", emoji: "🚗" },
-  { ar: "منح التعليم", en: "Education grants", emoji: "🎓" },
-  { ar: "تأسيس شركة", en: "Company registration", emoji: "🏢" },
-  { ar: "الضرائب", en: "Tax services", emoji: "💰" },
-  { ar: "شهادة الميلاد", en: "Birth certificate", emoji: "📋" },
-  { ar: "السكن", en: "Housing services", emoji: "🏠" }
+  { ar: "بطاقة التعريف البيومترية", en: "Biometric National ID", emoji: "🆔" },
+  { ar: "جواز السفر البيومتري", en: "Biometric Passport", emoji: "✈️" },
+  { ar: "رخصة السياقة البيومترية", en: "Biometric Driving License", emoji: "🚗" },
+  { ar: "التسجيل في العمل", en: "Employment Registration", emoji: "💼" },
+  { ar: "تأسيس شركة عبر الإنترنت", en: "Online Company Registration", emoji: "🏢" },
+  { ar: "التصريح الجبائي", en: "Tax Declaration", emoji: "💰" },
+  { ar: "شهادة الميلاد عبر الإنترنت", en: "Online Birth Certificate", emoji: "📋" },
+  { ar: "السكن الترقوي", en: "Social Housing", emoji: "🏠" }
 ];
 
 export default function SampleQuestions({ onQuestionClick, disabled = false }: SampleQuestionsProps) {
