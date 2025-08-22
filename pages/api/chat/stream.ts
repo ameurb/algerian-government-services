@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { handleSimpleCollectionChat } from '@/lib/simple-collection-handler';
+import { handleMultiDocumentChat } from '@/lib/multi-document-handler';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -73,8 +73,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       })}\n\n`);
     }, 1500);
 
-    // Get response from single collection query - simple and fast
-    const chatResult = await handleSimpleCollectionChat(message, sessionId, userId);
+    // Get response from multi-document analysis and summary
+    const chatResult = await handleMultiDocumentChat(message, sessionId, userId);
     const responseText = chatResult.response;
 
     // Send writing start

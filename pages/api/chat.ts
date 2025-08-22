@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { handleSimpleCollectionChat } from '@/lib/simple-collection-handler';
+import { handleMultiDocumentChat } from '@/lib/multi-document-handler';
 
 export default async function handler(
   req: NextApiRequest,
@@ -16,7 +16,7 @@ export default async function handler(
   }
 
   try {
-    const result = await handleSimpleCollectionChat(message, sessionId, userId);
+    const result = await handleMultiDocumentChat(message, sessionId, userId);
     return res.status(200).json(result);
   } catch (error) {
     console.error('Chat API error:', error);
