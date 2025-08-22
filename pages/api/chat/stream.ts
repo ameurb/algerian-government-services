@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { handleAdaptiveChatMessage } from '@/lib/adaptive-chat-handler';
+import { handleSimpleCollectionChat } from '@/lib/simple-collection-handler';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -73,8 +73,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       })}\n\n`);
     }, 1500);
 
-    // Get response from adaptive system that learns from database content
-    const chatResult = await handleAdaptiveChatMessage(message, sessionId, userId);
+    // Get response from single collection query - simple and fast
+    const chatResult = await handleSimpleCollectionChat(message, sessionId, userId);
     const responseText = chatResult.response;
 
     // Send writing start
