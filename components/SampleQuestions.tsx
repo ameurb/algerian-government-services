@@ -5,15 +5,16 @@ interface SampleQuestionsProps {
   disabled?: boolean;
 }
 
+// Sample questions based on actual database categories and services
 const sampleQuestions = [
-  { ar: "بطاقة التعريف البيومترية", en: "Biometric National ID", emoji: "🆔" },
-  { ar: "جواز السفر البيومتري", en: "Biometric Passport", emoji: "✈️" },
-  { ar: "رخصة السياقة البيومترية", en: "Biometric Driving License", emoji: "🚗" },
-  { ar: "التسجيل في العمل", en: "Employment Registration", emoji: "💼" },
-  { ar: "تأسيس شركة عبر الإنترنت", en: "Online Company Registration", emoji: "🏢" },
-  { ar: "التصريح الجبائي", en: "Tax Declaration", emoji: "💰" },
-  { ar: "شهادة الميلاد عبر الإنترنت", en: "Online Birth Certificate", emoji: "📋" },
-  { ar: "السكن الترقوي", en: "Social Housing", emoji: "🏠" }
+  { ar: "الحالة المدنية", en: "Marital Status", fr: "État Civil", emoji: "🆔" },
+  { ar: "السكن والعمران", en: "Housing and Urban Planning", fr: "Logement et urbanisme", emoji: "🏠" },
+  { ar: "التجارة والمالية", en: "Finance-Trade", fr: "Finance-Commerce", emoji: "💰" },
+  { ar: "الضمان الاجتماعي", en: "Social Security", fr: "Sécurité sociale", emoji: "🛡️" },
+  { ar: "الدعم الاجتماعي", en: "Social Assistance", fr: "Aides sociales", emoji: "🤝" },
+  { ar: "القانون والعدل", en: "Law-Justice", fr: "Droit et justice", emoji: "⚖️" },
+  { ar: "السياحة والترفيه", en: "Tourism and Leisure", fr: "Tourisme et loisir", emoji: "🏖️" },
+  { ar: "تكنولوجيا الاتصالات", en: "Telecom-Tech", fr: "Télécom-Tech", emoji: "📱" }
 ];
 
 export default function SampleQuestions({ onQuestionClick, disabled = false }: SampleQuestionsProps) {

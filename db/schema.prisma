@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Base Category model with shared data
+model Category {
+  id                Int                @id @default(autoincrement())
+  categoryId        Int                @unique
+  baseUrl           String
+  categoryNameAr    String
+  categoryNameEn    String
+  categoryNameFr    String
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+
+  @@map("categories")
+}
+
+// Arabic Service model
+model ServiceArabic {
+  id                           Int      @id @default(autoincrement())
+  serviceId                    Int      @unique
+  baseUrl                      String
+  title                        String
+  content                      String?
+  summary                      String?
+  url                          String
+  language                     String   @default("ar")
+  categoryId                   Int
+  categoryName                 String
+  categoryTags                 String
+  AccessOnlineServiceUrl       String?
+  AccessOnlineServiceSummary   String?
+  AccessOnlineServiceContent   String?
+  AccessOnlineServiceContentHtml String?
+  ContentUrls                  String?
+  OrganizationConcerned        String?
+  StructureConcernned          String?
+  TargetPopulation            String?
+  Themes                      String?
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+
+  @@map("services_arabic")
+}
+
+// French Service model
+model ServiceFrench {
+  id                           Int      @id @default(autoincrement())
+  serviceId                    Int      @unique
+  baseUrl                      String
+  title                        String
+  content                      String?
+  summary                      String?
+  url                          String
+  language                     String   @default("fr")
+  categoryId                   Int
+  categoryName                 String
+  categoryTags                 String
+  AccessOnlineServiceUrl       String?
+  AccessOnlineServiceSummary   String?
+  AccessOnlineServiceContent   String?
+  AccessOnlineServiceContentHtml String?
+  ContentUrls                  String?
+  OrganizationConcerned        String?
+  StructureConcernned          String?
+  TargetPopulation            String?
+  Themes                      String?
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+
+  @@map("services_french")
+}
+
+// English Service model
+model ServiceEnglish {
+  id                           Int      @id @default(autoincrement())
+  serviceId                    Int      @unique
+  baseUrl                      String
+  title                        String
+  content                      String?
+  summary                      String?
+  url                          String
+  language                     String   @default("en")
+  categoryId                   Int
+  categoryName                 String
+  categoryTags                 String
+  AccessOnlineServiceUrl       String?
+  AccessOnlineServiceSummary   String?
+  AccessOnlineServiceContent   String?
+  AccessOnlineServiceContentHtml String?
+  ContentUrls                  String?
+  OrganizationConcerned        String?
+  StructureConcernned          String?
+  TargetPopulation            String?
+  Themes                      String?
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+
+  @@map("services_english")
+}
+
+model ScrapingLog {
+  id        Int      @id @default(autoincrement())
+  url       String
+  status    String
+  errorMsg  String?
+  scrapedAt DateTime @default(now())
+  duration  Int?
+
+  @@map("scraping_logs")
+}
