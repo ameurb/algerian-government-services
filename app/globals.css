@@ -2,99 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    font-family: 'Inter', system-ui, sans-serif;
-    direction: ltr;
-  }
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-cairo: 'Cairo', sans-serif;
+}
 
-  /* RTL Support */
-  [dir="rtl"] {
-    direction: rtl;
-  }
+/* Enhanced styling for AI Assistant */
+html {
+  font-family: var(--font-cairo), var(--font-inter), system-ui, sans-serif;
+}
 
-  /* Arabic Font Optimization */
-  .font-arabic {
-    font-family: 'Cairo', 'Amiri', 'Scheherazade', 'Arial Unicode MS', sans-serif;
-    font-weight: 400;
-    line-height: 1.8;
-  }
+/* Arabic text styling */
+[dir="rtl"], .arabic {
+  font-family: var(--font-cairo), system-ui, sans-serif;
+  text-align: right;
+}
 
-  /* Latin Font Optimization */
-  .font-latin {
-    font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    line-height: 1.6;
-  }
+/* English/French text styling */
+[dir="ltr"], .latin {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  text-align: left;
+}
 
-  /* Mixed Language Font */
-  .font-mixed {
-    font-family: 'Inter', 'Cairo', 'Arial Unicode MS', sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-  }
+/* Auto-direction for mixed content */
+[dir="auto"] {
+  text-align: start;
+}
 
-  /* Text Direction Utilities */
-  .dir-rtl {
-    direction: rtl;
-    text-align: right;
-  }
+/* Streaming animation */
+@keyframes typing {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
 
-  .dir-ltr {
-    direction: ltr;
-    text-align: left;
-  }
+.typing-indicator {
+  animation: typing 1s infinite;
+}
 
-  /* RTL-specific adjustments */
-  .rtl-margin {
-    margin-right: auto;
-    margin-left: 0;
-  }
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
 
-  .ltr-margin {
-    margin-left: auto;
-    margin-right: 0;
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Markdown content styling */
+.markdown-content {
+  line-height: 1.7;
+}
+
+.markdown-content h1 {
+  @apply text-2xl font-bold text-blue-800 mb-4 pb-2 border-b border-gray-200;
+}
+
+.markdown-content h2 {
+  @apply text-xl font-semibold text-blue-700 mb-3 mt-6;
+}
+
+.markdown-content h3 {
+  @apply text-lg font-medium text-blue-600 mb-2 mt-4;
+}
+
+.markdown-content p {
+  @apply mb-4 text-gray-700 leading-relaxed;
+}
+
+.markdown-content ul {
+  @apply mb-4 ml-6 space-y-2;
+}
+
+.markdown-content ol {
+  @apply mb-4 ml-6 space-y-2;
+}
+
+.markdown-content li {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.markdown-content strong {
+  @apply font-semibold text-gray-900;
+}
+
+.markdown-content em {
+  @apply italic text-gray-600;
+}
+
+.markdown-content code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono text-gray-800;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-blue-200 pl-4 py-2 italic text-gray-600 bg-blue-50 rounded-r-lg my-4;
+}
+
+.markdown-content a {
+  @apply text-blue-600 hover:text-blue-800 underline transition-colors;
+}
+
+/* Service card animations */
+.service-card {
+  @apply transform transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+/* Loading animations */
+.pulse-dot {
+  animation: pulse 1.5s infinite;
+}
+
+.pulse-dot:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.pulse-dot:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-@layer components {
-  .chat-message {
-    @apply mb-4 flex gap-3;
+/* RTL support */
+html[dir="rtl"] .markdown-content ul,
+html[dir="rtl"] .markdown-content ol {
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .markdown-content h1 {
+    @apply text-xl;
   }
   
-  .message-user {
-    @apply flex-row-reverse;
+  .markdown-content h2 {
+    @apply text-lg;
   }
   
-  .message-assistant {
-    @apply flex-row;
-  }
-  
-  .message-bubble {
-    @apply max-w-xs lg:max-w-md px-4 py-2 rounded-2xl text-sm;
-  }
-  
-  .bubble-user {
-    @apply bg-primary-500 text-white rounded-br-md;
-  }
-  
-  .bubble-assistant {
-    @apply bg-gray-100 text-gray-900 rounded-bl-md;
-  }
-  
-  .typing-indicator {
-    @apply flex space-x-1 p-3;
-  }
-  
-  .typing-dot {
-    @apply w-2 h-2 bg-gray-400 rounded-full animate-pulse-dot;
-  }
-  
-  .typing-dot:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  
-  .typing-dot:nth-child(3) {
-    animation-delay: 0.4s;
+  .markdown-content h3 {
+    @apply text-base;
   }
 }
