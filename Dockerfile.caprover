@@ -18,7 +18,7 @@ COPY . .
 RUN npx prisma generate
 
 # Seed database with services
-RUN tsx prisma/enhanced_seed.ts
+RUN npx tsx prisma/enhanced_seed.ts
 
 # Build Next.js application
 RUN npm run build
