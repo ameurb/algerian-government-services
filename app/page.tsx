@@ -52,6 +52,18 @@ export default function GovernmentServicesAssistant() {
     }]);
   }, [language]);
 
+  // Show welcome message immediately on load
+  useEffect(() => {
+    if (messages.length === 0) {
+      setMessages([{
+        id: 'welcome',
+        role: 'assistant',
+        content: getWelcomeMessage(language),
+        createdAt: new Date()
+      }]);
+    }
+  }, []);
+
   // Auto-scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -87,8 +99,7 @@ export default function GovernmentServicesAssistant() {
         },
         body: JSON.stringify({
           messages: [...messages, userMsg].slice(-10), // Keep last 10 messages for context
-          sessionId,
-          language
+          sessionId
         }),
         signal: abortControllerRef.current.signal
       });
@@ -138,8 +149,21 @@ export default function GovernmentServicesAssistant() {
             
             try {
               const parsed = JSON.parse(data);
+              console.log('📡 Received streaming data:', parsed);
               
-              if (parsed.choices && parsed.choices[0] && parsed.choices[0].delta && parsed.choices[0].delta.content) {
+              // Handle our custom streaming format: {"content": "text"}
+              if (parsed.content) {
+                accumulatedText += parsed.content;
+                console.log('📝 Updated text length:', accumulatedText.length);
+                
+                // Update streaming message
+                setStreaming(prev => ({
+                  ...prev,
+                  currentMessage: accumulatedText
+                }));
+              }
+              // Handle OpenAI streaming format
+              else if (parsed.choices && parsed.choices[0] && parsed.choices[0].delta && parsed.choices[0].delta.content) {
                 const newContent = parsed.choices[0].delta.content;
                 accumulatedText += newContent;
                 
@@ -150,7 +174,8 @@ export default function GovernmentServicesAssistant() {
                 }));
               }
             } catch (parseError) {
-              // Handle different streaming formats
+              console.warn('Failed to parse streaming data:', data);
+              // Handle raw text streaming
               if (data.trim() && !data.includes('[DONE]')) {
                 accumulatedText += data;
                 setStreaming(prev => ({

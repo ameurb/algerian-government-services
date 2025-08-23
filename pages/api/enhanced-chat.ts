@@ -103,7 +103,7 @@ Consider Algerian administrative context and common citizen needs.`
 
     // Stream response with proper headers
     res.writeHead(200, {
-      'Content-Type': 'text/event-stream',
+      'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'no-cache',
       'Connection': 'keep-alive',
       'Access-Control-Allow-Origin': '*',
