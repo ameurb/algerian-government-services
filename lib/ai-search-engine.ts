@@ -219,29 +219,72 @@ export class AISearchEngine {
    * Main search method that combines AI analysis with database search
    */
   async search(userQuery: string, limit: number = 8) {
+    const startTime = Date.now();
+    console.log('🤖 AI Search Engine starting:', { 
+      query: userQuery.substring(0, 50) + '...', 
+      limit, 
+      model: this.model 
+    });
+
     try {
       // Step 1: Analyze query with AI
+      console.log('📊 Step 1: Analyzing query with AI...');
       const analysis = await this.analyzeQuery(userQuery);
+      console.log('✅ Query analysis completed:', {
+        intent: analysis.intent,
+        serviceType: analysis.serviceType,
+        keywords: analysis.keywords,
+        language: analysis.language,
+        category: analysis.category
+      });
       
       // Step 2: Search database using AI-optimized terms
+      console.log('🔍 Step 2: Searching database with optimized terms...');
       const services = await this.searchServices(analysis, limit);
+      console.log('✅ Database search completed:', {
+        servicesFound: services.length,
+        serviceNames: services.slice(0, 3).map(s => s.name)
+      });
       
       // Step 3: Get structured recommendations
+      console.log('💡 Step 3: Generating AI recommendations...');
       const recommendations = await this.getRecommendations(userQuery, services, analysis);
+      console.log('✅ Recommendations generated:', {
+        hasSummary: !!recommendations.summary,
+        recommendationsCount: recommendations.recommendations?.length || 0,
+        nextStepsCount: recommendations.nextSteps?.length || 0
+      });
+      
+      const totalTime = Date.now() - startTime;
+      console.log('🎉 AI Search completed successfully:', {
+        totalTimeMs: totalTime,
+        servicesFound: services.length,
+        model: this.model
+      });
       
       return {
         analysis,
         services,
         recommendations,
         metadata: {
-          queryTime: Date.now(),
+          queryTime: startTime,
           servicesFound: services.length,
-          model: this.model
+          model: this.model,
+          processingTimeMs: totalTime
         }
       };
     } catch (error) {
-      console.error('AI Search Error:', error);
-      throw new Error('Failed to process search query');
+      const totalTime = Date.now() - startTime;
+      console.error('❌ AI Search Engine Error:', {
+        error: error,
+        message: error instanceof Error ? error.message : 'Unknown error',
+        stack: error instanceof Error ? error.stack : 'No stack trace',
+        query: userQuery,
+        model: this.model,
+        processingTimeMs: totalTime
+      });
+      
+      throw new Error(`Failed to process search query: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   }
 
