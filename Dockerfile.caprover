@@ -23,17 +23,12 @@ RUN npm run build
 # Copy static assets for standalone mode
 RUN cp -r .next/static .next/standalone/.next/static
 
-# Expose ports
-EXPOSE 3030 8081
+# Expose port
+EXPOSE 3030
 
 # Set environment
 ENV NODE_ENV=production
 ENV PORT=3030
-ENV MCP_SERVER_PORT=8081
 
-# Create startup script to run both services
-RUN echo '#!/bin/sh\necho "🇩🇿 Starting Algerian Services..."\necho "🔧 Starting MCP Server..."\nnpm run mcp:http &\necho "🌐 Starting Next.js App..."\nnode .next/standalone/server.js' > /app/start.sh
-RUN chmod +x /app/start.sh
-
-# Start both Next.js and MCP server
-CMD ["/app/start.sh"]
+# Start Next.js application
+CMD ["node", ".next/standalone/server.js"]
