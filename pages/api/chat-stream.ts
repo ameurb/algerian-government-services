@@ -19,16 +19,8 @@ export default async function handler(req: any, res: any) {
     const userMessage = messages[messages.length - 1];
     const userQuery = userMessage.content;
     
-    console.log('🎯 Chat Stream API:', {
-      userQuery: userQuery.substring(0, 50) + '...',
-      language,
-      sessionId,
-      messagesCount: messages.length
-    });
-
     // Search for relevant services
     const services = await searchServices(userQuery, language);
-    console.log('🔍 Found services:', services.length);
     
     // Enhanced Analysis and Context Generation
     const queryAnalysis = analyzeUserQuery(userQuery, language);
@@ -134,13 +126,8 @@ Provide a comprehensive, helpful response that fully addresses the user's needs 
         try {
           // Save conversation to database
           await saveConversation(sessionId, userQuery, text, language, services);
-          console.log('💾 Conversation saved:', { 
-            sessionId, 
-            tokensUsed: usage?.totalTokens,
-            servicesReferenced: services.length 
-          });
         } catch (error) {
-          console.error('❌ Failed to save conversation:', error);
+          // Silently handle save errors
         }
       },
     });
@@ -163,7 +150,6 @@ Provide a comprehensive, helpful response that fully addresses the user's needs 
     res.write('data: [DONE]\n\n');
     res.end();
   } catch (error) {
-    console.error('❌ Chat Stream API Error:', error);
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
@@ -197,7 +183,6 @@ async function searchServices(query: string, language: string, limit: number = 8
 
     return services;
   } catch (error) {
-    console.error('❌ Service search error:', error);
     return [];
   }
 }
@@ -355,7 +340,7 @@ async function saveConversation(
     }
 
   } catch (error) {
-    console.error('❌ Database save error:', error);
+    // Silently handle database errors
     throw error;
   }
 }

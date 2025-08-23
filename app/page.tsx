@@ -149,12 +149,10 @@ export default function GovernmentServicesAssistant() {
             
             try {
               const parsed = JSON.parse(data);
-              console.log('📡 Received streaming data:', parsed);
               
               // Handle our custom streaming format: {"content": "text"}
               if (parsed.content) {
                 accumulatedText += parsed.content;
-                console.log('📝 Updated text length:', accumulatedText.length);
                 
                 // Update streaming message
                 setStreaming(prev => ({
@@ -174,7 +172,7 @@ export default function GovernmentServicesAssistant() {
                 }));
               }
             } catch (parseError) {
-              console.warn('Failed to parse streaming data:', data);
+              // Silently handle parse errors
               // Handle raw text streaming
               if (data.trim() && !data.includes('[DONE]')) {
                 accumulatedText += data;
@@ -189,10 +187,7 @@ export default function GovernmentServicesAssistant() {
       }
       
     } catch (error: any) {
-      console.error('❌ Streaming error:', error);
-      
       if (error.name === 'AbortError') {
-        console.log('🛑 Request aborted by user');
         return;
       }
       
@@ -508,7 +503,7 @@ const LanguageSelector = ({ language, onLanguageChange }: {
   ];
 
   return (
-    <div className="flex items-center gap-2 bg-white rounded-lg p-2 shadow-sm border border-gray-200">
+    <div className="flex items-center gap-2 bg-white rounded-lg p-2">
       <Languages className="w-4 h-4 text-gray-600" />
       <select 
         value={language} 

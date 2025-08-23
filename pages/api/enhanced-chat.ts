@@ -28,14 +28,7 @@ export default async function handler(req: any, res: any) {
     const userMessage = messages[messages.length - 1];
     const userQuery = userMessage.content;
     
-    console.log('🧠 Enhanced Chat API - AI Analysis Starting:', {
-      userQuery: userQuery.substring(0, 50) + '...',
-      sessionId,
-      timestamp: new Date().toISOString()
-    });
-
     // Step 1: AI-powered query analysis
-    console.log('📊 Step 1: AI Query Analysis...');
     const analysis = await generateObject({
       model: openai('gpt-4o-mini'),
       schema: QueryAnalysisSchema,
@@ -56,12 +49,8 @@ Determine:
 Consider Algerian administrative context and common citizen needs.`
     });
 
-    console.log('✅ Query Analysis:', analysis.object);
-
     // Step 2: Search for relevant services using AI keywords
-    console.log('🔍 Step 2: Database Search...');
     const services = await searchServicesWithAI(analysis.object.searchKeywords);
-    console.log(`✅ Found ${services.length} services`);
 
     // Step 3: Generate enhanced contextual prompt
     const comprehensiveContext = generateComprehensiveContext(
@@ -69,9 +58,6 @@ Consider Algerian administrative context and common citizen needs.`
       analysis.object, 
       services
     );
-
-    // Step 4: Stream enhanced response
-    console.log('🌊 Step 3: Streaming AI Response...');
     const result = await streamText({
       model: openai('gpt-4o'),
       messages: [
@@ -88,15 +74,8 @@ Consider Algerian administrative context and common citizen needs.`
       async onFinish({ text, usage }) {
         try {
           await saveEnhancedConversation(sessionId, userQuery, text, analysis.object, services);
-          console.log('💾 Enhanced conversation saved:', {
-            sessionId,
-            tokensUsed: usage?.totalTokens,
-            servicesFound: services.length,
-            language: analysis.object.preferredLanguage,
-            intent: analysis.object.intent
-          });
         } catch (error) {
-          console.error('❌ Save error:', error);
+          // Silently handle save errors
         }
       },
     });
@@ -119,8 +98,6 @@ Consider Algerian administrative context and common citizen needs.`
     res.end();
 
   } catch (error) {
-    console.error('❌ Enhanced Chat API Error:', error);
-    
     // Send error as streaming response
     res.writeHead(500, {
       'Content-Type': 'application/json',
@@ -161,7 +138,6 @@ async function searchServicesWithAI(keywords: string[]) {
 
     return services;
   } catch (error) {
-    console.error('❌ Service search error:', error);
     return [];
   }
 }
@@ -351,7 +327,7 @@ async function saveEnhancedConversation(
     }
 
   } catch (error) {
-    console.error('❌ Database save error:', error);
+    // Silently handle database errors
     throw error;
   }
 }
