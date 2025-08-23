@@ -169,8 +169,7 @@ export class AISearchEngine {
           `
         }
       ],
-      temperature: 0.3,
-      maxTokens: 1500
+      temperature: 0.3
     });
 
     for await (const chunk of stream.textStream) {
@@ -269,7 +268,7 @@ export class AISearchEngine {
       yield { type: 'response_end', data: { servicesCount: services.length } };
       
     } catch (error) {
-      yield { type: 'error', data: { message: error.message } };
+      yield { type: 'error', data: { message: error instanceof Error ? error.message : 'Unknown error' } };
     }
   }
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { useChat } from 'ai/react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Send, Loader2, Search, CheckCircle, AlertCircle, Clock } from 'lucide-react';
@@ -40,6 +39,14 @@ interface AISearchResult {
     servicesFound: number;
     model: string;
   };
+}
+
+interface Message {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: Date;
+  searchResult?: AISearchResult;
 }
 
 const SampleQuestions = ({ onQuestionClick }: { onQuestionClick: (question: string) => void }) => {
@@ -129,33 +136,29 @@ const ServiceCard = ({ service }: { service: ServiceResult }) => {
   );
 };
 
-export default function EnhancedStreamingChat() {
-  const [searchResults, setSearchResults] = useState<AISearchResult | null>(null);
-  const [isAISearching, setIsAISearching] = useState(false);
+export default function SimpleEnhancedChat() {
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 'welcome',
+      role: 'assistant',
+      content: 'مرحباً! 👋 أنا مساعدك الذكي المحدث للخدمات الحكومية الجزائرية! 🇩🇿\n\n✨ **الميزات الجديدة:**\n- 🧠 ذكاء اصطناعي محسّن لنتائج أكثر دقة\n- 🔍 تحليل متطور للاستعلامات\n- 📊 توصيات مخصصة\n\nاسأل بالعربية أو الإنجليزية عن أي خدمة حكومية!',
+      timestamp: new Date()
+    }
+  ]);
+  
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchResult, setSearchResult] = useState<AISearchResult | null>(null);
   const [showSampleQuestions, setShowSampleQuestions] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
-    api: '/api/ai-chat',
-    initialMessages: [
-      {
-        id: 'welcome',
-        role: 'assistant',
-        content: 'مرحباً! 👋 أنا مساعدك الذكي المحدث للخدمات الحكومية الجزائرية! 🇩🇿\n\n✨ **الميزات الجديدة:**\n- 🧠 ذكاء اصطناعي محسّن لنتائج أكثر دقة\n- 🌊 استجابة فورية مع التدفق المباشر\n- 🔍 تحليل متطور للاستعلامات\n- 📊 توصيات مخصصة\n\nاسأل بالعربية أو الإنجليزية عن أي خدمة حكومية!'
-      }
-    ],
-    onFinish: async (message) => {
-      // Enhanced AI search when user sends a message
-      if (message.role === 'user') {
-        await performAISearch(message.content);
-      }
-    }
-  });
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
-  const performAISearch = async (query: string) => {
-    setIsAISearching(true);
-    setShowSampleQuestions(false);
-    
+  useEffect(scrollToBottom, [messages, searchResult]);
+
+  const performAISearch = async (query: string): Promise<AISearchResult | null> => {
     try {
       const response = await fetch('/api/ai-search', {
         method: 'POST',
@@ -165,25 +168,128 @@ export default function EnhancedStreamingChat() {
 
       if (response.ok) {
         const result: AISearchResult = await response.json();
-        setSearchResults(result);
+        return result;
       }
     } catch (error) {
       console.error('AI Search failed:', error);
+    }
+    return null;
+  };
+
+  const generateAIResponse = async (query: string, searchResult: AISearchResult): Promise<string> => {
+    try {
+      const response = await fetch('/api/ai-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [
+            { role: 'user', content: query }
+          ]
+        })
+      });
+
+      if (response.ok) {
+        const reader = response.body?.getReader();
+        const decoder = new TextDecoder();
+        let result = '';
+
+        if (reader) {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            result += decoder.decode(value);
+          }
+        }
+
+        // Extract text from streaming response
+        const lines = result.split('\n');
+        let text = '';
+        for (const line of lines) {
+          if (line.startsWith('0:"')) {
+            const match = line.match(/0:"(.+)"/);
+            if (match) text += match[1];
+          }
+        }
+        
+        return text || 'تم إيجاد نتائج البحث المطلوبة.';
+      }
+    } catch (error) {
+      console.error('AI Chat failed:', error);
+    }
+    
+    return 'تم العثور على الخدمات المطابقة لاستعلامك.';
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      role: 'user',
+      content: input,
+      timestamp: new Date()
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
+    setShowSampleQuestions(false);
+    setSearchResult(null);
+
+    try {
+      // Perform AI search
+      const aiSearchResult = await performAISearch(input);
+      if (aiSearchResult) {
+        setSearchResult(aiSearchResult);
+        
+        // Generate AI response
+        const aiResponse = await generateAIResponse(input, aiSearchResult);
+        
+        const assistantMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: aiResponse,
+          timestamp: new Date(),
+          searchResult: aiSearchResult
+        };
+
+        setMessages(prev => [...prev, assistantMessage]);
+      } else {
+        // Fallback response
+        const fallbackMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: 'عذراً، لم أتمكن من العثور على خدمات مطابقة لاستعلامك. يرجى المحاولة بكلمات مختلفة.',
+          timestamp: new Date()
+        };
+
+        setMessages(prev => [...prev, fallbackMessage]);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: 'عذراً، حدث خطأ في معالجة استعلامك. يرجى المحاولة مرة أخرى.',
+        timestamp: new Date()
+      };
+
+      setMessages(prev => [...prev, errorMessage]);
     } finally {
-      setIsAISearching(false);
+      setIsLoading(false);
     }
   };
 
   const handleQuestionClick = (question: string) => {
-    handleInputChange({ target: { value: question } } as any);
+    setInput(question);
     setShowSampleQuestions(false);
-    // Trigger the chat
-    handleSubmit({ preventDefault: () => {} } as any);
+    // Auto submit
+    setTimeout(() => {
+      const form = document.querySelector('form');
+      form?.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    }, 100);
   };
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, searchResults]);
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
@@ -201,15 +307,11 @@ export default function EnhancedStreamingChat() {
               </span>
               <span className="text-gray-300">•</span>
               <span className="flex items-center gap-1">
-                🌊 Real-time Streaming
-              </span>
-              <span className="text-gray-300">•</span>
-              <span className="flex items-center gap-1">
                 🔍 Enhanced Search
               </span>
             </p>
           </div>
-          {(isLoading || isAISearching) && (
+          {isLoading && (
             <div className="flex items-center gap-2 text-blue-600">
               <Loader2 className="w-4 h-4 animate-spin" />
               <span className="text-sm font-medium">معالجة ذكية...</span>
@@ -258,42 +360,20 @@ export default function EnhancedStreamingChat() {
           ))}
 
           {/* AI Search Results */}
-          {searchResults && (
+          {searchResult && (
             <div className="bg-white/90 border border-gray-200 rounded-xl p-6 shadow-lg">
               <div className="flex items-center gap-2 mb-4">
                 <Search className="w-5 h-5 text-blue-600" />
                 <h3 className="font-bold text-gray-900">نتائج البحث المحسّنة بالذكاء الاصطناعي</h3>
                 <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                  {searchResults.services.length} خدمة
+                  {searchResult.services.length} خدمة
                 </span>
               </div>
 
-              {/* Analysis Summary */}
-              <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4 mb-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-                  <div>
-                    <span className="font-medium text-gray-700">القصد:</span>
-                    <p className="text-gray-600 capitalize">{searchResults.analysis.intent}</p>
-                  </div>
-                  <div>
-                    <span className="font-medium text-gray-700">نوع الخدمة:</span>
-                    <p className="text-gray-600">{searchResults.analysis.serviceType}</p>
-                  </div>
-                  <div>
-                    <span className="font-medium text-gray-700">الفئة:</span>
-                    <p className="text-gray-600">{searchResults.analysis.category || 'عام'}</p>
-                  </div>
-                  <div>
-                    <span className="font-medium text-gray-700">اللغة:</span>
-                    <p className="text-gray-600">{searchResults.analysis.language === 'ar' ? 'عربية' : searchResults.analysis.language === 'en' ? 'إنجليزية' : 'مختلطة'}</p>
-                  </div>
-                </div>
-              </div>
-
               {/* Services Grid */}
-              {searchResults.services.length > 0 ? (
+              {searchResult.services.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  {searchResults.services.slice(0, 6).map((service) => (
+                  {searchResult.services.slice(0, 6).map((service) => (
                     <ServiceCard key={service.id} service={service} />
                   ))}
                 </div>
@@ -305,42 +385,31 @@ export default function EnhancedStreamingChat() {
               )}
 
               {/* AI Recommendations */}
-              <div className="border-t border-gray-200 pt-4">
-                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                  🎯 توصيات ذكية
-                </h4>
-                <div className="space-y-3">
-                  <div>
-                    <p className="text-sm text-gray-700 leading-relaxed" dir="auto">
-                      {searchResults.recommendations.summary}
-                    </p>
-                  </div>
-                  
-                  {searchResults.recommendations.nextSteps.length > 0 && (
+              {searchResult.recommendations && (
+                <div className="border-t border-gray-200 pt-4">
+                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    🎯 توصيات ذكية
+                  </h4>
+                  <div className="space-y-3">
                     <div>
-                      <h5 className="font-medium text-gray-800 mb-2">الخطوات التالية:</h5>
-                      <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
-                        {searchResults.recommendations.nextSteps.map((step, index) => (
-                          <li key={index} dir="auto">{step}</li>
-                        ))}
-                      </ul>
+                      <p className="text-sm text-gray-700 leading-relaxed" dir="auto">
+                        {searchResult.recommendations.summary}
+                      </p>
                     </div>
-                  )}
-                  
-                  {searchResults.recommendations.warnings && searchResults.recommendations.warnings.length > 0 && (
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                      <h5 className="font-medium text-yellow-800 mb-2 flex items-center gap-2">
-                        ⚠️ تنبيهات مهمة
-                      </h5>
-                      <ul className="space-y-1 text-sm text-yellow-700">
-                        {searchResults.recommendations.warnings.map((warning, index) => (
-                          <li key={index} dir="auto">• {warning}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                    
+                    {searchResult.recommendations.nextSteps && searchResult.recommendations.nextSteps.length > 0 && (
+                      <div>
+                        <h5 className="font-medium text-gray-800 mb-2">الخطوات التالية:</h5>
+                        <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                          {searchResult.recommendations.nextSteps.map((step, index) => (
+                            <li key={index} dir="auto">{step}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
 
@@ -365,33 +434,27 @@ export default function EnhancedStreamingChat() {
             <div className="flex-1 relative">
               <textarea
                 value={input}
-                onChange={handleInputChange}
+                onChange={(e) => setInput(e.target.value)}
                 placeholder="اسأل بالعربية أو الإنجليزية: مثل 'كيف أحصل على جواز السفر؟'"
                 className="w-full resize-none border border-gray-300 rounded-2xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:text-gray-500 shadow-sm"
                 style={{ minHeight: '56px', maxHeight: '140px' }}
-                disabled={isLoading || isAISearching}
+                disabled={isLoading}
                 rows={1}
                 dir="auto"
               />
             </div>
             <button
               type="submit"
-              disabled={isLoading || isAISearching || !input.trim()}
+              disabled={isLoading || !input.trim()}
               className="bg-gradient-to-r from-blue-600 to-green-600 text-white rounded-2xl px-6 py-3 hover:from-blue-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl flex items-center gap-2"
             >
-              {(isLoading || isAISearching) ? (
+              {isLoading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
               ) : (
                 <Send className="w-5 h-5" />
               )}
             </button>
           </form>
-
-          {error && (
-            <div className="mt-3 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
-              حدث خطأ: {error.message}
-            </div>
-          )}
         </div>
       </div>
     </div>

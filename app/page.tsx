@@ -1,9 +1,9 @@
-import EnhancedStreamingChat from '@/components/EnhancedStreamingChat';
+import SimpleEnhancedChat from '@/components/SimpleEnhancedChat';
 
 export default function Home() {
   return (
     <main className="h-svh">
-      <EnhancedStreamingChat />
+      <SimpleEnhancedChat />
     </main>
   );
 }

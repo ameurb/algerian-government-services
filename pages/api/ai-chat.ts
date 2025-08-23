@@ -52,10 +52,9 @@ export default async function handler(req: any, res: any) {
     `;
 
     // Create enhanced messages with context
-    const enhancedMessages = [
-      {
-        role: 'system',
-        content: `أنت مساعد ذكي متطور للخدمات الحكومية الجزائرية مدعوم بتقنيات الذكاء الاصطناعي المتقدمة.
+    const systemMessage = {
+      role: 'system' as const,
+      content: `أنت مساعد ذكي متطور للخدمات الحكومية الجزائرية مدعوم بتقنيات الذكاء الاصطناعي المتقدمة.
 
 المهام الأساسية:
 1. الإجابة على استفسارات المواطنين حول الخدمات الحكومية
@@ -72,15 +71,20 @@ export default async function handler(req: any, res: any) {
 - قدم نصائح عملية ومفيدة
 
 تم تحسين البحث بالذكاء الاصطناعي وإليك السياق:`
-      },
-      ...convertToCoreMessages(messages),
-      {
-        role: 'user',
-        content: `${userQuery}
+    };
+
+    const contextUserMessage = {
+      role: 'user' as const,
+      content: `${userQuery}
 
 السياق من البحث المحسّن:
 ${contextMessage}`
-      }
+    };
+
+    const enhancedMessages = [
+      systemMessage,
+      ...convertToCoreMessages(messages),
+      contextUserMessage
     ];
 
     // Choose the appropriate AI model
@@ -92,7 +96,6 @@ ${contextMessage}`
       model,
       messages: enhancedMessages,
       temperature: 0.3,
-      maxTokens: 2000,
       onFinish: (completion) => {
         console.log('AI Response completed:', {
           tokensUsed: completion.usage?.totalTokens,
@@ -102,7 +105,7 @@ ${contextMessage}`
       }
     });
 
-    return result.toDataStreamResponse();
+    return result.toTextStreamResponse();
   } catch (error) {
     console.error('Enhanced Chat API Error:', error);
     
@@ -111,10 +114,9 @@ ${contextMessage}`
     const fallbackResult = streamText({
       model: fallbackModel,
       messages: convertToCoreMessages(messages),
-      temperature: 0.7,
-      maxTokens: 1000
+      temperature: 0.7
     });
 
-    return fallbackResult.toDataStreamResponse();
+    return fallbackResult.toTextStreamResponse();
   }
 }
