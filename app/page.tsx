@@ -439,12 +439,12 @@ const MessageBubble = ({ message, language }: { message: Message; language: stri
                 </h3>
               ),
               ul: ({ children }) => (
-                <ul className="list-disc ml-5 space-y-1 mb-3 text-gray-700">
+                <ul className="list-disc ms-5 rtl:ml-0 rtl:mr-5 space-y-1 mb-3 text-gray-700">
                   {children}
                 </ul>
               ),
               ol: ({ children }) => (
-                <ol className="list-decimal ml-5 space-y-1 mb-3 text-gray-700">
+                <ol className="list-decimal ms-5 rtl:ml-0 rtl:mr-5 space-y-1 mb-3 text-gray-700">
                   {children}
                 </ol>
               ),
