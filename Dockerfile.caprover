@@ -32,7 +32,7 @@ ENV PORT=3030
 ENV MCP_SERVER_PORT=8081
 
 # Create startup script to run both services
-RUN echo '#!/bin/sh\necho "🇩🇿 Starting Algerian Services..."\necho "📊 Seeding database..."\nnpx tsx prisma/enhanced_seed.ts\necho "🔧 Starting MCP Server..."\nnpm run mcp:http &\necho "🌐 Starting Next.js App..."\nnode .next/standalone/server.js' > /app/start.sh
+RUN echo '#!/bin/sh\necho "🇩🇿 Starting Algerian Services..."\necho "🔧 Starting MCP Server..."\nnpm run mcp:http &\necho "🌐 Starting Next.js App..."\nnode .next/standalone/server.js' > /app/start.sh
 RUN chmod +x /app/start.sh
 
 # Start both Next.js and MCP server
