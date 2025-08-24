@@ -1,8 +1,12 @@
 import { openai } from '@ai-sdk/openai';
+import { anthropic } from '@ai-sdk/anthropic';
+import { google } from '@ai-sdk/google';
+import { mistral } from '@ai-sdk/mistral';
 import { generateObject, streamText } from 'ai';
 import { z } from 'zod';
 import { PrismaClient } from '@prisma/client';
 import { AI_TEMPLATES } from '@/lib/ai-templates';
+import { aiProviderManager } from '@/lib/ai-providers';
 
 const prisma = new PrismaClient();
 
@@ -29,8 +33,9 @@ export default async function handler(req: any, res: any) {
     const userQuery = userMessage.content;
     
     // Step 1: AI-powered query analysis
+    const analysisModel = aiProviderManager.getModel();
     const analysis = await generateObject({
-      model: openai('gpt-4o-mini'),
+      model: analysisModel,
       schema: QueryAnalysisSchema,
       prompt: `Analyze this user query about Algerian government services:
 
@@ -58,8 +63,10 @@ Consider Algerian administrative context and common citizen needs.`
       analysis.object, 
       services
     );
+    // Get the configured AI model
+    const responseModel = aiProviderManager.getModel();
     const result = await streamText({
-      model: openai('gpt-4o'),
+      model: responseModel,
       messages: [
         {
           role: 'system',
